@@ -5,19 +5,24 @@ export default function MaterialsPage() {
   const materials = listMaterials();
 
   return (
-    <main style={{ maxWidth: 900, margin: "2rem auto", padding: "0 1rem" }}>
-      <h1 style={{ fontSize: "1.8rem", fontWeight: 700 }}>教材一覧</h1>
+    <main className="max-w-4xl mx-auto py-8 px-4">
+      <h1 className="text-3xl font-bold mb-6">教材一覧</h1>
 
       {materials.length === 0 ? (
-        <p style={{ marginTop: "1rem" }}>
+        <p className="text-zinc-600">
           contentフォルダにMarkdownがありません（web/content/*.md）。
         </p>
       ) : (
-        <ul style={{ marginTop: "1rem", lineHeight: 1.9 }}>
+        <ul className="space-y-3">
           {materials.map((m) => (
-            <li key={m.slug}>
-              <Link href={`/materials/${m.slug}`}>{m.title}</Link>{" "}
-              <span style={{ opacity: 0.6 }}>({m.slug})</span>
+            <li key={m.slug} className="border-b border-zinc-100 dark:border-zinc-800 pb-2">
+              <Link 
+                href={`/materials/${m.slug}`}
+                className="text-lg text-blue-600 hover:underline font-medium"
+              >
+                {m.title}
+              </Link>
+              <span className="ml-2 text-sm text-zinc-400">({m.slug})</span>
             </li>
           ))}
         </ul>

@@ -30,28 +30,32 @@ export default function MaterialPage() {
 
   if (!slug) {
     return (
-      <main style={{ maxWidth: 900, margin: "2rem auto", padding: "0 1rem" }}>
+      <main className="max-w-4xl mx-auto py-8 px-4">
         <p>slug が取得できません。</p>
-        <p>
-          <Link href="/materials">← 一覧へ</Link>
+        <p className="mt-4">
+          <Link href="/materials" className="text-blue-600 hover:underline">← 一覧へ</Link>
         </p>
       </main>
     );
   }
 
   return (
-    <main style={{ maxWidth: 900, margin: "2rem auto", padding: "0 1rem" }}>
-      <p style={{ marginBottom: "1rem" }}>
-        <Link href="/materials">← 一覧へ</Link>
+    <main className="max-w-4xl mx-auto py-8 px-4">
+      <p className="mb-6">
+        <Link href="/materials" className="text-sm text-zinc-500 hover:text-blue-600 transition-colors">
+          ← 教材一覧へ戻る
+        </Link>
       </p>
 
-      <h1 style={{ fontSize: "1.8rem", fontWeight: 700 }}>{title || slug}</h1>
+      <h1 className="text-3xl font-bold mb-8 pb-4 border-b border-zinc-200 dark:border-zinc-800">
+        {title || slug}
+      </h1>
 
       {error ? (
-        <p style={{ marginTop: "1rem" }}>{error}</p>
+        <p className="text-red-500">{error}</p>
       ) : (
         <article
-          style={{ marginTop: "1.2rem", lineHeight: 1.9 }}
+          className="max-w-none leading-relaxed space-y-4"
           dangerouslySetInnerHTML={{ __html: contentHtml }}
         />
       )}

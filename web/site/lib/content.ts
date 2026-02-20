@@ -10,6 +10,12 @@ export type MaterialMeta = {
 };
 
 function contentDir() {
+  const fromEnv = process.env.CONTENT_DIR?.trim();
+  if (fromEnv) {
+    return path.isAbsolute(fromEnv)
+      ? fromEnv
+      : path.resolve(process.cwd(), fromEnv);
+  }
   return path.join(process.cwd(), "..", "content");
 }
 
