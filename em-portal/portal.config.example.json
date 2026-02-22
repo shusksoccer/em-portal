@@ -1,0 +1,13 @@
+{
+  "obsidian": {
+    "contentSourceDir": ""
+  },
+  "portal": {
+    "appDir": "tmp-app",
+    "contentDir": "tmp-app/content"
+  },
+  "git": {
+    "repoRootDir": "..",
+    "branch": "main"
+  }
+}

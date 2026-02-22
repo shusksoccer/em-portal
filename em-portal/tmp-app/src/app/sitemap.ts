@@ -1,8 +1,9 @@
 import type { MetadataRoute } from "next";
 import { getCollection, getTagMap } from "@/lib/content";
+import { getSiteUrlString } from "@/lib/site-url";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://example.com";
+  const baseUrl = getSiteUrlString();
   const staticPaths = [
     "",
     "/intro",

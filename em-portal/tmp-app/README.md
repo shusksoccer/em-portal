@@ -46,6 +46,13 @@ npx pnpm dev
 4. Build Command は既定のままで可（`pnpm build`）
 5. 初回デプロイ後、`/sitemap.xml` と主要ページを確認
 
+## 設定の置き場所（迷わない用）
+- `src/lib/site-url.ts`: サイトURLの決め方をまとめる場所（優先順もここ）
+- `src/app/layout.tsx`: ページ全体の設定・見た目（URLの決定ロジックは書かない）
+- `src/app/sitemap.ts`: サイトマップ作成（URLの決定ロジックは書かない）
+- 環境変数名は具体的にする（例: `NEXT_PUBLIC_SITE_URL`）
+- 同じ意味の設定は1か所だけに置く（今回ならURLは `site-url.ts`）
+
 ## ディレクトリ
 - `content/lessons`: 授業コマ
 - `content/worksheets`: ワークシート

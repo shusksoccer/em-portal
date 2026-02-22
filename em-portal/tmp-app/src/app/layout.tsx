@@ -1,6 +1,7 @@
 ﻿import type { Metadata } from "next";
 import { Noto_Sans_JP, Noto_Serif_JP } from "next/font/google";
 import Link from "next/link";
+import { getSiteUrl } from "@/lib/site-url";
 import "./globals.css";
 
 const bodyFont = Noto_Sans_JP({
@@ -16,7 +17,7 @@ const headingFont = Noto_Serif_JP({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://example.com"),
+  metadataBase: getSiteUrl(),
   title: {
     default: "エスノメソドロジー探究ポータル",
     template: "%s | エスノメソドロジー探究ポータル",
