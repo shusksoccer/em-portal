@@ -22,6 +22,11 @@ npx pnpm dev
 - `npx pnpm lint`: ESLint実行
 - `npx pnpm build`: 検索インデックス生成後に本番ビルド
 
+## かんたん公開（ダブルクリック）
+- `更新して公開する.bat` をダブルクリックする
+- 自動で `lint` → `build` → 保存（commit）→ GitHubへ送信（push）を実行する
+- Vercel を一度連携していれば、その後は自動で公開更新される
+
 ## コンテンツ運用（Obsidian → GitHub → Vercel）
 1. Obsidianで `content/` 配下の Markdown を編集する
 2. frontmatter を維持して保存する（`slug`, `tags`, `sources` など）
