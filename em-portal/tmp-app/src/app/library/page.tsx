@@ -10,6 +10,15 @@ import {
   parseStatusFilter,
 } from "@/lib/status-filter";
 
+function getHostLabel(urlValue: unknown): string {
+  const url = String(urlValue ?? "");
+  try {
+    return new URL(url).hostname.replace(/^www\./, "");
+  } catch {
+    return "-";
+  }
+}
+
 export default async function LibraryPage({
   searchParams,
 }: {
@@ -63,25 +72,44 @@ export default async function LibraryPage({
       <div className="grid">
         {filteredDocs.map((doc) => (
           <article key={doc.slug} className="card">
-            <div className="library-head">
-              <div>
-                <h2>{doc.title}</h2>
-                <p className="meta">
-                  著者: {String(doc.author ?? "-")} / 年: {String(doc.year ?? "-")} / 状態: {getStatusLabel(getStatusValue(doc.status))}
-                </p>
-              </div>
-              <div className="library-meta-box">
-                <span>難易度: {String(doc.difficulty ?? "-")}</span>
-                <span>用途: {String(doc.use_case ?? "-")}</span>
-              </div>
-            </div>
-            <p>
-              <Link href={String(doc.url ?? "#")} target="_blank" rel="noreferrer">
-                外部リンクを開く
-              </Link>
+            <h2 style={{ marginBottom: "0.35rem" }}>{doc.title}</h2>
+            <p className="meta" style={{ marginTop: 0 }}>
+              著者: {String(doc.author ?? "-")} / 年: {String(doc.year ?? "-")} / 状態: {getStatusLabel(getStatusValue(doc.status))}
             </p>
-            <MarkdownBody body={doc.body} />
-            <SourceLinks sourceIds={doc.sources} />
+
+            <section className="card" aria-label="文献概要" style={{ marginTop: "0.75rem", padding: "0.9rem" }}>
+              <p className="meta" style={{ marginTop: 0 }}>文献概要</p>
+              <div className="grid two">
+                <div>
+                  <p className="meta">難易度</p>
+                  <p>{String(doc.difficulty ?? "-")}</p>
+                </div>
+                <div>
+                  <p className="meta">使いどころ</p>
+                  <p>{String(doc.use_case ?? "-")}</p>
+                </div>
+                <div>
+                  <p className="meta">出典サイト</p>
+                  <p>{getHostLabel(doc.url)}</p>
+                </div>
+                <div>
+                  <p className="meta">外部リンク</p>
+                  <p>
+                    <Link href={String(doc.url ?? "#")} target="_blank" rel="noreferrer">
+                      開く
+                    </Link>
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <details style={{ marginTop: "0.85rem" }}>
+              <summary style={{ cursor: "pointer", fontWeight: 600 }}>メモを開く</summary>
+              <div style={{ marginTop: "0.75rem" }}>
+                <MarkdownBody body={doc.body} />
+                <SourceLinks sourceIds={doc.sources} />
+              </div>
+            </details>
           </article>
         ))}
       </div>
