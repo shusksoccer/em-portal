@@ -1,21 +1,24 @@
-﻿---
-title: "用語: presentation"
+---
+title: "発表（Presentation）"
 term: "presentation"
 slug: "presentation"
-aliases: []
-related: ["observation","description"]
+aliases: ["探究発表"]
+related: ["description","analysis","ethics"]
 examples: ["学校","SNS"]
-tags: ["用語","基礎"]
+tags: ["用語","発表","授業"]
 sources: ["src-em-intro","src-ca-basics"]
+status: "reviewed"
 ---
-## 定義(短い)
-- presentation は、場面の秩序を読むための基本概念です。
+
+# 発表（Presentation）
+
+## 定義（短い）
+- 観察・記述・分析の結果を、問い・方法・根拠・限界とともに他者へ伝える活動です。
 
 ## 例
-- 学校: ホームルーム前のやり取り。
-- SNS: 返信タイミングや言い回し。
+- 学校: 教室内の短い観察プロジェクトを、スライド1〜3枚で報告する。
+- SNS: 返信タイミングの観察結果を匿名化したスクリーンショット説明とともに共有する。
 
-## 使い方
-- まず定義を読む。
-- 次に観察ログで該当箇所を1つ示す。
-
+## 授業での見方
+- 結論だけでなく、どのデータを根拠にしたかを示す。
+- 倫理配慮（匿名化・公開範囲）と限界も必ず含める。

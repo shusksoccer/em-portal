@@ -1,21 +1,24 @@
-﻿---
-title: "用語: context"
+---
+title: "文脈（Context）"
 term: "context"
 slug: "context"
-aliases: []
-related: ["observation","description"]
+aliases: ["文脈"]
+related: ["indexicality","observation","description"]
 examples: ["学校","SNS"]
-tags: ["用語","基礎"]
+tags: ["用語","基礎","観察"]
 sources: ["src-em-intro","src-ca-basics"]
+status: "reviewed"
 ---
-## 定義(短い)
-- context は、場面の秩序を読むための基本概念です。
+
+# 文脈（Context）
+
+## 定義（短い）
+- 発話や行為の意味を読むときに前提になる、場面・順序・参加者関係・タイミングなどの条件です。
 
 ## 例
-- 学校: ホームルーム前のやり取り。
-- SNS: 返信タイミングや言い回し。
+- 学校: 同じ「静かにして」でも、授業開始前とテスト中では意味の重さが違う。
+- SNS: 同じスタンプでも、直前のメッセージ内容や返信間隔で受け取られ方が変わる。
 
-## 使い方
-- まず定義を読む。
-- 次に観察ログで該当箇所を1つ示す。
-
+## 授業での見方
+- 発話を1行だけ切り出さず、前後のやりとりと場面情報を一緒に見る。
+- 「誰が・いつ・どこで」を最低限記録してから解釈する。

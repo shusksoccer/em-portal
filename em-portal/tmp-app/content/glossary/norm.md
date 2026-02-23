@@ -1,21 +1,24 @@
-﻿---
-title: "用語: norm"
+---
+title: "規範（Norm）"
 term: "norm"
 slug: "norm"
-aliases: []
-related: ["observation","description"]
+aliases: ["ルール","きまり"]
+related: ["deviation","background-expectancies","accountability"]
 examples: ["学校","SNS"]
-tags: ["用語","基礎"]
+tags: ["用語","基礎","観察"]
 sources: ["src-em-intro","src-ca-basics"]
+status: "reviewed"
 ---
-## 定義(短い)
-- norm は、場面の秩序を読むための基本概念です。
+
+# 規範（Norm）
+
+## 定義（短い）
+- その場で期待されるふるまいの基準です。明文化された校則だけでなく、暗黙の「ふつう」も含みます。
 
 ## 例
-- 学校: ホームルーム前のやり取り。
-- SNS: 返信タイミングや言い回し。
+- 学校: 発言前に手を挙げる、提出物を指定場所に出す、など。
+- SNS: 連絡への返信タイミングや、グループでの話題の切り出し方など。
 
-## 使い方
-- まず定義を読む。
-- 次に観察ログで該当箇所を1つ示す。
-
+## 授業での見方
+- 規範を説明するときは、実際に守られた場面と逸脱した場面を比べる。
+- 「なぜそれが規範だと分かるか」を反応や修復から確認する。

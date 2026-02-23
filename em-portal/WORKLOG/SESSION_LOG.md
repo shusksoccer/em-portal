@@ -24,3 +24,4 @@
 - Improved `glossary` readability: quick links now show Japanese term titles, detail pages include a Japanese summary block, and `accountability` text was de-mojibaked/refined.
 - Fixed mojibake glossary entries `adjacency-pair` and `anonymization` with clean Japanese definitions/examples for classroom use.
 - Cleaned residual UTF-8 BOM markers from `content/faq/faq-1.md` and `content/lessons/l1-what-is-em.md` (content unchanged, formatting hygiene).
+- Replaced 14 placeholder glossary entries with Japanese classroom-ready definitions/examples (`context`, `data-session`, `deviation`, `embodiment`, `fieldnote`, `gaze`, `inference`, `institutional-talk`, `membership-categorization`, `norm`, `presentation`, `silence`, `topic-management`, `validity`).
