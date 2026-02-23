@@ -28,3 +28,4 @@
 - Standardized `faq-1` to `faq-10` into a consistent structure (`回答（短く） / 具体例（学校・SNS） / 注意点 / チェック`) and added missing `status` where needed.
 - Improved `/faq` list readability: cards now show a short answer first, sort by FAQ number, and tuck full markdown/source details behind a collapsible section.
 - Added an L1 lesson toolkit block to `/curriculum/[slug]` with direct links to key figures/glossary/worksheet/FAQ for in-class navigation.
+- Aligned `library/lib-2` to `lib-5` with `読み方の目安` and more consistent classroom-facing notes to match `lib-1`.
