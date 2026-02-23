@@ -4,6 +4,22 @@ import { SourceLinks } from "@/components/source-links";
 import { getCollection } from "@/lib/content";
 import { STATUS_OPTIONS, getStatusLabel, getStatusValue, parseStatusFilter } from "@/lib/status-filter";
 
+function getFaqOrder(slug: string): number {
+  const match = slug.match(/^faq-(\d+)$/);
+  return match ? Number(match[1]) : Number.POSITIVE_INFINITY;
+}
+
+function getShortAnswer(body: string): string {
+  const normalized = body.replace(/\r\n/g, "\n");
+  const match = normalized.match(/##\s*回答[（(]短く[)）]\s*\n-\s+(.+)/);
+  if (match?.[1]) return match[1].trim();
+
+  const firstBullet = normalized.match(/^\s*-\s+(.+)$/m);
+  if (firstBullet?.[1]) return firstBullet[1].trim();
+
+  return normalized.split("\n").map((line) => line.trim()).find(Boolean) ?? "";
+}
+
 export default async function FaqPage({
   searchParams,
 }: {
@@ -15,6 +31,7 @@ export default async function FaqPage({
   const filtered = statusFilter === "all"
     ? faqs
     : faqs.filter((faq) => getStatusValue(faq.status) === statusFilter);
+  const ordered = [...filtered].sort((a, b) => getFaqOrder(a.slug) - getFaqOrder(b.slug) || a.title.localeCompare(b.title, "ja"));
 
   const counts = {
     all: faqs.length,
@@ -49,13 +66,19 @@ export default async function FaqPage({
         </div>
       </div>
       <div className="grid reveal">
-        {filtered.map((faq, index) => (
+        {ordered.map((faq, index) => (
           <article key={faq.slug} className="card faq-card">
             <p className="faq-index">Q{index + 1}</p>
             <h2>{faq.title}</h2>
             <p className="meta">状態: {getStatusLabel(getStatusValue(faq.status))}</p>
-            <MarkdownBody body={faq.body} />
-            <SourceLinks sourceIds={faq.sources} />
+            <p>{getShortAnswer(faq.body)}</p>
+            <details>
+              <summary style={{ cursor: "pointer", fontWeight: 600 }}>回答の詳細を開く</summary>
+              <div style={{ marginTop: "0.75rem" }}>
+                <MarkdownBody body={faq.body} />
+                <SourceLinks sourceIds={faq.sources} />
+              </div>
+            </details>
           </article>
         ))}
       </div>
