@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { MarkdownBody } from "@/components/markdown-body";
 import { SourceLinks } from "@/components/source-links";
 import { getCollection } from "@/lib/content";
@@ -35,7 +35,7 @@ export default async function FaqPage({
         <p className="meta">
           状態: {getStatusLabel(statusFilter)} / {filtered.length}件表示
         </p>
-        <div className="chip-row" aria-label="status filters">
+        <div className="chip-row" aria-label="状態フィルタ">
           {STATUS_OPTIONS.map((status) => (
             <Link
               key={status}

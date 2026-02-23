@@ -26,7 +26,7 @@ export default async function TagDetailPage({
   return (
     <section>
       <div className="card section-hero section-hero-tags reveal">
-        <p className="section-kicker">Tag</p>
+        <p className="section-kicker">タグ</p>
         <h1>{tag}</h1>
         <p>{docs.length}件の教材があります。</p>
       </div>

@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import Link from "next/link";
 import { getCollection } from "@/lib/content";
 import { STATUS_OPTIONS, getStatusLabel, getStatusValue, parseStatusFilter } from "@/lib/status-filter";
@@ -31,17 +31,10 @@ export default async function FiguresPage({
         <p>
           授業の説明に使えるSVG図解です。1図1主張で作成しており、各図解ページで説明文と参考リンクを確認できます。
         </p>
-        <p className="meta">
-          状態: {getStatusLabel(statusFilter)} / {filtered.length}件表示
-        </p>
-        <div className="chip-row" aria-label="status filters">
+        <p className="meta">状態: {getStatusLabel(statusFilter)} / {filtered.length}件表示</p>
+        <div className="chip-row" aria-label="状態フィルタ">
           {STATUS_OPTIONS.map((status) => (
-            <Link
-              key={status}
-              href={status === "all" ? "/figures" : `/figures?status=${status}`}
-              className="chip-link"
-              aria-current={statusFilter === status ? "page" : undefined}
-            >
+            <Link key={status} href={status === "all" ? "/figures" : `/figures?status=${status}`} className="chip-link" aria-current={statusFilter === status ? "page" : undefined}>
               {getStatusLabel(status)} ({counts[status]})
             </Link>
           ))}
@@ -57,12 +50,7 @@ export default async function FiguresPage({
         {filtered.map((item) => (
           <Link key={item.slug} href={`/figures/${item.slug}`} className="figure-tile">
             <div className="figure-thumb">
-              <Image
-                src={`/figures/${item.slug}.svg`}
-                alt={String(item.alt ?? item.title)}
-                width={1200}
-                height={720}
-              />
+              <Image src={`/figures/${item.slug}.svg`} alt={String(item.alt ?? item.title)} width={1200} height={720} />
             </div>
             <div className="figure-caption">
               <h2>{item.title}</h2>

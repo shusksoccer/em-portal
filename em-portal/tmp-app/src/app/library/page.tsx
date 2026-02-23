@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { MarkdownBody } from "@/components/markdown-body";
 import { SourceLinks } from "@/components/source-links";
 import { getCollection } from "@/lib/content";
@@ -40,19 +40,12 @@ export default async function LibraryPage({
         <p>
           授業で使う順に読みやすい短い文献メモです。難易度・用途・読むポイントが先に見える形にしています。
         </p>
-        <p className="meta">
-          状態: {getStatusLabel(statusFilter)} / {filteredDocs.length}件表示
-        </p>
-        <div className="chip-row" aria-label="status filters">
+        <p className="meta">状態: {getStatusLabel(statusFilter)} / {filteredDocs.length}件表示</p>
+        <div className="chip-row" aria-label="状態フィルタ">
           {STATUS_OPTIONS.map((status) => {
             const href = status === "all" ? "/library" : `/library?status=${status}`;
             return (
-              <Link
-                key={status}
-                href={href}
-                className="chip-link"
-                aria-current={statusFilter === status ? "page" : undefined}
-              >
+              <Link key={status} href={href} className="chip-link" aria-current={statusFilter === status ? "page" : undefined}>
                 {getStatusLabel(status)} ({statusCounts[status]})
               </Link>
             );
@@ -74,8 +67,7 @@ export default async function LibraryPage({
               <div>
                 <h2>{doc.title}</h2>
                 <p className="meta">
-                  著者: {String(doc.author ?? "-")} / 年: {String(doc.year ?? "-")} / 状態:{" "}
-                  {getStatusLabel(getStatusValue(doc.status))}
+                  著者: {String(doc.author ?? "-")} / 年: {String(doc.year ?? "-")} / 状態: {getStatusLabel(getStatusValue(doc.status))}
                 </p>
               </div>
               <div className="library-meta-box">

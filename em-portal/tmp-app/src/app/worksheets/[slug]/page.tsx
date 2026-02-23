@@ -21,7 +21,7 @@ export default async function WorksheetDetailPage({
   return (
     <article>
       <header className="card detail-hero detail-hero-worksheet reveal">
-        <p className="section-kicker">Worksheet</p>
+        <p className="section-kicker">ワーク</p>
         <h1>{worksheet.title}</h1>
         <div className="detail-meta-row">
           <span className="detail-pill">{String(worksheet.duration_min ?? 20)}分</span>

@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { DocCard } from "@/components/doc-card";
 import { getCollection, getTagMap } from "@/lib/content";
 import { STATUS_OPTIONS, getStatusLabel, getStatusValue, parseStatusFilter } from "@/lib/status-filter";
@@ -37,7 +37,7 @@ export default async function CurriculumPage({
         <p className="meta">
           状態: {getStatusLabel(statusFilter)} / {filtered.length}件表示
         </p>
-        <div className="chip-row" aria-label="status filters">
+        <div className="chip-row" aria-label="状態フィルタ">
           {STATUS_OPTIONS.map((status) => (
             <Link
               key={status}
@@ -56,9 +56,7 @@ export default async function CurriculumPage({
           </div>
           <div>
             <span>総時間</span>
-            <strong>
-              {filtered.reduce((acc, lesson) => acc + Number(lesson.duration_min ?? 0), 0)}分
-            </strong>
+            <strong>{filtered.reduce((acc, lesson) => acc + Number(lesson.duration_min ?? 0), 0)}分</strong>
           </div>
           <div>
             <span>対象</span>
