@@ -14,3 +14,5 @@
 - Fixed remaining English/mixed UI labels on top/list/detail pages and status labels; rebuilt successfully.
 - Added 10 figure description pages and expanded glossary to 16 core terms; search index now generates 40 rows.
 - Added home page AI workflow shortcut section (Inbox / reviewed / published / search).
+- Cleaned local `em-portal` worktree by restoring accidental `tmp-app/content` deletions and reverting a noisy `public/search-index.json` regeneration.
+- Removed obsolete/untracked `ethnomethodology_portal_codex_instructions.md` (mojibake memo duplicate of WORKLOG usage notes).
