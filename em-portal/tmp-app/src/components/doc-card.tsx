@@ -14,7 +14,7 @@ export function DocCard({ doc, href }: Props) {
         <Link href={href}>{doc.title}</Link>
       </h2>
       {"lesson_no" in doc && doc.lesson_no ? (
-        <p className="meta">授業{String(doc.lesson_no)}コマ目</p>
+        <p className="meta">授業 {String(doc.lesson_no)} コマ目</p>
       ) : null}
       <p className="meta">状態: {getStatusLabel(getStatusValue(doc.status))}</p>
       {doc.tags.length ? (
