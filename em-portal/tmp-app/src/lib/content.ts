@@ -33,6 +33,11 @@ export type ContentDoc = {
 
 const CONTENT_ROOT = path.join(process.cwd(), "content");
 const SOURCES_PATH = path.join(CONTENT_ROOT, "_sources", "sources.yml");
+const UTF8_BOM = "\uFEFF";
+
+function stripBom(text: string): string {
+  return text.startsWith(UTF8_BOM) ? text.slice(1) : text;
+}
 
 function parseScalarValue(raw: string): unknown {
   const value = raw.trim();
@@ -53,15 +58,16 @@ function parseScalarValue(raw: string): unknown {
 }
 
 function parseFrontmatter(file: string): { data: Record<string, unknown>; body: string } {
-  if (!file.startsWith("---\n")) {
-    return { data: {}, body: file };
+  const normalized = stripBom(file);
+  if (!normalized.startsWith("---\n")) {
+    return { data: {}, body: normalized };
   }
-  const second = file.indexOf("\n---\n", 4);
+  const second = normalized.indexOf("\n---\n", 4);
   if (second === -1) {
-    return { data: {}, body: file };
+    return { data: {}, body: normalized };
   }
-  const fmRaw = file.slice(4, second).trim();
-  const body = file.slice(second + 5).trim();
+  const fmRaw = normalized.slice(4, second).trim();
+  const body = normalized.slice(second + 5).trim();
   const data: Record<string, unknown> = {};
   for (const line of fmRaw.split("\n")) {
     const idx = line.indexOf(":");
@@ -138,7 +144,7 @@ export function getDocsByTag(tag: string): ContentDoc[] {
 
 export function getSources(): SourceItem[] {
   const raw = fs.readFileSync(SOURCES_PATH, "utf-8");
-  return JSON.parse(raw) as SourceItem[];
+  return JSON.parse(stripBom(raw)) as SourceItem[];
 }
 
 export function getSourcesByIds(ids: string[]): SourceItem[] {

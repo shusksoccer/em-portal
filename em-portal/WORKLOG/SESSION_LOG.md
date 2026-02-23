@@ -16,3 +16,5 @@
 - Added home page AI workflow shortcut section (Inbox / reviewed / published / search).
 - Cleaned local `em-portal` worktree by restoring accidental `tmp-app/content` deletions and reverting a noisy `public/search-index.json` regeneration.
 - Removed obsolete/untracked `ethnomethodology_portal_codex_instructions.md` (mojibake memo duplicate of WORKLOG usage notes).
+- Expanded all `tmp-app/content/figures/*.md` detail pages with lesson-ready sections (`導入 / 活動 / 確認`) for classroom use.
+- Hardened `tmp-app/src/lib/content.ts` and `tmp-app/scripts/generate-search-index.mjs` to strip UTF-8 BOM before parsing JSON/frontmatter (prevents build failures from PowerShell-saved files).

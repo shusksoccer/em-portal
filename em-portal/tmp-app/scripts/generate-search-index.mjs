@@ -6,6 +6,11 @@ const CONTENT_ROOT = path.join(ROOT, "content");
 const OUT_PATH = path.join(ROOT, "public", "search-index.json");
 const COLLECTIONS = ["lessons", "worksheets", "glossary", "figures", "library", "people", "faq"];
 const STATUS_VALUES = new Set(["inbox", "reviewed", "published"]);
+const UTF8_BOM = "\uFEFF";
+
+function stripBom(text) {
+  return text.startsWith(UTF8_BOM) ? text.slice(1) : text;
+}
 
 function parseScalarValue(raw) {
   const value = raw.trim();
@@ -21,11 +26,12 @@ function parseScalarValue(raw) {
 }
 
 function parseFrontmatter(file) {
-  if (!file.startsWith("---\n")) return { data: {}, body: file };
-  const second = file.indexOf("\n---\n", 4);
-  if (second === -1) return { data: {}, body: file };
-  const fmRaw = file.slice(4, second).trim();
-  const body = file.slice(second + 5).trim();
+  const normalized = stripBom(file);
+  if (!normalized.startsWith("---\n")) return { data: {}, body: normalized };
+  const second = normalized.indexOf("\n---\n", 4);
+  if (second === -1) return { data: {}, body: normalized };
+  const fmRaw = normalized.slice(4, second).trim();
+  const body = normalized.slice(second + 5).trim();
   const data = {};
   for (const line of fmRaw.split("\n")) {
     const idx = line.indexOf(":");
