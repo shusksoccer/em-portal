@@ -10,6 +10,7 @@ export default async function GlossaryPage({
 }) {
   const glossary = getCollection("glossary");
   const quick = ["accountability", "indexicality", "reflexivity", "turn-taking", "repair"];
+  const glossaryMap = new Map(glossary.map((item) => [item.slug, item]));
   const params = searchParams ? await searchParams : {};
   const statusFilter = parseStatusFilter(params?.status);
   const filtered = statusFilter === "all"
@@ -44,7 +45,7 @@ export default async function GlossaryPage({
         <div className="chip-row" aria-label="頻出語">
           {quick.map((slug) => (
             <Link key={slug} href={`/glossary/${slug}`} className="chip-link">
-              {slug}
+              {String(glossaryMap.get(slug)?.title ?? slug)}
             </Link>
           ))}
         </div>

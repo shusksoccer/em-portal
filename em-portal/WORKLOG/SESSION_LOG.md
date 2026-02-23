@@ -21,3 +21,4 @@
 - Added classroom-ready concrete examples (school / SNS) to all figure detail pages to make explanations easier during lessons.
 - Improved worksheet detail UI readability: added Japanese summary section (`所要時間 / 提出物 / 評価観点`) and fixed mojibake labels in shared doc cards.
 - Simplified `library` list cards with a Japanese "文献概要" block and collapsible memo area; also fixed mojibake/metadata text in `content/library/lib-1.md`.
+- Improved `glossary` readability: quick links now show Japanese term titles, detail pages include a Japanese summary block, and `accountability` text was de-mojibaked/refined.
