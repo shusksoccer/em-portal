@@ -1,21 +1,15 @@
 ﻿---
-title: "用語: anonymization"
-term: "anonymization"
 slug: "anonymization"
-aliases: []
-related: ["observation","description"]
-examples: ["学校","SNS"]
-tags: ["用語","基礎"]
-sources: ["src-em-intro","src-ca-basics"]
+title: "Anonymization（匿名化）"
+tags: ["倫理","用語","記録"]
+sources: "talkbank-jefferson-nb"
+status: "published"
 ---
-## 定義(短い)
-- anonymization は、場面の秩序を読むための基本概念です。
 
-## 例
-- 学校: ホームルーム前のやり取り。
-- SNS: 返信タイミングや言い回し。
+# Anonymization（匿名化）
 
-## 使い方
-- まず定義を読む。
-- 次に観察ログで該当箇所を1つ示す。
+個人や場所が特定されないように、名前・固有情報・識別可能な特徴を加工することです。授業でデータを扱う前提として重要です。
 
+## 授業での見方
+- 単語の定義だけでなく、どの場面で使うかを確認する
+- 観察・記述・分析のどこで使う概念かを意識する

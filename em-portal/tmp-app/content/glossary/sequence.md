@@ -1,21 +1,15 @@
 ﻿---
-title: "用語: sequence"
-term: "sequence"
 slug: "sequence"
-aliases: []
-related: ["observation","description"]
-examples: ["学校","SNS"]
-tags: ["用語","基礎"]
-sources: ["src-em-intro","src-ca-basics"]
+title: "Sequence（連鎖）"
+tags: ["会話分析","用語","順序"]
+sources: "isca-turntaking-1974"
+status: "published"
 ---
-## 定義(短い)
-- sequence は、場面の秩序を読むための基本概念です。
 
-## 例
-- 学校: ホームルーム前のやり取り。
-- SNS: 返信タイミングや言い回し。
+# Sequence（連鎖）
 
-## 使い方
-- まず定義を読む。
-- 次に観察ログで該当箇所を1つ示す。
+ある発話とそれへの応答、さらにその後続応答まで含めた連なりを指します。個々の発話を単独で読むのではなく、前後関係で読むための観点です。
 
+## 授業での見方
+- 単語の定義だけでなく、どの場面で使うかを確認する
+- 観察・記述・分析のどこで使う概念かを意識する

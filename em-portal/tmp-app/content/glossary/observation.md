@@ -1,21 +1,15 @@
 ﻿---
-title: "用語: observation"
-term: "observation"
 slug: "observation"
-aliases: []
-related: ["observation","description"]
-examples: ["学校","SNS"]
-tags: ["用語","基礎"]
-sources: ["src-em-intro","src-ca-basics"]
+title: "Observation（観察）"
+tags: ["観察","用語","基礎"]
+sources: ["britannica-em","wiley-sem"]
+status: "published"
 ---
-## 定義(短い)
-- observation は、場面の秩序を読むための基本概念です。
 
-## 例
-- 学校: ホームルーム前のやり取り。
-- SNS: 返信タイミングや言い回し。
+# Observation（観察）
 
-## 使い方
-- まず定義を読む。
-- 次に観察ログで該当箇所を1つ示す。
+EM/CAの学習では、まず評価や解釈を急がず、何が起きたかを観察可能な形で押さえることを重視します。
 
+## 授業での見方
+- 単語の定義だけでなく、どの場面で使うかを確認する
+- 観察・記述・分析のどこで使う概念かを意識する

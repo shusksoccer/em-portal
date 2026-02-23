@@ -18,6 +18,30 @@
   {
     "status": "unknown",
     "kind": "glossary",
+    "slug": "adjacency-pair",
+    "title": "adjacency-pair.md",
+    "tags": [],
+    "text": "--- slug: \"adjacency-pair\" title: \"Adjacency pair（隣接ペア）\" tags: [\"会話分析\",\"用語\",\"順序\"] sources: \"isca-turntaking-1974\" status: \"published\" --- # Adjacency pair（隣接ペア） あいさつ-あいさつ、質問-回答のように、ある発話が次の応答の型を強く予期させる組み合わせです。会話の順序構造を見る基本単位です。 ## 授業での見方 - 単語の定義だけでなく、どの場面で使うかを確認する - 観察・記述・分析のどこで使う概念かを意識する"
+  },
+  {
+    "status": "unknown",
+    "kind": "glossary",
+    "slug": "anonymization",
+    "title": "anonymization.md",
+    "tags": [],
+    "text": "--- slug: \"anonymization\" title: \"Anonymization（匿名化）\" tags: [\"倫理\",\"用語\",\"記録\"] sources: \"talkbank-jefferson-nb\" status: \"published\" --- # Anonymization（匿名化） 個人や場所が特定されないように、名前・固有情報・識別可能な特徴を加工することです。授業でデータを扱う前提として重要です。 ## 授業での見方 - 単語の定義だけでなく、どの場面で使うかを確認する - 観察・記述・分析のどこで使う概念かを意識する"
+  },
+  {
+    "status": "unknown",
+    "kind": "glossary",
+    "slug": "background-expectancies",
+    "title": "background-expectancies.md",
+    "tags": [],
+    "text": "--- slug: \"background-expectancies\" title: \"Background expectancies（背景的期待）\" tags: [\"基礎\",\"用語\",\"分析\"] sources: [\"wiley-sem\",\"wikipedia-garfinkel\"] status: \"published\" --- # Background expectancies（背景的期待） 日常行為が成り立つために参加者が暗黙に共有している前提や期待のことです。ブリーチングの発想を理解する鍵になります。 ## 授業での見方 - 単語の定義だけでなく、どの場面で使うかを確認する - 観察・記述・分析のどこで使う概念かを意識する"
+  },
+  {
+    "status": "unknown",
+    "kind": "glossary",
     "slug": "breaching",
     "title": "breaching.md",
     "tags": [],
@@ -26,10 +50,50 @@
   {
     "status": "unknown",
     "kind": "glossary",
+    "slug": "consent",
+    "title": "consent.md",
+    "tags": [],
+    "text": "--- slug: \"consent\" title: \"Consent（同意）\" tags: [\"倫理\",\"用語\",\"観察\"] sources: \"britannica-em\" status: \"published\" --- # Consent（同意） 観察や記録、共有の目的・範囲を説明し、本人が理解したうえで了承することです。学校現場では保護者・学校のルール確認も必要です。 ## 授業での見方 - 単語の定義だけでなく、どの場面で使うかを確認する - 観察・記述・分析のどこで使う概念かを意識する"
+  },
+  {
+    "status": "unknown",
+    "kind": "glossary",
+    "slug": "description",
+    "title": "description.md",
+    "tags": [],
+    "text": "--- slug: \"description\" title: \"Description（記述）\" tags: [\"記述\",\"用語\",\"基礎\"] sources: [\"britannica-em\",\"wiley-sem\"] status: \"published\" --- # Description（記述） 観察した事柄を、時刻・発話・行為・順序などの形で再確認できるように書くことです。分析の前段階として重要です。 ## 授業での見方 - 単語の定義だけでなく、どの場面で使うかを確認する - 観察・記述・分析のどこで使う概念かを意識する"
+  },
+  {
+    "status": "unknown",
+    "kind": "glossary",
+    "slug": "ethics",
+    "title": "ethics.md",
+    "tags": [],
+    "text": "--- slug: \"ethics\" title: \"Ethics（倫理）\" tags: [\"倫理\",\"用語\",\"基礎\"] sources: \"britannica-em\" status: \"published\" --- # Ethics（倫理） データ収集・記録・共有・発表の各段階で、対象者への配慮と安全性を確保する考え方です。探究授業では特に先に確認します。 ## 授業での見方 - 単語の定義だけでなく、どの場面で使うかを確認する - 観察・記述・分析のどこで使う概念かを意識する"
+  },
+  {
+    "status": "unknown",
+    "kind": "glossary",
     "slug": "indexicality",
     "title": "indexicality.md",
     "tags": [],
     "text": "--- slug: \"indexicality\" title: \"Indexicality（文脈依存性）\" tags: [\"基礎\",\"用語\",\"記述\"] sources: [\"britannica-em\",\"wiley-sem\"] status: \"published\" --- # Indexicality（文脈依存性） 発話や行為の意味が、その場の文脈・関係・タイミングに依存して決まることです。 ## 例 - 「それ、いいね」は、褒め言葉にも皮肉にもなりうる。 - 意味は語そのものだけでなく、誰がいつどこで言ったかに依存する。 ## 授業での使い方 - 発話を切り出すときは、前後のやりとりを必ず残す。"
+  },
+  {
+    "status": "unknown",
+    "kind": "glossary",
+    "slug": "observation",
+    "title": "observation.md",
+    "tags": [],
+    "text": "--- slug: \"observation\" title: \"Observation（観察）\" tags: [\"観察\",\"用語\",\"基礎\"] sources: [\"britannica-em\",\"wiley-sem\"] status: \"published\" --- # Observation（観察） EM/CAの学習では、まず評価や解釈を急がず、何が起きたかを観察可能な形で押さえることを重視します。 ## 授業での見方 - 単語の定義だけでなく、どの場面で使うかを確認する - 観察・記述・分析のどこで使う概念かを意識する"
+  },
+  {
+    "status": "unknown",
+    "kind": "glossary",
+    "slug": "overlap",
+    "title": "overlap.md",
+    "tags": [],
+    "text": "--- slug: \"overlap\" title: \"Overlap（重なり発話）\" tags: [\"会話分析\",\"用語\",\"順番取り\"] sources: \"isca-overlap-2000\" status: \"published\" --- # Overlap（重なり発話） 複数の参加者の発話が同時に重なる現象です。単なる混乱としてではなく、順番取りの調整過程として分析します。 ## 授業での見方 - 単語の定義だけでなく、どの場面で使うかを確認する - 観察・記述・分析のどこで使う概念かを意識する"
   },
   {
     "status": "unknown",
@@ -50,10 +114,106 @@
   {
     "status": "unknown",
     "kind": "glossary",
+    "slug": "sequence",
+    "title": "sequence.md",
+    "tags": [],
+    "text": "--- slug: \"sequence\" title: \"Sequence（連鎖）\" tags: [\"会話分析\",\"用語\",\"順序\"] sources: \"isca-turntaking-1974\" status: \"published\" --- # Sequence（連鎖） ある発話とそれへの応答、さらにその後続応答まで含めた連なりを指します。個々の発話を単独で読むのではなく、前後関係で読むための観点です。 ## 授業での見方 - 単語の定義だけでなく、どの場面で使うかを確認する - 観察・記述・分析のどこで使う概念かを意識する"
+  },
+  {
+    "status": "unknown",
+    "kind": "glossary",
+    "slug": "transcript",
+    "title": "transcript.md",
+    "tags": [],
+    "text": "--- slug: \"transcript\" title: \"Transcript（転写）\" tags: [\"転写\",\"用語\",\"記述\"] sources: [\"talkresearch-transcription\",\"talkbank-jefferson-nb\"] status: \"published\" --- # Transcript（転写） 録音・録画データを分析可能な形に書き起こしたものです。何をどこまで記号化するかで、見える現象が変わります。 ## 授業での見方 - 単語の定義だけでなく、どの場面で使うかを確認する - 観察・記述・分析のどこで使う概念かを意識する"
+  },
+  {
+    "status": "unknown",
+    "kind": "glossary",
     "slug": "turn-taking",
     "title": "turn-taking.md",
     "tags": [],
     "text": "--- slug: \"turn-taking\" title: \"Turn-taking（順番取り）\" tags: [\"会話分析\",\"用語\",\"観察\"] sources: [\"isca-turntaking-1974\",\"isca-overlap-2000\"] status: \"published\" --- # Turn-taking（順番取り） 会話で、誰がいつ話すかがどのように調整されるかを扱う会話分析の中心概念です。 ## 重要点 - 順番は完全にランダムではない。 - 参加者はその場で順番を調整している。 - 重なり（overlap）も無秩序なノイズとは限らない。 ## 授業で見るポイント - 発話の切れ目 - 指名・視線・うなずき - 同時開始が起きた後の調整"
+  },
+  {
+    "status": "unknown",
+    "kind": "figures",
+    "slug": "fig-background-expectancy",
+    "title": "fig-background-expectancy.md",
+    "tags": [],
+    "text": "--- slug: \"fig-background-expectancy\" title: \"背景的期待を読む\" alt: \"日常の当たり前が共有されている前提を図示\" tags: [\"図解\",\"基礎\",\"背景的期待\"] sources: [\"wiley-sem\",\"britannica-em\"] status: \"published\" --- # 背景的期待を読む 日常の行為は、明示されない前提（背景的期待）に支えられています。この図は、行為・期待・破れ・説明要求の関係を授業向けに整理したものです。 ## 授業での使い方 - 導入で全体像を示す - 用語説明や活動前の観点共有に使う - 発表準備の確認項目として再利用する"
+  },
+  {
+    "status": "unknown",
+    "kind": "figures",
+    "slug": "fig-breaching-safe",
+    "title": "fig-breaching-safe.md",
+    "tags": [],
+    "text": "--- slug: \"fig-breaching-safe\" title: \"安全なブリーチング学習\" alt: \"危険な実践を避けて模擬データで学ぶ流れ\" tags: [\"図解\",\"倫理\",\"ブリーチング\"] sources: [\"wiley-sem\",\"wikipedia-garfinkel\"] status: \"published\" --- # 安全なブリーチング学習 ブリーチングの考え方は学べますが、実社会で他者に迷惑をかける実践は避けます。模擬データ・既存事例・ロールプレイを使う授業設計の流れを示します。 ## 授業での使い方 - 導入で全体像を示す - 用語説明や活動前の観点共有に使う - 発表準備の確認項目として再利用する"
+  },
+  {
+    "status": "unknown",
+    "kind": "figures",
+    "slug": "fig-ethics-checklist",
+    "title": "fig-ethics-checklist.md",
+    "tags": [],
+    "text": "--- slug: \"fig-ethics-checklist\" title: \"観察と記述の倫理チェック\" alt: \"同意・匿名化・公開範囲を確認するチェックリスト\" tags: [\"図解\",\"倫理\",\"観察\"] sources: [\"britannica-em\",\"talkbank-jefferson-nb\"] status: \"published\" --- # 観察と記述の倫理チェック 観察活動や記録の共有時に確認したい倫理項目を一覧化しています。授業での提出前確認に使えるよう、短いチェック項目で構成しています。 ## 授業での使い方 - 導入で全体像を示す - 用語説明や活動前の観点共有に使う - 発表準備の確認項目として再利用する"
+  },
+  {
+    "status": "unknown",
+    "kind": "figures",
+    "slug": "fig-learning-route",
+    "title": "fig-learning-route.md",
+    "tags": [],
+    "text": "--- slug: \"fig-learning-route\" title: \"学習ルート（観察→記述→分析→発表）\" alt: \"授業全体の流れを4段階で示した図\" tags: [\"図解\",\"授業設計\",\"基礎\"] sources: \"britannica-em\" status: \"published\" --- # 学習ルート（観察→記述→分析→発表） 探究授業での進行を、観察・記述・分析・発表の4段階でつないだ全体図です。どの教材がどこで使われるかの見取り図として使います。 ## 授業での使い方 - 導入で全体像を示す - 用語説明や活動前の観点共有に使う - 発表準備の確認項目として再利用する"
+  },
+  {
+    "status": "unknown",
+    "kind": "figures",
+    "slug": "fig-observation-log",
+    "title": "fig-observation-log.md",
+    "tags": [],
+    "text": "--- slug: \"fig-observation-log\" title: \"観察ログの書き方\" alt: \"時刻・場面・行為・気づきを分けて記録するテンプレート\" tags: [\"図解\",\"観察\",\"記述\"] sources: \"britannica-em\" status: \"published\" --- # 観察ログの書き方 観察ログを感想メモにしないために、時刻・場面・行為・気づきを分けて記録する枠組みを図にしています。 ## 授業での使い方 - 導入で全体像を示す - 用語説明や活動前の観点共有に使う - 発表準備の確認項目として再利用する"
+  },
+  {
+    "status": "unknown",
+    "kind": "figures",
+    "slug": "fig-observe-describe-analyze",
+    "title": "fig-observe-describe-analyze.md",
+    "tags": [],
+    "text": "--- slug: \"fig-observe-describe-analyze\" title: \"観察・記述・分析の違い\" alt: \"3つの段階の違いとつながりを比較する図\" tags: [\"図解\",\"観察\",\"記述\",\"分析\"] sources: [\"britannica-em\",\"wiley-sem\"] status: \"published\" --- # 観察・記述・分析の違い 「見たこと」「書き起こしたこと」「そこから読めること」を混同しないために、3段階の役割を分けて説明する図です。 ## 授業での使い方 - 導入で全体像を示す - 用語説明や活動前の観点共有に使う - 発表準備の確認項目として再利用する"
+  },
+  {
+    "status": "unknown",
+    "kind": "figures",
+    "slug": "fig-presentation-map",
+    "title": "fig-presentation-map.md",
+    "tags": [],
+    "text": "--- slug: \"fig-presentation-map\" title: \"発表構成マップ\" alt: \"問い・方法・データ・分析・倫理・限界の発表構成\" tags: [\"図解\",\"発表\",\"授業設計\"] sources: \"britannica-em\" status: \"published\" --- # 発表構成マップ 探究発表を1枚で構成するための型です。問い・方法・データ・分析・倫理・限界を順に並べ、授業内発表に使える形にしています。 ## 授業での使い方 - 導入で全体像を示す - 用語説明や活動前の観点共有に使う - 発表準備の確認項目として再利用する"
+  },
+  {
+    "status": "unknown",
+    "kind": "figures",
+    "slug": "fig-repair-pattern",
+    "title": "fig-repair-pattern.md",
+    "tags": [],
+    "text": "--- slug: \"fig-repair-pattern\" title: \"修復パターンの見方\" alt: \"聞き返し・言い直し・訂正の基本パターン図\" tags: [\"図解\",\"会話分析\",\"修復\"] sources: [\"isca-turntaking-1974\",\"isca-overlap-2000\"] status: \"published\" --- # 修復パターンの見方 会話における修復を、聞き返し・自己修正・他者修正の観点で整理した授業向け図解です。分析時の観点確認に使えます。 ## 授業での使い方 - 導入で全体像を示す - 用語説明や活動前の観点共有に使う - 発表準備の確認項目として再利用する"
+  },
+  {
+    "status": "unknown",
+    "kind": "figures",
+    "slug": "fig-transcript-template",
+    "title": "fig-transcript-template.md",
+    "tags": [],
+    "text": "--- slug: \"fig-transcript-template\" title: \"転写テンプレート\" alt: \"話者・時刻・重なり・間を記録する転写テンプレート\" tags: [\"図解\",\"転写\",\"会話分析\"] sources: [\"talkresearch-transcription\",\"talkbank-jefferson-nb\"] status: \"published\" --- # 転写テンプレート 授業で使いやすい最小限の転写テンプレートです。話者ラベル、時間、重なり、間などをどこに書くかを示します。 ## 授業での使い方 - 導入で全体像を示す - 用語説明や活動前の観点共有に使う - 発表準備の確認項目として再利用する"
+  },
+  {
+    "status": "unknown",
+    "kind": "figures",
+    "slug": "fig-turn-structure",
+    "title": "fig-turn-structure.md",
+    "tags": [],
+    "text": "--- slug: \"fig-turn-structure\" title: \"順番取りの基本構造\" alt: \"発話の切れ目と次話者選択の流れを示した図\" tags: [\"図解\",\"会話分析\",\"順番取り\"] sources: \"isca-turntaking-1974\" status: \"published\" --- # 順番取りの基本構造 順番取りの基本的な見方を授業で説明するための図です。誰が次に話すかがどのように組織されるかを視覚化しています。 ## 授業での使い方 - 導入で全体像を示す - 用語説明や活動前の観点共有に使う - 発表準備の確認項目として再利用する"
   },
   {
     "status": "unknown",

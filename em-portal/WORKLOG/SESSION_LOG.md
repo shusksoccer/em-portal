@@ -12,4 +12,5 @@
 - Synced `test/em-portal/content` -> `em-portal/tmp-app/content`, regenerated search index (20 rows), and confirmed production build passes.
 - Fixed mojibake text in `intro` page and `source-links` labels.
 - Fixed remaining English/mixed UI labels on top/list/detail pages and status labels; rebuilt successfully.
+- Added 10 figure description pages and expanded glossary to 16 core terms; search index now generates 40 rows.
 - Added home page AI workflow shortcut section (Inbox / reviewed / published / search).
