@@ -1,44 +1,38 @@
 # Current Task
 
 ## Task
-- Obsidian + AI で情報収集/編集し、em-portal に反映できる運用基盤を整える
+- Obsidian + AI で収集・整理した内容を `em-portal` に反映し、授業で使える日本語ポータルとして運用できる状態に整える
 
 ## Current Scope
-- [x] Obsidian AI運用スクリプト追加（初期化 / ノート作成 / AIプロンプト生成）
-- [x] `library` に status フィルタ追加
-- [x] 一覧ページへ status フィルタ横展開
-- [x] 検索で status 活用（インデックス + UIフィルタ）
-- [x] トップで status 活用（AI作業ショートカット）
-- [x] 実データ用の一括 `status` 付与スクリプトを追加
-- [x] 調査ベースの初期コンテンツを Obsidian 側に作成し、tmp-appへ同期
-- [ ] GitHub/Vercel 反映（コミット/プッシュ）
+- [x] Obsidian / AI 運用スクリプトの整備（初期化・ノート作成・AI編集プロンプト・status一括付与）
+- [x] 一覧ページ・検索ページの `status` フィルタ対応
+- [x] 図解・用語・FAQ・人物・文献・ワークの日本語化と見やすさ改善
+- [x] `curriculum` L1〜L6 に授業導線（図解 / 用語 / ワーク / FAQ）を追加
+- [x] `WORKLOG` 運用の導入（中断時の再開性の確保）
+- [x] GitHub / Vercel への継続反映フローを安定化
+- [ ] 最終点検（主要ページの目視確認と微修正）
 
 ## Recent Changes
-- `em-portal/ops/Setup-ObsidianAIWorkspace.ps1`
-- `em-portal/ops/New-ObsidianResearchNote.ps1`
-- `em-portal/ops/Build-AIEditPrompt.ps1`
-- `em-portal/tmp-app/src/lib/status-filter.ts`
-- `em-portal/tmp-app/src/app/*/page.tsx` (list pages)
-- `em-portal/tmp-app/src/components/doc-card.tsx`
-- `em-portal/tmp-app/scripts/generate-search-index.mjs`
-- `em-portal/tmp-app/src/app/search/page.tsx`
-- `em-portal/ops/Set-PortalContentStatus.ps1`
-- `test/em-portal/content/*` (Obsidian source content)
-- `em-portal/tmp-app/content/*` (synced)
-- `em-portal/tmp-app/src/app/intro/page.tsx`
-- `em-portal/tmp-app/src/components/source-links.tsx`
+- `em-portal/tmp-app/src/app/page.tsx`（トップページ日本語化・導線整理）
+- `em-portal/tmp-app/src/app/intro/page.tsx`（入門ページの再構成）
+- `em-portal/tmp-app/src/app/curriculum/[slug]/page.tsx`（L1〜L6 授業導線）
+- `em-portal/tmp-app/content/worksheets/ws-l1..ws-l6.md`（授業別に全面作り直し）
+- `em-portal/tmp-app/content/glossary/*.md`（主要用語・テンプレ用語の日本語化）
+- `em-portal/tmp-app/content/faq/faq-1..faq-10.md`（構成統一）
+- `em-portal/tmp-app/src/app/faq/page.tsx`（短答先出し + 折りたたみ）
+- `em-portal/tmp-app/src/app/library/page.tsx`（文献概要ブロック）
+- `em-portal/tmp-app/src/app/people/page.tsx`（覚える一言の先出し）
 
 ## Open Issues / Notes
-- 既存の古いコンテンツ一式は欠損状態だったため、今回は最小の日本語コンテンツセットを新規作成した
-- `status` 未設定のMarkdownは `unknown` 扱い（今回追加分は status 付与済み）
-- GitHub/Vercel反映は未実施（この場では push まで未実行）
+- トップページ・主要導線は改善済み。残りは細かい表現の揺れや、授業現場での使い勝手の微調整が中心。
+- `status` 未設定の Markdown は `unknown` 表示になる（運用上は必要に応じて `published/reviewed/inbox` を付与）。
+- `em-portal` 外（`../web`, `../scripts`, `../test`）の差分は別作業として分離して扱う。
 
 ## Next Resume Point
-1. 差分を確認してコミット（`em-portal` のみ）
-2. `更新して公開する.bat` または `git push` で GitHub 反映
-3. Vercelデプロイ後、トップ / glossary / library / search を確認
+1. 主要ページを目視確認（`/`, `/intro`, `/curriculum/*`, `/worksheets/*`, `/glossary/*`, `/figures/*`, `/faq`, `/library`, `/people`）
+2. 気になる文言・導線を数件修正
+3. `build` 確認
+4. GitHub push → Vercel 反映確認
 
 ## Validation
-- `cmd /c "set npm_config_cache=.npm-cache&& npx.cmd --yes pnpm run lint"` (`em-portal/tmp-app`) OK
-- `cmd /c "set npm_config_cache=.npm-cache&& npx.cmd --yes pnpm run gen:search"` (`em-portal/tmp-app`) OK (`20 rows`)
-- `cmd /c "set npm_config_cache=.npm-cache&& npx.cmd --yes pnpm run build"` (`em-portal/tmp-app`) OK
+- `cmd /c "set npm_config_cache=.npm-cache&& npx.cmd --yes pnpm run build"` (`em-portal/tmp-app`) OK（継続確認）

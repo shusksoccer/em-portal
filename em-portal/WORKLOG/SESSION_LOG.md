@@ -34,3 +34,4 @@
 - Rewrote `ws-l1` to `ws-l6` from generic templates into lesson-specific worksheets aligned with L1-L6 objectives (observation, checking, data description, CA entry, safe breaching analysis, presentation planning).
 - Expanded curriculum lesson toolkit links from L1-only to all lessons L1-L6, so each lesson page has direct links to relevant figures/glossary/worksheet/FAQ.
 - Refined the home page (`/`) copy and labels to clear Japanese wording (AI workflow, 6-lesson timeline, and primary navigation cards) after earlier mojibake-heavy states.
+- Rewrote `WORKLOG/CURRENT_TASK.md` and `WORKLOG/README.md` to remove mojibake and reflect the current project state/resume steps.
