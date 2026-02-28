@@ -1,5 +1,6 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import { notFound } from "next/navigation";
+import { CheckpointBlock } from "@/components/content-blocks";
 import { MarkdownBody } from "@/components/markdown-body";
 import { PrintButton } from "@/components/print-button";
 import { SourceLinks } from "@/components/source-links";
@@ -10,35 +11,6 @@ type LessonLinkItem = {
   label: string;
   note?: string;
 };
-
-function LessonLinkGroup({
-  title,
-  items,
-}: {
-  title: string;
-  items: LessonLinkItem[];
-}) {
-  if (!items.length) return null;
-  return (
-    <section>
-      <p className="meta" style={{ marginBottom: "0.4rem" }}>{title}</p>
-      <div className="tags" aria-label={title}>
-        {items.map((item) => (
-          <Link key={item.href} href={item.href} className="tag" title={item.note}>
-            {item.label}
-          </Link>
-        ))}
-      </div>
-      {items.some((item) => item.note) ? (
-        <div style={{ marginTop: "0.5rem" }}>
-          {items.map((item) => (
-            item.note ? <p key={`${item.href}-note`} className="meta" style={{ margin: "0.2rem 0" }}>{item.label}: {item.note}</p> : null
-          ))}
-        </div>
-      ) : null}
-    </section>
-  );
-}
 
 function getLessonToolkit(slug: string): {
   figures: LessonLinkItem[];
@@ -143,6 +115,18 @@ function getLessonToolkit(slug: string): {
   }
 }
 
+function getLessonPhase(slug: string): "understand" | "practice" | "apply" {
+  if (["l1-what-is-em", "l2-how-to-observe"].includes(slug)) return "understand";
+  if (["l3-how-to-describe", "l4-ca-entry", "l5-breaching"].includes(slug)) return "practice";
+  return "apply";
+}
+
+const phaseLabel = {
+  understand: "理解フェーズ",
+  practice: "実践フェーズ",
+  apply: "統合フェーズ",
+} as const;
+
 export function generateStaticParams() {
   return getCollection("lessons").map((lesson) => ({ slug: lesson.slug }));
 }
@@ -158,14 +142,23 @@ export default async function LessonDetailPage({
 
   const lessonToolkit = getLessonToolkit(lesson.slug);
   const objectives = Array.isArray(lesson.objectives) ? lesson.objectives : [];
-  const prereq = Array.isArray(lesson.prereq) ? lesson.prereq : [];
+  const lessonPhase = getLessonPhase(lesson.slug);
+  const quickLinks = lessonToolkit
+    ? [
+        ...lessonToolkit.figures.map((item) => ({ ...item, kind: "図解" })),
+        ...lessonToolkit.glossary.map((item) => ({ ...item, kind: "用語" })),
+        ...lessonToolkit.worksheets.map((item) => ({ ...item, kind: "ワーク" })),
+        ...lessonToolkit.faqs.map((item) => ({ ...item, kind: "補助" })),
+      ]
+    : [];
 
   return (
-    <article>
+    <article className="lesson-article">
       <header className="card detail-hero detail-hero-lesson reveal">
         <p className="section-kicker">授業</p>
         <h1>{lesson.title}</h1>
         <div className="detail-meta-row">
+          <span className={`phase-badge phase-${lessonPhase}`}>{phaseLabel[lessonPhase]}</span>
           <span className="detail-pill">授業{String(lesson.lesson_no)}コマ目</span>
           <span className="detail-pill">{String(lesson.duration_min)}分</span>
           <PrintButton label="授業を印刷" />
@@ -179,80 +172,24 @@ export default async function LessonDetailPage({
         </div>
       </header>
 
-      <section className="card reveal" aria-label="この授業でやること">
-        <h2 style={{ marginTop: 0 }}>この授業でやること（先に確認）</h2>
-        <ol style={{ marginTop: "0.4rem", paddingLeft: "1.1rem" }}>
-          <li>本文を読み、観察可能な根拠を押さえる</li>
-          <li>対応ワークを実施して提出物を作る</li>
-          <li>FAQで詰まりを解消し、次の授業へ進む</li>
-        </ol>
-      </section>
-
       {lessonToolkit ? (
-        <section className="card reveal" aria-label="この授業で使うリンク">
-          <h2 style={{ marginTop: 0 }}>この授業で使うリンク</h2>
-          <p className="meta" style={{ marginTop: 0 }}>
-            導入で開く順に並べています。授業中はここから図解・用語・ワークへ移動してください。
-          </p>
-          <div className="grid two">
-            <div>
-              <LessonLinkGroup title="図解" items={lessonToolkit.figures} />
-              <LessonLinkGroup title="用語" items={lessonToolkit.glossary} />
-            </div>
-            <div>
-              <LessonLinkGroup title="ワーク" items={lessonToolkit.worksheets} />
-              <LessonLinkGroup title="補助" items={lessonToolkit.faqs} />
-              {lesson.next ? (
-                <section style={{ marginTop: "0.75rem" }}>
-                  <p className="meta" style={{ marginBottom: "0.4rem" }}>次の授業</p>
-                  <Link href={`/curriculum/${encodeURIComponent(String(lesson.next))}`} className="chip-link">
-                    {String(lesson.next)}
-                  </Link>
-                </section>
-              ) : null}
-            </div>
-          </div>
-        </section>
+        <div className="lesson-nav-bar reveal">
+          <span className="lesson-nav-bar-label">この授業のリンク集</span>
+          {quickLinks.map((item) => (
+            <Link key={item.href} href={item.href} className="chip-link" title={item.note}>
+              <small>{item.kind}</small> {item.label}
+            </Link>
+          ))}
+          {lesson.next ? (
+            <Link href={`/curriculum/${encodeURIComponent(String(lesson.next))}`} className="chip-link">
+              <small>次へ</small> {String(lesson.next)}
+            </Link>
+          ) : null}
+        </div>
       ) : null}
 
-      <section className="card reveal" aria-label="高探究チェック">
-        <h2 style={{ marginTop: 0 }}>高探究チェック</h2>
-        {objectives.length ? (
-          <>
-            <p className="meta">この回の到達目標</p>
-            <ul style={{ marginTop: "0.4rem" }}>
-              {objectives.map((item) => (
-                <li key={String(item)}>{String(item)}</li>
-              ))}
-            </ul>
-          </>
-        ) : null}
-        {prereq.length ? (
-          <p className="meta" style={{ marginTop: "0.8rem" }}>
-            前提授業: {prereq.map((item) => String(item)).join(" / ")}
-          </p>
-        ) : null}
-        <div className="grid two" style={{ marginTop: "0.8rem" }}>
-          <article className="card">
-            <h3 style={{ marginTop: 0 }}>根拠</h3>
-            <p>主張ごとに、対応するデータ箇所を示す。</p>
-          </article>
-          <article className="card">
-            <h3 style={{ marginTop: 0 }}>限界</h3>
-            <p>別解または不足データを1点以上書く。</p>
-          </article>
-          <article className="card">
-            <h3 style={{ marginTop: 0 }}>再現性</h3>
-            <p>手順を他者が追える形で残す。</p>
-          </article>
-          <article className="card">
-            <h3 style={{ marginTop: 0 }}>倫理</h3>
-            <p>同意・匿名化・安全性の確認を残す。</p>
-          </article>
-        </div>
-      </section>
-
       <section className="card detail-body reveal">
+        {objectives.length > 0 ? <CheckpointBlock items={objectives.map((item) => String(item))} /> : null}
         <MarkdownBody body={lesson.body} />
       </section>
       <SourceLinks sourceIds={lesson.sources} />

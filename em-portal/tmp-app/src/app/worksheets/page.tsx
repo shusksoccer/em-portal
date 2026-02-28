@@ -49,7 +49,7 @@ export default async function WorksheetsPage({
 
       <div className="grid two">
         {filtered.map((item) => (
-          <DocCard key={item.slug} doc={item} href={`/worksheets/${item.slug}`} />
+          <DocCard key={item.slug} doc={item} href={`/worksheets/${item.slug}`} kind="worksheets" />
         ))}
       </div>
     </section>

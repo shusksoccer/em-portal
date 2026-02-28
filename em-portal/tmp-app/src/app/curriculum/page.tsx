@@ -85,7 +85,7 @@ export default async function CurriculumPage({
 
       <div className="grid">
         {filtered.map((lesson) => (
-          <DocCard key={lesson.slug} doc={lesson} href={`/curriculum/${lesson.slug}`} />
+          <DocCard key={lesson.slug} doc={lesson} href={`/curriculum/${lesson.slug}`} kind="lessons" />
         ))}
       </div>
     </section>

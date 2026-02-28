@@ -5,11 +5,14 @@ import { getStatusLabel, getStatusValue } from "@/lib/status-filter";
 type Props = {
   doc: ContentDoc;
   href: string;
+  kind?: ContentDoc["kind"];
 };
 
-export function DocCard({ doc, href }: Props) {
+export function DocCard({ doc, href, kind }: Props) {
+  const kindClass = `card-kind-${String(kind ?? doc.kind)}`;
+
   return (
-    <article className="card">
+    <article className={`card ${kindClass}`}>
       <h2>
         <Link href={href}>{doc.title}</Link>
       </h2>

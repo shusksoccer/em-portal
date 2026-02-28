@@ -36,7 +36,7 @@ export default async function TagDetailPage({
           const href = doc.kind === "library" || doc.kind === "people" || doc.kind === "faq"
             ? base
             : `${base}/${doc.slug}`;
-          return <DocCard key={`${doc.kind}-${doc.slug}`} doc={doc} href={href} />;
+          return <DocCard key={`${doc.kind}-${doc.slug}`} doc={doc} href={href} kind={doc.kind} />;
         })}
       </div>
     </section>
