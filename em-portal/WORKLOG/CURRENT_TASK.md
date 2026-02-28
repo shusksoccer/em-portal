@@ -1,38 +1,47 @@
 # Current Task
 
 ## Task
-- Obsidian + AI で収集・整理した内容を `em-portal` に反映し、授業で使える日本語ポータルとして運用できる状態に整える
+- 高校生が最終的に「自力でEMを実践できる」ことをゴールに、サイト構成・レイアウト・コンテンツを段階的に再構成する。
+- 実行規約は `WORKLOG/RESTRUCTURE_PLAN.md` に従う。
 
-## Current Scope
-- [x] Obsidian / AI 運用スクリプトの整備（初期化・ノート作成・AI編集プロンプト・status一括付与）
-- [x] 一覧ページ・検索ページの `status` フィルタ対応
-- [x] 図解・用語・FAQ・人物・文献・ワークの日本語化と見やすさ改善
-- [x] `curriculum` L1〜L6 に授業導線（図解 / 用語 / ワーク / FAQ）を追加
-- [x] `WORKLOG` 運用の導入（中断時の再開性の確保）
-- [x] GitHub / Vercel への継続反映フローを安定化
-- [ ] 最終点検（主要ページの目視確認と微修正）
+## Current Phase
+- `Phase 5: 公開前固定`（完了）
 
-## Recent Changes
-- `em-portal/tmp-app/src/app/page.tsx`（トップページ日本語化・導線整理）
-- `em-portal/tmp-app/src/app/intro/page.tsx`（入門ページの再構成）
-- `em-portal/tmp-app/src/app/curriculum/[slug]/page.tsx`（L1〜L6 授業導線）
-- `em-portal/tmp-app/content/worksheets/ws-l1..ws-l6.md`（授業別に全面作り直し）
-- `em-portal/tmp-app/content/glossary/*.md`（主要用語・テンプレ用語の日本語化）
-- `em-portal/tmp-app/content/faq/faq-1..faq-10.md`（構成統一）
-- `em-portal/tmp-app/src/app/faq/page.tsx`（短答先出し + 折りたたみ）
-- `em-portal/tmp-app/src/app/library/page.tsx`（文献概要ブロック）
-- `em-portal/tmp-app/src/app/people/page.tsx`（覚える一言の先出し）
+## Phase Checklist
+- [x] `curriculum/[slug]` の本文構造を高探究要件で統一
+- [x] `worksheets/*` の提出条件を共通フォーマット化
+- [x] `glossary` の必修語優先表示を実装
+- [x] 主要ページの導線詰まりを目視で検証（`/`, `/intro`, `/curriculum/*`, `/worksheets/*`）
+- [x] Phase 4検証シナリオの作成
+- [x] シナリオA（概念理解のみ）の通し検証を実施
+- [x] シナリオB（ワーク実施まで）の通し検証を実施
+- [x] シナリオC（自力ミニ実践まで）の通し検証を実施
+- [x] Phase 5 公開前固定（最終文言/status/build）へ移行
+- [x] 主要ページ文言の最終確認を実施
+- [x] `status` 未設定/許可外値チェックを実施（公開対象0件）
+- [x] 公開候補版のbuild成功を確認
+
+## Scope Guard（今回触る範囲）
+- `tmp-app/content/*`
+- `tmp-app/src/app/*`
+- `WORKLOG/*`
+
+## Out Of Scope（今回触らない）
+- `../web`, `../scripts`, `../test`, `../tools`
+- デプロイ設定変更（Vercel設定自体の変更）
 
 ## Open Issues / Notes
-- トップページ・主要導線は改善済み。残りは細かい表現の揺れや、授業現場での使い勝手の微調整が中心。
-- `status` 未設定の Markdown は `unknown` 表示になる（運用上は必要に応じて `published/reviewed/inbox` を付与）。
-- `em-portal` 外（`../web`, `../scripts`, `../test`）の差分は別作業として分離して扱う。
+- `library` の `core/supplement` 表示は実装済み。運用上は `status` 更新を継続する。
+- `content/_sources` は一次資料群として公開導線外のまま維持する。
+- Phase 3 の導線監査結果は `WORKLOG/PHASE3_ROUTE_AUDIT.md` を参照。
+- Phase 4 の検証シナリオは `WORKLOG/PHASE4_SCENARIOS.md` を参照。
+- Phase 4 の実施ログは `WORKLOG/PHASE4_VALIDATION_LOG.md` を参照。
+- Phase 5 の公開前固定チェックは `WORKLOG/PHASE5_RELEASE_CHECK.md` を参照。
 
 ## Next Resume Point
-1. 主要ページを目視確認（`/`, `/intro`, `/curriculum/*`, `/worksheets/*`, `/glossary/*`, `/figures/*`, `/faq`, `/library`, `/people`）
-2. 気になる文言・導線を数件修正
-3. `build` 確認
-4. GitHub push → Vercel 反映確認
+1. 変更差分をレビューし、公開対象コミットを分割整理
+2. デプロイ可否を判断（`tmp-app` と `../web` の反映方針を確定）
+3. 公開後の運用ルール（status更新頻度・FAQ更新手順）を `WORKLOG` に追記
 
 ## Validation
-- `cmd /c "set npm_config_cache=.npm-cache&& npx.cmd --yes pnpm run build"` (`em-portal/tmp-app`) OK（継続確認）
+- 各フェーズ完了時に `pnpm run build` を実施し、成功ログを残す

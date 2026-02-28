@@ -35,3 +35,49 @@
 - Expanded curriculum lesson toolkit links from L1-only to all lessons L1-L6, so each lesson page has direct links to relevant figures/glossary/worksheet/FAQ.
 - Refined the home page (`/`) copy and labels to clear Japanese wording (AI workflow, 6-lesson timeline, and primary navigation cards) after earlier mojibake-heavy states.
 - Rewrote `WORKLOG/CURRENT_TASK.md` and `WORKLOG/README.md` to remove mojibake and reflect the current project state/resume steps.
+
+## 2026-02-28
+- Added WORKLOG/RESTRUCTURE_PLAN.md as a phased execution guide for full site restructure toward the student self-practice goal.
+- Rewrote WORKLOG/CURRENT_TASK.md to Phase-0 inventory mode with scope guards and no-skip phase gates.
+- Updated WORKLOG/README.md to require RESTRUCTURE_PLAN.md usage during large refactors.
+- Classified all `tmp-app/content/library/*.md` entries with goal-aligned frontmatter (`learning_stage`, `learning_role`, `recommended_order`, `content_track`) without editing body text.
+- Updated `/library` listing to support stage filtering and to show goal-role metadata; library sort now follows `recommended_order`.
+- Moved draft library content out of the public path to `tmp-app/content/_drafts/library` and renamed library files to purpose-oriented names.
+- Added a hard guard in `/library` to hide `content_track: draft` from display and filters.
+- Switched AI workflow emphasis from latest-refresh to EM knowledge enrichment by adding `ops/Build-AIKnowledgePrompt.ps1`, updating setup templates, and removing `ops/Build-AIRefreshPrompt.ps1`.
+- Updated `README-運用.md` and `WORKLOG/LIBRARY_CLASSIFICATION.md` to match the new file layout and operating policy.
+- Restarted Phase 0 in `CURRENT_TASK.md` after the pre-sorting work was completed.- Created WORKLOG/PHASE0_INVENTORY.md and started Phase-0 inventory baseline with the full library category pre-classified.
+
+- Phase 0 progress: completed lesson-category inventory (l1-l6) in WORKLOG/PHASE0_INVENTORY.md; all six lessons classified as goal-critical, with missing status fields flagged for later normalization.
+
+- Phase 0 progress: completed worksheet-category inventory (ws-l1-ws-l6); all worksheets classified as goal-critical and kept.
+
+- Phase 0 progress: completed inventory for glossary (30), igures (10), aq (10), and people (4); flagged aq-2/aq-5 as a merge candidate due to duplicate intent.
+- Updated WORKLOG/CURRENT_TASK.md checklist to reflect full-category inventory completion and draft-material separation done.
+
+- Finalized Phase 0 duplicate cleanup in FAQ: merged key checklist points into aq-2.md and removed aq-5.md (duplicate breaching-policy question).
+- Updated WORKLOG/PHASE0_INVENTORY.md and WORKLOG/CURRENT_TASK.md to mark Phase 0 completion and set next resume point to Phase 1 information design.
+
+- Phase 1 started: created WORKLOG/PHASE1_SITEMAP.md (high-inquiry sitemap) and WORKLOG/PAGE_ROLE_SPEC.md (one-page-one-purpose role definitions).
+- Updated WORKLOG/CURRENT_TASK.md to Phase 1 in-progress state and aligned next resume points to top/intro/curriculum role split implementation.
+
+- Phase 1 implementation: rewrote / as route-only navigator, rewrote /intro as prerequisite page (no lesson-body duplication), and updated /curriculum header to explicitly require evidence/limitations/ethics outcomes.
+- Build passed after Phase 1 page-role split implementation (pnpm run build, 2026-02-28).
+
+- Phase 2 completed: added WORKLOG/PHASE2_ACTIONS.md with fixed action order and handoff items, and implemented /library priority display by content_track (core first, supplement collapsed section).
+- Build passed after Phase 2 completion updates (pnpm run build, 2026-02-28).
+
+- Phase 3 implementation: standardized all lesson markdown files (l1-l6) with high-inquiry sections (evidence/limits/ethics), fixed worksheet detail page mojibake and unified submission layout, and added stage-based required-term priority blocks to /glossary.
+- Build passed after Phase 3 content/route updates (pnpm run build, 2026-02-28).
+- Resumed from CURRENT_TASK Next Resume Point and completed Phase 3 route audit across `/`, `/intro`, `/curriculum/*`, and `/worksheets/*`; added `WORKLOG/PHASE3_ROUTE_AUDIT.md`.
+- Added worksheet detail "next action" navigation in `tmp-app/src/app/worksheets/[slug]/page.tsx` to prevent dead-end flow (`FAQ`, `next lesson`, `curriculum`, `worksheets`).
+- Created `WORKLOG/PHASE4_SCENARIOS.md` with A/B/C end-to-end validation routes and per-scenario success criteria.
+- Updated `WORKLOG/CURRENT_TASK.md` to Phase 4 in-progress and set next resume points to scenario execution.
+- Build passed after route audit micro-fix and Phase 4 scenario setup (`npm.cmd run build`, 2026-02-28).
+- Executed Phase 4 static validation for scenarios A/B/C and recorded outcomes in `WORKLOG/PHASE4_VALIDATION_LOG.md`.
+- Added L6-specific support links on worksheet detail (`fig-presentation-map`, `glossary/validity`, `library?stage=自力実践`) to strengthen scenario C completion flow.
+- Build passed after Phase 4 scenario validation updates (`npm.cmd run build`, 2026-02-28).
+- Phase 5 release-freeze checks completed and documented in `WORKLOG/PHASE5_RELEASE_CHECK.md` (major-page wording/status/build).
+- Verified public content status integrity: missing status 0, invalid status 0 (excluding `_drafts`, `_sources`).
+- Build passed for release-candidate freeze (`npm.cmd run build`, 2026-02-28).
+
