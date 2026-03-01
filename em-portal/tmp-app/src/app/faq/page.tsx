@@ -1,86 +1,58 @@
-﻿import Link from "next/link";
-import { MarkdownBody } from "@/components/markdown-body";
-import { SourceLinks } from "@/components/source-links";
+import { DocCard } from "@/components/doc-card";
 import { getCollection } from "@/lib/content";
-import { STATUS_OPTIONS, getStatusLabel, getStatusValue, parseStatusFilter } from "@/lib/status-filter";
 
-function getFaqOrder(slug: string): number {
-  const match = slug.match(/^faq-(\d+)$/);
-  return match ? Number(match[1]) : Number.POSITIVE_INFINITY;
-}
+const faqGroups = [
+  {
+    label: "EMの基礎を理解する",
+    sub: "最初に確認する質問",
+    slugs: ["faq-1", "faq-11", "faq-12", "faq-13"],
+  },
+  {
+    label: "観察とデータ記述",
+    sub: "L2-L3 で使う",
+    slugs: ["faq-3", "faq-9", "faq-14", "faq-16"],
+  },
+  {
+    label: "分析と発表",
+    sub: "L4-L6 で使う",
+    slugs: ["faq-6", "faq-7", "faq-10", "faq-15"],
+  },
+  {
+    label: "運用・AI活用",
+    sub: "授業運営で迷ったとき",
+    slugs: ["faq-2", "faq-4", "faq-8"],
+  },
+] as const;
 
-function getShortAnswer(body: string): string {
-  const normalized = body.replace(/\r\n/g, "\n");
-  const match = normalized.match(/##\s*回答[（(]短く[)）]\s*\n-\s+(.+)/);
-  if (match?.[1]) return match[1].trim();
-
-  const firstBullet = normalized.match(/^\s*-\s+(.+)$/m);
-  if (firstBullet?.[1]) return firstBullet[1].trim();
-
-  return normalized.split("\n").map((line) => line.trim()).find(Boolean) ?? "";
-}
-
-export default async function FaqPage({
-  searchParams,
-}: {
-  searchParams?: Promise<{ status?: string | string[] }>;
-}) {
+export default function FaqPage() {
   const faqs = getCollection("faq");
-  const params = searchParams ? await searchParams : {};
-  const statusFilter = parseStatusFilter(params?.status);
-  const filtered = statusFilter === "all"
-    ? faqs
-    : faqs.filter((faq) => getStatusValue(faq.status) === statusFilter);
-  const ordered = [...filtered].sort((a, b) => getFaqOrder(a.slug) - getFaqOrder(b.slug) || a.title.localeCompare(b.title, "ja"));
-
-  const counts = {
-    all: faqs.length,
-    inbox: faqs.filter((faq) => getStatusValue(faq.status) === "inbox").length,
-    reviewed: faqs.filter((faq) => getStatusValue(faq.status) === "reviewed").length,
-    published: faqs.filter((faq) => getStatusValue(faq.status) === "published").length,
-    unknown: faqs.filter((faq) => getStatusValue(faq.status) === "unknown").length,
-  } as const;
 
   return (
     <section>
       <div className="card section-hero section-hero-faq reveal">
         <p className="section-kicker">FAQ</p>
         <h1>よくある質問</h1>
-        <p>
-          授業で止まりやすいポイントを短く確認できます。回答は短く、チェック項目は共通でそろえています。
-        </p>
-        <p className="meta">
-          状態: {getStatusLabel(statusFilter)} / {filtered.length}件表示
-        </p>
-        <div className="chip-row" aria-label="状態フィルタ">
-          {STATUS_OPTIONS.map((status) => (
-            <Link
-              key={status}
-              href={status === "all" ? "/faq" : `/faq?status=${status}`}
-              className="chip-link"
-              aria-current={statusFilter === status ? "page" : undefined}
-            >
-              {getStatusLabel(status)} ({counts[status]})
-            </Link>
-          ))}
-        </div>
+        <p>つまずきやすい質問をステージ別に並べています。必要な塊だけ見れば次の行動を決めやすくなります。</p>
+        <p className="meta">全{faqs.length}件</p>
       </div>
-      <div className="grid reveal">
-        {ordered.map((faq, index) => (
-          <article key={faq.slug} className="card faq-card card-kind-faq">
-            <p className="faq-index">Q{index + 1}</p>
-            <h2>{faq.title}</h2>
-            <p className="meta">状態: {getStatusLabel(getStatusValue(faq.status))}</p>
-            <p>{getShortAnswer(faq.body)}</p>
-            <details>
-              <summary style={{ cursor: "pointer", fontWeight: 600 }}>回答の詳細を開く</summary>
-              <div style={{ marginTop: "0.75rem" }}>
-                <MarkdownBody body={faq.body} />
-                <SourceLinks sourceIds={faq.sources} />
+
+      <div style={{ display: "grid", gap: "1.5rem", marginTop: "1.2rem" }}>
+        {faqGroups.map(({ label, sub, slugs }) => {
+          const groupFaqs = faqs.filter((f) => slugs.includes(f.slug as never));
+          if (groupFaqs.length === 0) return null;
+
+          return (
+            <section key={label} className="reveal">
+              <h2 style={{ fontSize: "1rem", fontWeight: 700, marginBottom: "0.2rem" }}>{label}</h2>
+              <p className="meta" style={{ margin: "0 0 0.6rem" }}>{sub}</p>
+              <div className="grid">
+                {groupFaqs.map((faq) => (
+                  <DocCard key={faq.slug} doc={faq} href={`/faq/${faq.slug}`} kind="faq" />
+                ))}
               </div>
-            </details>
-          </article>
-        ))}
+            </section>
+          );
+        })}
       </div>
     </section>
   );

@@ -12,37 +12,43 @@ type LessonLinkItem = {
   note?: string;
 };
 
-function getLessonToolkit(slug: string): {
+type LessonToolkit = {
   figures: LessonLinkItem[];
   glossary: LessonLinkItem[];
   worksheets: LessonLinkItem[];
   faqs: LessonLinkItem[];
-} | null {
+  people: LessonLinkItem[];
+};
+
+function getLessonToolkit(slug: string): LessonToolkit | null {
   switch (slug) {
     case "l1-what-is-em":
       return {
         figures: [
-          { href: "/figures/fig-learning-route", label: "学習ルート", note: "単元全体の流れを最初に共有" },
-          { href: "/figures/fig-observe-describe-analyze", label: "観察・記述・分析", note: "役割の違いを説明" },
-          { href: "/figures/fig-background-expectancy", label: "背景的期待", note: "EMの見方を導入" },
+          { href: "/figures/fig-learning-route", label: "学習ルート", note: "全体像を最初に確認" },
+          { href: "/figures/fig-observe-describe-analyze", label: "観察→記述→分析", note: "3段階の関係" },
+          { href: "/figures/fig-background-expectancy", label: "背景期待", note: "EMの土台" },
         ],
         glossary: [
-          { href: "/glossary/accountability", label: "可説明可能性" },
-          { href: "/glossary/indexicality", label: "文脈依存性" },
-          { href: "/glossary/reflexivity", label: "反射性" },
-          { href: "/glossary/context", label: "文脈" },
+          { href: "/glossary/accountability", label: "アカウンタビリティ" },
+          { href: "/glossary/indexicality", label: "インデクシカリティ" },
+          { href: "/glossary/reflexivity", label: "再帰性" },
+          { href: "/glossary/context", label: "コンテクスト" },
         ],
         worksheets: [
-          { href: "/worksheets/ws-l1", label: "WS1 観察ログ", note: "授業内ミニ活動の提出用" },
+          { href: "/worksheets/ws-l1", label: "WS1 観察ログ", note: "導入の記録テンプレ" },
         ],
         faqs: [
-          { href: "/faq", label: "FAQ一覧", note: "心理学との違い / AI公開 / データ量などを確認" },
+          { href: "/faq", label: "FAQ一覧", note: "つまずきポイント確認" },
+        ],
+        people: [
+          { href: "/people/garfinkel", label: "Garfinkel", note: "EMの創始者" },
         ],
       };
     case "l2-how-to-observe":
       return {
         figures: [
-          { href: "/figures/fig-observation-log", label: "観察ログの書き方" },
+          { href: "/figures/fig-observation-log", label: "観察ログの見本" },
           { href: "/figures/fig-ethics-checklist", label: "倫理チェック" },
         ],
         glossary: [
@@ -50,56 +56,64 @@ function getLessonToolkit(slug: string): {
           { href: "/glossary/fieldnote", label: "フィールドノート" },
           { href: "/glossary/anonymization", label: "匿名化" },
         ],
-        worksheets: [{ href: "/worksheets/ws-l2", label: "WS2 観察チェックシート" }],
-        faqs: [{ href: "/faq", label: "FAQ一覧", note: "データ量・テーマ設定も確認可" }],
+        worksheets: [{ href: "/worksheets/ws-l2", label: "WS2 観察チェック" }],
+        faqs: [{ href: "/faq", label: "FAQ一覧", note: "観察・倫理の確認" }],
+        people: [],
       };
     case "l3-how-to-describe":
       return {
         figures: [
-          { href: "/figures/fig-observe-describe-analyze", label: "観察・記述・分析" },
-          { href: "/figures/fig-transcript-template", label: "転写テンプレート" },
+          { href: "/figures/fig-observe-describe-analyze", label: "観察→記述→分析" },
+          { href: "/figures/fig-transcript-template", label: "転記テンプレート" },
         ],
         glossary: [
           { href: "/glossary/description", label: "記述" },
-          { href: "/glossary/transcript", label: "転写" },
+          { href: "/glossary/transcript", label: "転記" },
           { href: "/glossary/data-session", label: "データセッション" },
         ],
         worksheets: [{ href: "/worksheets/ws-l3", label: "WS3 記述テンプレート" }],
-        faqs: [{ href: "/faq", label: "FAQ一覧", note: "記述と分析の混同を確認" }],
+        faqs: [{ href: "/faq", label: "FAQ一覧", note: "記述と分析の違い" }],
+        people: [{ href: "/people/jefferson", label: "Jefferson", note: "転記記号の基礎" }],
       };
     case "l4-ca-entry":
       return {
         figures: [
-          { href: "/figures/fig-turn-structure", label: "順番取りの基本構造" },
+          { href: "/figures/fig-turn-structure", label: "ターン構造" },
           { href: "/figures/fig-repair-pattern", label: "修復パターン" },
         ],
         glossary: [
-          { href: "/glossary/turn-taking", label: "順番取り" },
+          { href: "/glossary/turn-taking", label: "ターンテイキング" },
           { href: "/glossary/repair", label: "修復" },
           { href: "/glossary/adjacency-pair", label: "隣接ペア" },
         ],
-        worksheets: [{ href: "/worksheets/ws-l4", label: "WS4 ターン分けと修復" }],
-        faqs: [{ href: "/faq", label: "FAQ一覧", note: "会話分析で何を数えるか等" }],
+        worksheets: [{ href: "/worksheets/ws-l4", label: "WS4 ターン分析" }],
+        faqs: [{ href: "/faq", label: "FAQ一覧", note: "会話分析の基礎" }],
+        people: [
+          { href: "/people/sacks", label: "Sacks", note: "CAの基盤" },
+          { href: "/people/schegloff", label: "Schegloff", note: "連鎖組織と修復" },
+          { href: "/people/jefferson", label: "Jefferson", note: "転記と相互行為" },
+        ],
       };
     case "l5-breaching":
       return {
         figures: [
-          { href: "/figures/fig-breaching-safe", label: "安全なブリーチング学習" },
-          { href: "/figures/fig-background-expectancy", label: "背景的期待" },
+          { href: "/figures/fig-breaching-safe", label: "安全なブリーチング" },
+          { href: "/figures/fig-background-expectancy", label: "背景期待" },
           { href: "/figures/fig-ethics-checklist", label: "倫理チェック" },
         ],
         glossary: [
           { href: "/glossary/breaching", label: "ブリーチング" },
-          { href: "/glossary/background-expectancies", label: "背景的期待" },
+          { href: "/glossary/background-expectancies", label: "背景期待" },
           { href: "/glossary/ethics", label: "倫理" },
         ],
-        worksheets: [{ href: "/worksheets/ws-l5", label: "WS5 模擬ブリーチング分析" }],
-        faqs: [{ href: "/faq", label: "FAQ一覧", note: "ブリーチングの安全運用を確認" }],
+        worksheets: [{ href: "/worksheets/ws-l5", label: "WS5 ブリーチング分析" }],
+        faqs: [{ href: "/faq", label: "FAQ一覧", note: "倫理と安全の確認" }],
+        people: [{ href: "/people/garfinkel", label: "Garfinkel", note: "ブリーチング実験" }],
       };
     case "l6-project":
       return {
         figures: [
-          { href: "/figures/fig-presentation-map", label: "発表構成マップ" },
+          { href: "/figures/fig-presentation-map", label: "発表マップ" },
           { href: "/figures/fig-learning-route", label: "学習ルート" },
         ],
         glossary: [
@@ -107,8 +121,9 @@ function getLessonToolkit(slug: string): {
           { href: "/glossary/validity", label: "妥当性" },
           { href: "/glossary/anonymization", label: "匿名化" },
         ],
-        worksheets: [{ href: "/worksheets/ws-l6", label: "WS6 発表計画シート" }],
-        faqs: [{ href: "/faq", label: "FAQ一覧", note: "テーマの絞り込み・発表評価を確認" }],
+        worksheets: [{ href: "/worksheets/ws-l6", label: "WS6 発表設計シート" }],
+        faqs: [{ href: "/faq", label: "FAQ一覧", note: "仕上げ時の確認" }],
+        people: [],
       };
     default:
       return null;
@@ -148,7 +163,8 @@ export default async function LessonDetailPage({
         ...lessonToolkit.figures.map((item) => ({ ...item, kind: "図解" })),
         ...lessonToolkit.glossary.map((item) => ({ ...item, kind: "用語" })),
         ...lessonToolkit.worksheets.map((item) => ({ ...item, kind: "ワーク" })),
-        ...lessonToolkit.faqs.map((item) => ({ ...item, kind: "補助" })),
+        ...lessonToolkit.faqs.map((item) => ({ ...item, kind: "FAQ" })),
+        ...lessonToolkit.people.map((item) => ({ ...item, kind: "人物" })),
       ]
     : [];
 
@@ -180,14 +196,16 @@ export default async function LessonDetailPage({
               <small>{item.kind}</small> {item.label}
             </Link>
           ))}
-          {lesson.next ? (() => {
-            const nextLesson = getDocBySlug("lessons", String(lesson.next));
-            return (
-              <Link href={`/curriculum/${encodeURIComponent(String(lesson.next))}`} className="chip-link">
-                <small>次へ</small> {nextLesson?.title ?? String(lesson.next)}
-              </Link>
-            );
-          })() : null}
+          {lesson.next
+            ? (() => {
+                const nextLesson = getDocBySlug("lessons", String(lesson.next));
+                return (
+                  <Link href={`/curriculum/${encodeURIComponent(String(lesson.next))}`} className="chip-link">
+                    <small>次へ</small> {nextLesson?.title ?? String(lesson.next)}
+                  </Link>
+                );
+              })()
+            : null}
         </div>
       ) : null}
 
