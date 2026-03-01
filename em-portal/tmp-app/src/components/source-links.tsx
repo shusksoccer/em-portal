@@ -1,4 +1,5 @@
-﻿import { getSourcesByIds } from "@/lib/content";
+import Link from "next/link";
+import { getSourcesByIds } from "@/lib/content";
 
 type Props = {
   sourceIds: string[];
@@ -15,9 +16,13 @@ export function SourceLinks({ sourceIds }: Props) {
       <ul>
         {sources.map((source) => (
           <li key={source.id}>
-            <a href={source.url} target="_blank" rel="noreferrer">
-              {source.title}
-            </a>{" "}
+            {source.url.startsWith("/") ? (
+              <Link href={source.url}>{source.title}</Link>
+            ) : (
+              <a href={source.url} target="_blank" rel="noreferrer">
+                {source.title}
+              </a>
+            )}{" "}
             <span className="meta">
               ({source.author}, {source.year}, 信頼度: {source.reliability})
             </span>

@@ -4,7 +4,6 @@ import { MarkdownBody } from "@/components/markdown-body";
 import { PrintButton } from "@/components/print-button";
 import { SourceLinks } from "@/components/source-links";
 import { getCollection, getDocBySlug } from "@/lib/content";
-import { getStatusLabel, getStatusValue } from "@/lib/status-filter";
 
 export function generateStaticParams() {
   return getCollection("glossary").map((item) => ({ slug: item.slug }));
@@ -50,51 +49,43 @@ export default async function GlossaryDetailPage({
         ) : null}
       </header>
 
-      <section className="card reveal" aria-label="用語概要">
-        <h2 style={{ marginTop: 0 }}>用語概要</h2>
-        <div className="grid two">
-          <div>
-            <p className="meta">状態</p>
-            <p>{getStatusLabel(getStatusValue(term.status))}</p>
-          </div>
-          <div>
-            <p className="meta">出典数</p>
-            <p>{term.sources.length}件</p>
-          </div>
-        </div>
-        {aliases.length ? (
-          <>
-            <p className="meta">別名・言い換え</p>
-            <div className="tags" aria-label="別名・言い換え">
-              {aliases.map((item) => (
-                <span key={item} className="tag">{item}</span>
-              ))}
-            </div>
-          </>
-        ) : null}
-        {related.length ? (
-          <>
-            <p className="meta">関連語</p>
-            <div className="tags" aria-label="関連語">
-              {related.map((item) => (
-                <Link key={item} href={`/glossary/${encodeURIComponent(item)}`} className="tag">
-                  {item}
-                </Link>
-              ))}
-            </div>
-          </>
-        ) : null}
-        {examples.length ? (
-          <>
-            <p className="meta">例のカテゴリ</p>
-            <div className="tags" aria-label="例のカテゴリ">
-              {examples.map((item) => (
-                <span key={item} className="tag">{item}</span>
-              ))}
-            </div>
-          </>
-        ) : null}
-      </section>
+      {(aliases.length > 0 || related.length > 0 || examples.length > 0) ? (
+        <section className="card reveal" aria-label="用語概要">
+          <h2 style={{ marginTop: 0 }}>用語概要</h2>
+          {aliases.length ? (
+            <>
+              <p className="meta">別名・言い換え</p>
+              <div className="tags" aria-label="別名・言い換え">
+                {aliases.map((item) => (
+                  <span key={item} className="tag">{item}</span>
+                ))}
+              </div>
+            </>
+          ) : null}
+          {related.length ? (
+            <>
+              <p className="meta">関連語</p>
+              <div className="tags" aria-label="関連語">
+                {related.map((item) => (
+                  <Link key={item} href={`/glossary/${encodeURIComponent(item)}`} className="tag">
+                    {item}
+                  </Link>
+                ))}
+              </div>
+            </>
+          ) : null}
+          {examples.length ? (
+            <>
+              <p className="meta">例のカテゴリ</p>
+              <div className="tags" aria-label="例のカテゴリ">
+                {examples.map((item) => (
+                  <span key={item} className="tag">{item}</span>
+                ))}
+              </div>
+            </>
+          ) : null}
+        </section>
+      ) : null}
 
       <section className="card detail-body reveal">
         <MarkdownBody body={term.body} />

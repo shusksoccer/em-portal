@@ -166,5 +166,19 @@
       "Use only as supplementary orientation"
     ],
     "reliability": "低"
+  },
+  {
+    "id": "em-practice-overview",
+    "title": "EM実践・CA・MCA・違背実験の包括解説",
+    "author": "EM Portal 制作チーム",
+    "year": 2026,
+    "url": "/library/em-practice-overview",
+    "type": "internal",
+    "key_points": [
+      "EM実践の4アプローチ（CA・MCA・違背実験・フィールドワーク）を包括的に解説",
+      "授業設計者・学習者向けの参照資料",
+      "l1-what-is-em および l5-breaching で参照"
+    ],
+    "reliability": "高"
   }
 ]

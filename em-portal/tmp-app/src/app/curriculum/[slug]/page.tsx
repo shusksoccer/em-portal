@@ -180,11 +180,14 @@ export default async function LessonDetailPage({
               <small>{item.kind}</small> {item.label}
             </Link>
           ))}
-          {lesson.next ? (
-            <Link href={`/curriculum/${encodeURIComponent(String(lesson.next))}`} className="chip-link">
-              <small>次へ</small> {String(lesson.next)}
-            </Link>
-          ) : null}
+          {lesson.next ? (() => {
+            const nextLesson = getDocBySlug("lessons", String(lesson.next));
+            return (
+              <Link href={`/curriculum/${encodeURIComponent(String(lesson.next))}`} className="chip-link">
+                <small>次へ</small> {nextLesson?.title ?? String(lesson.next)}
+              </Link>
+            );
+          })() : null}
         </div>
       ) : null}
 
