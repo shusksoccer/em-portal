@@ -33,10 +33,11 @@ export const metadata: Metadata = {
 };
 
 const navItems = [
-  { href: "/intro", label: "はじめる" },
-  { href: "/curriculum", label: "授業6コマ" },
-  { href: "/worksheets", label: "ワーク提出" },
-  { href: "/faq", label: "困ったとき" },
+  { href: "/intro", label: "EMとは", sub: "" },
+  { href: "/curriculum/l1-what-is-em", label: "観察する", sub: "L1–L2" },
+  { href: "/curriculum/l3-how-to-describe", label: "記述・分析", sub: "L3–L5" },
+  { href: "/curriculum/l6-project", label: "まとめる", sub: "L6" },
+  { href: "/reference", label: "参照", sub: "" },
 ];
 
 export default function RootLayout({
@@ -61,7 +62,8 @@ export default function RootLayout({
             <nav aria-label="メインナビゲーション" className="main-nav">
               {navItems.map((item) => (
                 <Link key={item.href} href={item.href}>
-                  {item.label}
+                  <span>{item.label}</span>
+                  {item.sub && <span className="nav-sub">{item.sub}</span>}
                 </Link>
               ))}
             </nav>

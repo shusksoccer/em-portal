@@ -1,9 +1,20 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { CycleBar, type CycleStep } from "@/components/cycle-bar";
 import { MarkdownBody } from "@/components/markdown-body";
 import { PrintButton } from "@/components/print-button";
 import { SourceLinks } from "@/components/source-links";
 import { getCollection, getDocBySlug } from "@/lib/content";
+
+function getWorksheetCycleStep(slug: string): CycleStep {
+  const match = slug.match(/^ws-l(\d+)$/);
+  if (!match) return "observe";
+  const no = Number(match[1]);
+  if (no <= 2) return "observe";
+  if (no === 3) return "describe";
+  if (no <= 5) return "analyze";
+  return "present";
+}
 
 function getRubricItems(raw: unknown): string[] {
   return String(raw ?? "")
@@ -57,6 +68,7 @@ export default async function WorksheetDetailPage({
   const rubricItems = getRubricItems(worksheet.rubric);
   const lessonHref = getLessonHrefFromWorksheet(worksheet.slug);
   const nextLessonHref = getNextLessonHrefFromWorksheet(worksheet.slug);
+  const cycleStep = getWorksheetCycleStep(worksheet.slug);
   const finalPracticeLinks = worksheet.slug === "ws-l6"
     ? [
         { href: "/figures/fig-presentation-map", label: "発表構成マップを確認" },
@@ -67,6 +79,7 @@ export default async function WorksheetDetailPage({
 
   return (
     <article>
+      <CycleBar current={cycleStep} />
       <header className="card detail-hero detail-hero-worksheet reveal">
         <p className="section-kicker">ワーク</p>
         <h1>{worksheet.title}</h1>

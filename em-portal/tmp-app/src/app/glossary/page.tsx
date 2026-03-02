@@ -1,10 +1,10 @@
 import { GlossaryCard } from "@/components/glossary-card";
 import { getCollection } from "@/lib/content";
 
-const glossaryPhaseGroups = [
+const glossaryCycleGroups = [
   {
-    label: "理解フェーズの用語",
-    sub: "L1-L2: EMの基本概念と観察",
+    label: "観察するときの用語",
+    sub: "L1–L2: フィールドに出る前に押さえる基本概念",
     slugs: [
       "accountability",
       "indexicality",
@@ -22,8 +22,8 @@ const glossaryPhaseGroups = [
     ],
   },
   {
-    label: "実践フェーズの用語",
-    sub: "L3-L5: 記述・会話分析・ブリーチング",
+    label: "記述・分析するときの用語",
+    sub: "L3–L5: 転記・会話分析・ブリーチング実験で使う概念",
     slugs: [
       "transcript",
       "sequence",
@@ -41,8 +41,8 @@ const glossaryPhaseGroups = [
     ],
   },
   {
-    label: "統合フェーズの用語",
-    sub: "L6: まとめと発表",
+    label: "まとめる・発表するときの用語",
+    sub: "L6: 分析結果を整理し、他者に伝えるための概念",
     slugs: ["presentation", "validity", "inference", "topic-management"],
   },
 ] as const;
@@ -55,12 +55,12 @@ export default function GlossaryPage() {
       <div className="card section-hero section-hero-glossary reveal">
         <p className="section-kicker">用語集</p>
         <h1>用語集</h1>
-        <p>授業で使う順に並べています。今のフェーズだけ見れば、必要語を先に絞れます。</p>
+        <p>探究サイクルの段階ごとに並べています。今いるステージの用語から確認してください。</p>
         <p className="meta">全{glossary.length}語</p>
       </div>
 
       <div style={{ display: "grid", gap: "1.5rem", marginTop: "1.2rem" }}>
-        {glossaryPhaseGroups.map(({ label, sub, slugs }) => {
+        {glossaryCycleGroups.map(({ label, sub, slugs }) => {
           const groupTerms = glossary.filter((g) => slugs.includes(g.slug as never));
           if (groupTerms.length === 0) return null;
 

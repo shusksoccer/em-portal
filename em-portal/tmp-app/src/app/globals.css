@@ -76,6 +76,10 @@ h3 {
 }
 
 .main-nav a {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.05rem;
   text-decoration: none;
   font-size: 0.86rem;
   color: #0c4f4c;
@@ -84,6 +88,13 @@ h3 {
   border-radius: 999px;
   padding: 0.26rem 0.72rem;
   transition: transform 180ms ease, background 180ms ease;
+}
+
+.nav-sub {
+  font-size: 0.62rem;
+  letter-spacing: 0.05em;
+  opacity: 0.72;
+  line-height: 1;
 }
 
 .main-nav a:hover {
@@ -1450,6 +1461,632 @@ input:focus-visible {
   border-left: 4px solid #d9c59f;
 }
 
+/* ───────────────────────────────────────────
+   Homepage: Practice Cycle
+─────────────────────────────────────────── */
+.home-hero-lead {
+  margin: 0.6rem 0 0;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--ink);
+}
+
+.chip-link-primary {
+  background: linear-gradient(135deg, #0f6a67, #1a8a7a) !important;
+  color: #fff !important;
+  border-color: #0a4e4c !important;
+  font-weight: 600;
+}
+
+.chip-link-primary:hover {
+  background: linear-gradient(135deg, #0c5855, #157a6c) !important;
+}
+
+.practice-cycle {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+.cycle-step {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 1rem 0.9rem;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: #fffef9;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cycle-step::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  border-radius: 14px 14px 0 0;
+}
+
+.cycle-step:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px #2435401a;
+}
+
+.cycle-observe::before  { background: #4aab8c; }
+.cycle-describe::before { background: #5b7fc4; }
+.cycle-analyze::before  { background: #9b6cb8; }
+.cycle-present::before  { background: #c07a3a; }
+
+.cycle-step-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 0.15rem;
+}
+
+.cycle-no {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: var(--font-heading), serif;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.cycle-lessons {
+  font-size: 0.68rem;
+  color: var(--ink-soft);
+  letter-spacing: 0.04em;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.1rem 0.4rem;
+  background: var(--sand);
+}
+
+.cycle-label {
+  font-size: 1.05rem;
+  font-family: var(--font-heading), serif;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.cycle-tagline {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.cycle-desc {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+.cycle-loop-note {
+  text-align: center;
+  margin: 0.8rem 0 0;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  letter-spacing: 0.04em;
+}
+
+/* ───────────────────────────────────────────
+   Homepage: Observation Invitation
+─────────────────────────────────────────── */
+.observation-invite {
+  border-color: #a0c8bc;
+  background: linear-gradient(120deg, #f2faf6 0%, #e4f5ee 60%, #fef8ed 100%);
+  position: relative;
+}
+
+.observation-kicker {
+  color: #1e6050 !important;
+}
+
+.observation-prompt {
+  margin: 0.4rem 0 0;
+  font-size: 1.02rem;
+  line-height: 1.75;
+  color: #1a2e28;
+}
+
+.observation-hint {
+  margin: 0.5rem 0 0;
+  font-size: 0.87rem;
+  color: #3a5a52;
+  padding: 0.5rem 0.8rem;
+  border-left: 3px solid #7abfaa;
+  background: #eaf5f0;
+  border-radius: 0 8px 8px 0;
+}
+
+/* ───────────────────────────────────────────
+   Homepage: Field Kit (Reference Tools)
+─────────────────────────────────────────── */
+.ref-tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.7rem;
+}
+
+.ref-tool-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fffef9;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.ref-tool-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px #2435400e;
+  color: inherit;
+}
+
+.ref-tool-badge {
+  flex-shrink: 0;
+  width: 2.4rem;
+  height: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: var(--accent-soft);
+  color: #0c4f4c;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  font-family: var(--font-heading), serif;
+}
+
+.ref-tool-body strong {
+  display: block;
+  font-size: 0.94rem;
+  margin-bottom: 0.1rem;
+}
+
+.ref-tool-body p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+
+/* ───────────────────────────────────────────
+   Reference Hub（参照・道具箱）
+─────────────────────────────────────────── */
+.ref-hub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0.8rem;
+}
+
+.ref-hub-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1rem 1.05rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #fffef9;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  overflow: hidden;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.ref-hub-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  border-radius: 14px 14px 0 0;
+}
+
+.ref-hub-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px #2435401a;
+  color: inherit;
+}
+
+.ref-card-glossary::before { background: #4aab8c; }
+.ref-card-faq::before      { background: #d4965a; }
+.ref-card-figures::before  { background: #9b6cb8; }
+.ref-card-library::before  { background: #5b7fc4; }
+.ref-card-people::before   { background: #c07a3a; }
+
+.ref-hub-card-head {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 0.1rem;
+}
+
+.ref-hub-badge {
+  flex-shrink: 0;
+  width: 2.2rem;
+  height: 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: var(--accent-soft);
+  color: #0c4f4c;
+  font-size: 0.85rem;
+  font-weight: 700;
+  font-family: var(--font-heading), serif;
+}
+
+.ref-hub-label {
+  display: block;
+  font-size: 1rem;
+  font-family: var(--font-heading), serif;
+}
+
+.ref-hub-count {
+  font-size: 0.74rem;
+  color: var(--ink-soft);
+  margin-left: 0.3rem;
+}
+
+.ref-hub-when {
+  font-size: 0.79rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin: 0;
+}
+
+.ref-hub-desc {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.ref-hub-arrow {
+  align-self: flex-end;
+  color: var(--accent);
+  font-size: 1rem;
+  margin-top: 0.2rem;
+}
+
+/* Cycle quick links */
+.ref-cycle-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.7rem;
+}
+
+.ref-cycle-section {
+  padding: 0.85rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fffef9;
+  position: relative;
+  overflow: hidden;
+}
+
+.ref-cycle-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  border-radius: 12px 12px 0 0;
+}
+
+.ref-cycle-observe::before  { background: #4aab8c; }
+.ref-cycle-describe::before { background: #5b7fc4; }
+.ref-cycle-analyze::before  { background: #9b6cb8; }
+.ref-cycle-present::before  { background: #c07a3a; }
+
+.ref-cycle-step {
+  font-size: 0.9rem;
+  font-weight: 700;
+  font-family: var(--font-heading), serif;
+  margin: 0 0 0.6rem;
+  color: var(--ink);
+}
+
+.ref-cycle-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.ref-cycle-links li a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  text-decoration: none;
+  color: var(--ink);
+  line-height: 1.4;
+}
+
+.ref-cycle-links li a:hover {
+  color: var(--accent);
+}
+
+.ref-cycle-kind {
+  font-size: 0.66rem;
+  padding: 0.05rem 0.3rem;
+  border-radius: 999px;
+  background: var(--sand);
+  color: var(--ink-soft);
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+/* ───────────────────────────────────────────
+   Cycle Bar（探究サイクル現在地）
+─────────────────────────────────────────── */
+.cycle-bar {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0.9rem;
+  background: #f3f0e8;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  margin-bottom: 0.75rem;
+  gap: 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.cycle-bar-step {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  text-decoration: none;
+  padding: 0.18rem 0.4rem;
+  border-radius: 6px;
+  flex-shrink: 0;
+  transition: background 140ms;
+}
+
+.cycle-bar-step:hover {
+  background: rgba(15, 106, 103, 0.09);
+}
+
+.cycle-bar-label {
+  font-size: 0.81rem;
+  white-space: nowrap;
+}
+
+.cycle-bar-step--current .cycle-bar-label {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.cycle-bar-step--done .cycle-bar-label {
+  color: #4a8070;
+}
+
+.cycle-bar-step--upcoming .cycle-bar-label {
+  color: var(--ink-soft);
+  opacity: 0.5;
+}
+
+.cycle-bar-dot {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.cycle-bar-step--current .cycle-bar-dot {
+  background: var(--accent);
+  box-shadow: 0 0 0 3px #cde9df;
+}
+
+.cycle-bar-step--done .cycle-bar-dot {
+  background: #7ab8a8;
+}
+
+.cycle-bar-step--upcoming .cycle-bar-dot {
+  background: transparent;
+  border: 2px solid #c0c8c4;
+}
+
+.cycle-bar-connector {
+  flex: 1;
+  height: 1px;
+  min-width: 1.2rem;
+  background: #cdd0cc;
+  margin: 0 0.2rem;
+  flex-shrink: 0;
+}
+
+.cycle-bar-connector--done {
+  background: #7ab8a8;
+}
+
+.cycle-bar-now {
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  margin-left: auto;
+  padding-left: 0.6rem;
+  flex-shrink: 0;
+  white-space: nowrap;
+  opacity: 0.8;
+}
+
+/* ───────────────────────────────────────────
+   Intro page
+─────────────────────────────────────────── */
+.intro-example-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.intro-example-card {
+  flex: 1;
+  min-width: 180px;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--sand);
+}
+
+.intro-example-card-after {
+  background: #e8f5ef;
+  border-color: #9cc8b8;
+}
+
+.intro-example-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0 0 0.25rem;
+}
+
+.intro-example-card p:last-child {
+  margin: 0;
+  font-size: 0.92rem;
+}
+
+.intro-example-arrow {
+  font-size: 1.4rem;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.intro-cycle-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  flex-wrap: wrap;
+  row-gap: 0.4rem;
+}
+
+.intro-cycle-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.intro-cycle-step {
+  font-size: 0.94rem;
+  font-weight: 700;
+  font-family: var(--font-heading), serif;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.intro-cycle-desc {
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+
+.intro-cycle-sep {
+  font-size: 1.1rem;
+  color: var(--line);
+  margin: 0 0.3rem;
+  flex-shrink: 0;
+}
+
+.intro-principle {
+  display: grid;
+  grid-template-columns: 4rem 1fr;
+  gap: 0.75rem;
+  align-items: start;
+  padding: 0.8rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fffef9;
+}
+
+.intro-principle-no {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  padding-top: 0.1rem;
+  white-space: nowrap;
+}
+
+.intro-principle-title {
+  display: block;
+  font-size: 0.94rem;
+  margin-bottom: 0.25rem;
+}
+
+.intro-principle-body {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+.intro-action-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #fffef9;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.intro-action-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px #2435400f;
+  color: inherit;
+}
+
+.intro-action-card strong {
+  font-size: 0.98rem;
+  font-family: var(--font-heading), serif;
+}
+
+.intro-action-card p {
+  margin: 0;
+  font-size: 0.83rem;
+  color: var(--ink-soft);
+}
+
+.intro-action-arrow {
+  margin-top: 0.4rem;
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+
+/* ───────────────────────────────────────────
+   Responsive
+─────────────────────────────────────────── */
+@media (max-width: 860px) {
+  .ref-cycle-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 640px) {
   .transcript-line {
     grid-template-columns: 1.8rem 1fr;
@@ -1457,5 +2094,19 @@ input:focus-visible {
 
   .lesson-article {
     max-width: 100%;
+  }
+
+  .practice-cycle {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ref-cycle-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 400px) {
+  .practice-cycle {
+    grid-template-columns: 1fr;
   }
 }

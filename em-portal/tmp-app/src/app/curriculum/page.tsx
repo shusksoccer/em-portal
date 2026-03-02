@@ -9,9 +9,9 @@ function getLessonPhase(slug: string): "understand" | "practice" | "apply" {
 }
 
 const phaseGroups = [
-  { phase: "understand" as const, label: "理解フェーズ", sub: "L1–L2｜EMとは何か・観察する" },
-  { phase: "practice" as const, label: "実践フェーズ", sub: "L3–L5｜記述・会話分析・ブリーチング" },
-  { phase: "apply" as const, label: "統合フェーズ", sub: "L6｜テーマ化と発表" },
+  { phase: "understand" as const, label: "観察する", sub: "L1–L2｜EMの見方をつかみ、フィールドに出る" },
+  { phase: "practice" as const, label: "記述・分析する", sub: "L3–L5｜転記・会話分析・ブリーチング実験" },
+  { phase: "apply" as const, label: "まとめる", sub: "L6｜分析をまとめ、発表へ" },
 ] as const;
 
 export default function CurriculumPage() {
@@ -23,7 +23,8 @@ export default function CurriculumPage() {
         <p className="section-kicker">カリキュラム</p>
         <h1>カリキュラム</h1>
         <p>
-          6コマを「理解 → 実践 → 統合」の順で進めます。迷った場合は理解フェーズ（L1）から順に進んでください。
+          EMの探究サイクル「観察 → 記述・分析 → まとめる」に沿って6コマを進めます。
+          迷った場合はL1から順に進んでください。
         </p>
         <div className="chip-row" style={{ marginTop: "0.4rem" }}>
           <Link href="/curriculum/l1-what-is-em" className="chip-link">L1から始める</Link>
