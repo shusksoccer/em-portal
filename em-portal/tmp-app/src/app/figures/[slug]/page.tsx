@@ -6,7 +6,7 @@ import { PrintButton } from "@/components/print-button";
 import { SourceLinks } from "@/components/source-links";
 import { getCollection, getDocBySlug } from "@/lib/content";
 
-const FIGURE_ASSET_VERSION = "ja-svg-20260223-1";
+const FIGURE_ASSET_VERSION = "ja-svg-20260303-2";
 
 export function generateStaticParams() {
   return getCollection("figures").map((item) => ({ slug: item.slug }));

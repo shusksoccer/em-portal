@@ -1,43 +1,136 @@
-﻿<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='720' viewBox='0 0 1200 720' role='img' aria-labelledby='t d'>
-  <title id='t'>観察・記述・分析</title>
-  <desc id='d'>エスノメソドロジー授業用の図解。</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="t d">
+  <title id="t">観察・記述・分析 3ステップの違い</title>
+  <desc id="d">観察する・記述する・分析する、それぞれの目的・方法・産出物を比較する表。</desc>
   <defs>
-    <linearGradient id='g' x1='0' y1='0' x2='1' y2='1'>
-      <stop offset='0%' stop-color='#f0f7ef'/>
-      <stop offset='100%' stop-color='#dfeee7'/>
-    </linearGradient>
-    <marker id='arrow' markerWidth='10' markerHeight='10' refX='8' refY='3' orient='auto'>
-      <path d='M0,0 L0,6 L9,3 z' fill='#1e6a53'/>
-    </marker>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Kaku Gothic ProN',Meiryo,sans-serif; }</style>
   </defs>
-  <rect x='0' y='0' width='1200' height='720' fill='url(#g)'/>
-  <rect x='40' y='40' width='1120' height='640' rx='20' fill='#ffffff' stroke='#b9d1c2' stroke-width='2'/>
-  <text x='600' y='95' text-anchor='middle' font-family='Verdana, sans-serif' font-size='42' fill='#1a3f33'>観察・記述・分析</text>
 
-  <rect x='90' y='210' width='180' height='90' rx='12' fill='#e8f4ee' stroke='#8fb8a3'/>
-  <text x='180' y='264' text-anchor='middle' font-family='Verdana, sans-serif' font-size='22' fill='#1a3f33'>場面</text>
+  <!-- Background -->
+  <rect width="1200" height="720" fill="#f4f6f3"/>
 
-  <rect x='300' y='210' width='180' height='90' rx='12' fill='#e8f4ee' stroke='#8fb8a3'/>
-  <text x='390' y='264' text-anchor='middle' font-family='Verdana, sans-serif' font-size='22' fill='#1a3f33'>記録</text>
+  <!-- Header bar -->
+  <rect x="0" y="0" width="1200" height="68" fill="#1a3f33"/>
+  <text x="600" y="28" text-anchor="middle" font-size="24" font-weight="bold" fill="#ffffff">観察・記述・分析 ── 3ステップの違い</text>
+  <text x="600" y="54" text-anchor="middle" font-size="15" fill="#90c4a8">「何をするのか」「何が残るのか」をステップ別に整理する</text>
 
-  <rect x='510' y='210' width='180' height='90' rx='12' fill='#e8f4ee' stroke='#8fb8a3'/>
-  <text x='600' y='264' text-anchor='middle' font-family='Verdana, sans-serif' font-size='22' fill='#1a3f33'>証拠</text>
+  <!-- Column 1: 観察する -->
+  <rect x="40" y="80" width="354" height="590" rx="10" fill="#ffffff" stroke="#3d9970" stroke-width="3"/>
+  <rect x="40" y="80" width="354" height="50" rx="10" fill="#3d9970"/>
+  <rect x="40" y="110" width="354" height="20" fill="#3d9970"/>
+  <text x="60" y="108" font-size="13" fill="#c8eed8">STEP 1</text>
+  <text x="217" y="117" text-anchor="middle" font-size="22" font-weight="bold" fill="#ffffff">観察する</text>
 
-  <rect x='720' y='210' width='180' height='90' rx='12' fill='#e8f4ee' stroke='#8fb8a3'/>
-  <text x='810' y='264' text-anchor='middle' font-family='Verdana, sans-serif' font-size='22' fill='#1a3f33'>主張</text>
+  <text x="60" y="158" font-size="13" font-weight="bold" fill="#3d9970">● 目的</text>
+  <text x="60" y="182" font-size="14" fill="#333">フィールドで何が起きているかを</text>
+  <text x="60" y="200" font-size="14" fill="#333">「見て・感じて・気づく」</text>
 
-  <rect x='930' y='210' width='180' height='90' rx='12' fill='#e8f4ee' stroke='#8fb8a3'/>
-  <text x='1020' y='264' text-anchor='middle' font-family='Verdana, sans-serif' font-size='22' fill='#1a3f33'>確認</text>
+  <line x1="50" y1="215" x2="384" y2="215" stroke="#d0ead8" stroke-width="1"/>
 
-  <line x1='270' y1='255' x2='300' y2='255' stroke='#1e6a53' stroke-width='4' marker-end='url(#arrow)'/>
-  <line x1='480' y1='255' x2='510' y2='255' stroke='#1e6a53' stroke-width='4' marker-end='url(#arrow)'/>
-  <line x1='690' y1='255' x2='720' y2='255' stroke='#1e6a53' stroke-width='4' marker-end='url(#arrow)'/>
-  <line x1='900' y1='255' x2='930' y2='255' stroke='#1e6a53' stroke-width='4' marker-end='url(#arrow)'/>
+  <text x="60" y="238" font-size="13" font-weight="bold" fill="#3d9970">● 方法</text>
+  <text x="60" y="260" font-size="14" fill="#333">現場に行き、5W1Hで事実を記録する</text>
+  <text x="60" y="278" font-size="14" fill="#333">（誰が・何を・いつ・どこで・どう）</text>
 
-  <rect x='120' y='390' width='960' height='200' rx='14' fill='#f8fcf9' stroke='#c9ddd1'/>
-  <text x='150' y='445' font-family='Verdana, sans-serif' font-size='24' fill='#264b3f'>授業での使い方</text>
-  <text x='150' y='485' font-family='Verdana, sans-serif' font-size='20' fill='#335f50'>1) 左から順に読みます。</text>
-  <text x='150' y='520' font-family='Verdana, sans-serif' font-size='20' fill='#335f50'>2) 授業の事例と対応づけます。</text>
-  <text x='150' y='555' font-family='Verdana, sans-serif' font-size='20' fill='#335f50'>3) 自分の言葉で流れを説明します。</text>
+  <line x1="50" y1="295" x2="384" y2="295" stroke="#d0ead8" stroke-width="1"/>
+
+  <text x="60" y="318" font-size="13" font-weight="bold" fill="#3d9970">● 産出物</text>
+  <text x="60" y="340" font-size="14" fill="#333">フィールドノート（手書きメモ）</text>
+
+  <line x1="50" y1="360" x2="384" y2="360" stroke="#d0ead8" stroke-width="1"/>
+
+  <text x="60" y="382" font-size="13" font-weight="bold" fill="#3d9970">● 記入例</text>
+  <rect x="55" y="392" width="324" height="100" rx="6" fill="#f0faf4" stroke="#b8dfc6"/>
+  <text x="68" y="414" font-size="12" fill="#2a5a3c">13:05  A「ちょっといい？」</text>
+  <text x="68" y="434" font-size="12" fill="#2a5a3c">       Bは机を見たまま返事なし</text>
+  <text x="68" y="454" font-size="12" fill="#2a5a3c">13:06  A 少し近づく</text>
+  <text x="68" y="474" font-size="12" fill="#2a5a3c">       B「あ、ごめん」と顔を上げる</text>
+
+  <line x1="50" y1="505" x2="384" y2="505" stroke="#d0ead8" stroke-width="1"/>
+
+  <rect x="55" y="515" width="324" height="36" rx="6" fill="#3d9970"/>
+  <text x="217" y="538" text-anchor="middle" font-size="13" font-weight="bold" fill="#ffffff">NG：解釈・原因推測を混ぜない</text>
+
+  <text x="60" y="580" font-size="12" fill="#555">✗「Bは無視した（失礼だと思った）」</text>
+  <text x="60" y="598" font-size="12" fill="#2a7a50">✓「Bは顔を上げなかった（0.8秒）」</text>
+
+  <!-- Column 2: 記述する -->
+  <rect x="422" y="80" width="354" height="590" rx="10" fill="#ffffff" stroke="#4a7bc4" stroke-width="3"/>
+  <rect x="422" y="80" width="354" height="50" rx="10" fill="#4a7bc4"/>
+  <rect x="422" y="110" width="354" height="20" fill="#4a7bc4"/>
+  <text x="442" y="108" font-size="13" fill="#c0d0f0">STEP 2</text>
+  <text x="599" y="117" text-anchor="middle" font-size="22" font-weight="bold" fill="#ffffff">記述する</text>
+
+  <text x="442" y="158" font-size="13" font-weight="bold" fill="#4a7bc4">● 目的</text>
+  <text x="442" y="182" font-size="14" fill="#333">音声・行動を「再現可能な形」に</text>
+  <text x="442" y="200" font-size="14" fill="#333">固定し、共有できるデータにする</text>
+
+  <line x1="432" y1="215" x2="766" y2="215" stroke="#c8d8f0" stroke-width="1"/>
+
+  <text x="442" y="238" font-size="13" font-weight="bold" fill="#4a7bc4">● 方法</text>
+  <text x="442" y="260" font-size="14" fill="#333">ジェファーソン記法で転記する</text>
+  <text x="442" y="278" font-size="14" fill="#333">（記号で重なり・間・強弱を表す）</text>
+
+  <line x1="432" y1="295" x2="766" y2="295" stroke="#c8d8f0" stroke-width="1"/>
+
+  <text x="442" y="318" font-size="13" font-weight="bold" fill="#4a7bc4">● 産出物</text>
+  <text x="442" y="340" font-size="14" fill="#333">トランスクリプト（転記データ）</text>
+
+  <line x1="432" y1="360" x2="766" y2="360" stroke="#c8d8f0" stroke-width="1"/>
+
+  <text x="442" y="382" font-size="13" font-weight="bold" fill="#4a7bc4">● 記入例</text>
+  <rect x="437" y="392" width="324" height="100" rx="6" fill="#f0f4fa" stroke="#b8c8e6"/>
+  <text x="450" y="414" font-size="12" fill="#2a3a6c" font-family="'Courier New',monospace">01  A: ちょっと[いい？</text>
+  <text x="450" y="434" font-size="12" fill="#2a3a6c" font-family="'Courier New',monospace">02  B:        [（0.8）</text>
+  <text x="450" y="454" font-size="12" fill="#2a3a6c" font-family="'Courier New',monospace">03  B: あ、↑ごめん</text>
+  <text x="450" y="474" font-size="12" fill="#888">   [ = 重なり  (0.8) = 間(秒)</text>
+
+  <line x1="432" y1="505" x2="766" y2="505" stroke="#c8d8f0" stroke-width="1"/>
+
+  <rect x="437" y="515" width="324" height="36" rx="6" fill="#4a7bc4"/>
+  <text x="599" y="538" text-anchor="middle" font-size="13" font-weight="bold" fill="#ffffff">NG：聞こえなかった箇所を推測で埋めない</text>
+
+  <text x="442" y="580" font-size="12" fill="#555">✗「（おそらく「そう」と言った）」</text>
+  <text x="442" y="598" font-size="12" fill="#2a4a9c">✓「（ xxx ）＝聞き取り不能」</text>
+
+  <!-- Column 3: 分析する -->
+  <rect x="804" y="80" width="354" height="590" rx="10" fill="#ffffff" stroke="#8e5cb8" stroke-width="3"/>
+  <rect x="804" y="80" width="354" height="50" rx="10" fill="#8e5cb8"/>
+  <rect x="804" y="110" width="354" height="20" fill="#8e5cb8"/>
+  <text x="824" y="108" font-size="13" fill="#d8c0f0">STEP 3</text>
+  <text x="981" y="117" text-anchor="middle" font-size="22" font-weight="bold" fill="#ffffff">分析する</text>
+
+  <text x="824" y="158" font-size="13" font-weight="bold" fill="#8e5cb8">● 目的</text>
+  <text x="824" y="182" font-size="14" fill="#333">転記データからパターン・ルール・</text>
+  <text x="824" y="200" font-size="14" fill="#333">秩序の仕組みを読み解く</text>
+
+  <line x1="814" y1="215" x2="1148" y2="215" stroke="#d8c8f0" stroke-width="1"/>
+
+  <text x="824" y="238" font-size="13" font-weight="bold" fill="#8e5cb8">● 方法</text>
+  <text x="824" y="260" font-size="14" fill="#333">隣接ペア・順番取り・修復など</text>
+  <text x="824" y="278" font-size="14" fill="#333">CA概念で行番号を指定して読む</text>
+
+  <line x1="814" y1="295" x2="1148" y2="295" stroke="#d8c8f0" stroke-width="1"/>
+
+  <text x="824" y="318" font-size="13" font-weight="bold" fill="#8e5cb8">● 産出物</text>
+  <text x="824" y="340" font-size="14" fill="#333">分析メモ（行番号付きの説明）</text>
+
+  <line x1="814" y1="360" x2="1148" y2="360" stroke="#d8c8f0" stroke-width="1"/>
+
+  <text x="824" y="382" font-size="13" font-weight="bold" fill="#8e5cb8">● 記入例</text>
+  <rect x="819" y="392" width="324" height="100" rx="6" fill="#f8f0fc" stroke="#c8b0e0"/>
+  <text x="832" y="414" font-size="12" fill="#4a2a70">01行: 質問（隣接ペア前項）</text>
+  <text x="832" y="434" font-size="12" fill="#4a2a70">02行: 応答なし → TRP で沈黙</text>
+  <text x="832" y="454" font-size="12" fill="#4a2a70">03行: 遅延応答＋謝罪で修復</text>
+  <text x="832" y="474" font-size="12" fill="#888">→ 自己開始・他者修復のパターン</text>
+
+  <line x1="814" y1="505" x2="1148" y2="505" stroke="#d8c8f0" stroke-width="1"/>
+
+  <rect x="819" y="515" width="324" height="36" rx="6" fill="#8e5cb8"/>
+  <text x="981" y="538" text-anchor="middle" font-size="13" font-weight="bold" fill="#ffffff">NG：行番号なしで「なんとなく」読む</text>
+
+  <text x="824" y="580" font-size="12" fill="#555">✗「なんか気まずい感じがする」</text>
+  <text x="824" y="598" font-size="12" fill="#5a2a90">✓「2行目(0.8)秒の間が修復開始点」</text>
+
+  <!-- Bottom rule -->
+  <rect x="0" y="682" width="1200" height="38" fill="#1a3f33"/>
+  <text x="600" y="706" text-anchor="middle" font-size="14" fill="#90c4a8">3ステップは「素材収集 → 固定 → 意味解釈」の順。前のステップに戻ることも必要。</text>
 </svg>
-

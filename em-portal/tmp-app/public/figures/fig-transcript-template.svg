@@ -1,43 +1,170 @@
-﻿<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='720' viewBox='0 0 1200 720' role='img' aria-labelledby='t d'>
-  <title id='t'>転写テンプレート</title>
-  <desc id='d'>エスノメソドロジー授業用の図解。</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="t d">
+  <title id="t">ジェファーソン記法 転記テンプレート</title>
+  <desc id="d">会話分析で使うジェファーソン転記記法の主要な記号を、実例つきで解説する。</desc>
   <defs>
-    <linearGradient id='g' x1='0' y1='0' x2='1' y2='1'>
-      <stop offset='0%' stop-color='#f0f7ef'/>
-      <stop offset='100%' stop-color='#dfeee7'/>
-    </linearGradient>
-    <marker id='arrow' markerWidth='10' markerHeight='10' refX='8' refY='3' orient='auto'>
-      <path d='M0,0 L0,6 L9,3 z' fill='#1e6a53'/>
-    </marker>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Kaku Gothic ProN',Meiryo,sans-serif; }</style>
   </defs>
-  <rect x='0' y='0' width='1200' height='720' fill='url(#g)'/>
-  <rect x='40' y='40' width='1120' height='640' rx='20' fill='#ffffff' stroke='#b9d1c2' stroke-width='2'/>
-  <text x='600' y='95' text-anchor='middle' font-family='Verdana, sans-serif' font-size='42' fill='#1a3f33'>転写テンプレート</text>
 
-  <rect x='90' y='210' width='180' height='90' rx='12' fill='#e8f4ee' stroke='#8fb8a3'/>
-  <text x='180' y='264' text-anchor='middle' font-family='Verdana, sans-serif' font-size='22' fill='#1a3f33'>行</text>
+  <!-- Background -->
+  <rect width="1200" height="720" fill="#f4f6f3"/>
 
-  <rect x='300' y='210' width='180' height='90' rx='12' fill='#e8f4ee' stroke='#8fb8a3'/>
-  <text x='390' y='264' text-anchor='middle' font-family='Verdana, sans-serif' font-size='22' fill='#1a3f33'>発話</text>
+  <!-- Header -->
+  <rect x="0" y="0" width="1200" height="68" fill="#1a3f33"/>
+  <text x="600" y="28" text-anchor="middle" font-size="24" font-weight="bold" fill="#ffffff">ジェファーソン記法 ── 転記テンプレートと記号解説</text>
+  <text x="600" y="54" text-anchor="middle" font-size="15" fill="#90c4a8">音声の特徴を記号で書き残す。「見た目の正確さ」より「分析に必要な特徴の記録」が目的。</text>
 
-  <rect x='510' y='210' width='180' height='90' rx='12' fill='#e8f4ee' stroke='#8fb8a3'/>
-  <text x='600' y='264' text-anchor='middle' font-family='Verdana, sans-serif' font-size='22' fill='#1a3f33'>間</text>
+  <!-- Left: Transcript example -->
+  <rect x="40" y="84" width="520" height="584" rx="10" fill="#ffffff" stroke="#4a7bc4" stroke-width="2"/>
+  <rect x="40" y="84" width="520" height="46" rx="10" fill="#4a7bc4"/>
+  <rect x="40" y="110" width="520" height="20" fill="#4a7bc4"/>
+  <text x="300" y="115" text-anchor="middle" font-size="18" font-weight="bold" fill="#ffffff">転記例（会話分析データ形式）</text>
 
-  <rect x='720' y='210' width='180' height='90' rx='12' fill='#e8f4ee' stroke='#8fb8a3'/>
-  <text x='810' y='264' text-anchor='middle' font-family='Verdana, sans-serif' font-size='22' fill='#1a3f33'>身振り</text>
+  <!-- Transcript body -->
+  <rect x="60" y="142" width="480" height="280" rx="6" fill="#f0f4fa" stroke="#c0d0e8"/>
 
-  <rect x='930' y='210' width='180' height='90' rx='12' fill='#e8f4ee' stroke='#8fb8a3'/>
-  <text x='1020' y='264' text-anchor='middle' font-family='Verdana, sans-serif' font-size='22' fill='#1a3f33'>コメント</text>
+  <!-- Line numbers and transcript -->
+  <text x="78" y="170" font-size="13" fill="#888">01</text>
+  <text x="110" y="170" font-size="14" fill="#2a3a7c" font-family="'Courier New',Courier,monospace">A: おはよ[う</text>
 
-  <line x1='270' y1='255' x2='300' y2='255' stroke='#1e6a53' stroke-width='4' marker-end='url(#arrow)'/>
-  <line x1='480' y1='255' x2='510' y2='255' stroke='#1e6a53' stroke-width='4' marker-end='url(#arrow)'/>
-  <line x1='690' y1='255' x2='720' y2='255' stroke='#1e6a53' stroke-width='4' marker-end='url(#arrow)'/>
-  <line x1='900' y1='255' x2='930' y2='255' stroke='#1e6a53' stroke-width='4' marker-end='url(#arrow)'/>
+  <text x="78" y="198" font-size="13" fill="#888">02</text>
+  <text x="110" y="198" font-size="14" fill="#5a2a8a" font-family="'Courier New',Courier,monospace">B:       [おはよ：：う</text>
 
-  <rect x='120' y='390' width='960' height='200' rx='14' fill='#f8fcf9' stroke='#c9ddd1'/>
-  <text x='150' y='445' font-family='Verdana, sans-serif' font-size='24' fill='#264b3f'>授業での使い方</text>
-  <text x='150' y='485' font-family='Verdana, sans-serif' font-size='20' fill='#335f50'>1) 左から順に読みます。</text>
-  <text x='150' y='520' font-family='Verdana, sans-serif' font-size='20' fill='#335f50'>2) 授業の事例と対応づけます。</text>
-  <text x='150' y='555' font-family='Verdana, sans-serif' font-size='20' fill='#335f50'>3) 自分の言葉で流れを説明します。</text>
+  <text x="78" y="226" font-size="13" fill="#888">03</text>
+  <text x="110" y="226" font-size="14" fill="#2a3a7c" font-family="'Courier New',Courier,monospace">A: 今日さ（0.8）あれ持って</text>
+  <text x="140" y="246" font-size="14" fill="#2a3a7c" font-family="'Courier New',Courier,monospace">   きた？</text>
+
+  <text x="78" y="272" font-size="13" fill="#888">04</text>
+  <text x="110" y="272" font-size="14" fill="#5a2a8a" font-family="'Courier New',Courier,monospace">B: ↑あ、°もってきた°</text>
+
+  <text x="78" y="300" font-size="13" fill="#888">05</text>
+  <text x="110" y="300" font-size="14" fill="#2a3a7c" font-family="'Courier New',Courier,monospace">A: =よかった</text>
+
+  <text x="78" y="328" font-size="13" fill="#888">06</text>
+  <text x="110" y="328" font-size="14" fill="#5a2a8a" font-family="'Courier New',Courier,monospace">B: （ xxx ）（.）うん</text>
+
+  <text x="78" y="356" font-size="13" fill="#888">07</text>
+  <text x="110" y="356" font-size="14" fill="#2a3a7c" font-family="'Courier New',Courier,monospace">A: じゃ、あとで↓ね</text>
+
+  <text x="78" y="384" font-size="13" fill="#888">08</text>
+  <text x="110" y="384" font-size="14" fill="#5a2a8a" font-family="'Courier New',Courier,monospace">B: うん（笑）</text>
+
+  <!-- Callout lines pointing to symbols -->
+  <!-- [ overlap -->
+  <line x1="184" y1="170" x2="184" y2="195" stroke="#c0392b" stroke-width="1.5"/>
+  <line x1="184" y1="195" x2="542" y2="195" stroke="#c0392b" stroke-width="1" stroke-dasharray="4,2"/>
+
+  <!-- Reference points for annotations -->
+
+  <!-- Annotation section below transcript -->
+  <rect x="60" y="434" width="480" height="56" rx="6" fill="#e8f0fa"/>
+  <text x="80" y="456" font-size="12" fill="#2a3a7c" font-weight="bold">行番号のつけ方：</text>
+  <text x="80" y="474" font-size="12" fill="#333">01から順番。続行行は前の行のインデントを合わせる。</text>
+  <text x="80" y="490" font-size="12" fill="#888">話者ラベルは左端に。コロンの後に発話。</text>
+
+  <rect x="60" y="500" width="480" height="56" rx="6" fill="#fff8f0"/>
+  <text x="80" y="522" font-size="12" fill="#e08030" font-weight="bold">未確認部分の扱い：</text>
+  <text x="80" y="540" font-size="12" fill="#333">（ xxx ） = 聞き取り不能。（？） = 候補あるが不確か。</text>
+  <text x="80" y="556" font-size="12" fill="#888">推測で埋めず、不明は不明として記録する。</text>
+
+  <rect x="60" y="566" width="480" height="56" rx="6" fill="#f0faf4"/>
+  <text x="80" y="588" font-size="12" fill="#3d9970" font-weight="bold">転記の粒度：</text>
+  <text x="80" y="606" font-size="12" fill="#333">最初は基本記号（[]、(秒)、：、↑↓）だけでよい。</text>
+  <text x="80" y="622" font-size="12" fill="#888">分析が進んだら詳細記号を追加する。</text>
+
+  <!-- Right: Symbol reference table -->
+  <rect x="580" y="84" width="580" height="584" rx="10" fill="#ffffff" stroke="#4a7bc4" stroke-width="2"/>
+  <rect x="580" y="84" width="580" height="46" rx="10" fill="#4a7bc4"/>
+  <rect x="580" y="110" width="580" height="20" fill="#4a7bc4"/>
+  <text x="870" y="115" text-anchor="middle" font-size="18" font-weight="bold" fill="#ffffff">記号一覧 ── 主要12記号</text>
+
+  <!-- Symbol table header -->
+  <rect x="600" y="142" width="540" height="28" rx="4" fill="#2a4a8a"/>
+  <text x="660" y="161" text-anchor="middle" font-size="13" font-weight="bold" fill="#ffffff">記号</text>
+  <text x="870" y="161" text-anchor="middle" font-size="13" font-weight="bold" fill="#ffffff">意味</text>
+  <text x="1070" y="161" text-anchor="middle" font-size="13" font-weight="bold" fill="#ffffff">例</text>
+  <line x1="720" y1="142" x2="720" y2="658" stroke="#c0d0e8" stroke-width="1"/>
+  <line x1="1020" y1="142" x2="1020" y2="658" stroke="#c0d0e8" stroke-width="1"/>
+
+  <!-- Rows -->
+  <!-- Row 1 -->
+  <rect x="600" y="170" width="540" height="36" fill="#f0f4ff"/>
+  <text x="660" y="193" text-anchor="middle" font-size="16" fill="#2a3a9c" font-family="'Courier New',monospace">[ ]</text>
+  <text x="870" y="190" text-anchor="middle" font-size="12" fill="#333">重なり（同時発話開始・終了）</text>
+  <text x="1070" y="193" text-anchor="middle" font-size="12" fill="#555" font-family="'Courier New',monospace">A:[うん  B:[え</text>
+
+  <!-- Row 2 -->
+  <rect x="600" y="206" width="540" height="36" fill="#ffffff"/>
+  <text x="660" y="229" text-anchor="middle" font-size="16" fill="#2a3a9c" font-family="'Courier New',monospace">(0.8)</text>
+  <text x="870" y="226" text-anchor="middle" font-size="12" fill="#333">沈黙・間（秒数）</text>
+  <text x="1070" y="229" text-anchor="middle" font-size="12" fill="#555" font-family="'Courier New',monospace">（0.8）</text>
+
+  <!-- Row 3 -->
+  <rect x="600" y="242" width="540" height="36" fill="#f0f4ff"/>
+  <text x="660" y="265" text-anchor="middle" font-size="16" fill="#2a3a9c" font-family="'Courier New',monospace">(.)</text>
+  <text x="870" y="262" text-anchor="middle" font-size="12" fill="#333">微少の間（0.2秒未満）</text>
+  <text x="1070" y="265" text-anchor="middle" font-size="12" fill="#555" font-family="'Courier New',monospace">あ（.）うん</text>
+
+  <!-- Row 4 -->
+  <rect x="600" y="278" width="540" height="36" fill="#ffffff"/>
+  <text x="660" y="301" text-anchor="middle" font-size="16" fill="#2a3a9c" font-family="'Courier New',monospace">：：</text>
+  <text x="870" y="298" text-anchor="middle" font-size="12" fill="#333">音の引き伸ばし（コロン数＝長さ）</text>
+  <text x="1070" y="301" text-anchor="middle" font-size="12" fill="#555" font-family="'Courier New',monospace">うー：：ん</text>
+
+  <!-- Row 5 -->
+  <rect x="600" y="314" width="540" height="36" fill="#f0f4ff"/>
+  <text x="660" y="337" text-anchor="middle" font-size="16" fill="#2a3a9c" font-family="'Courier New',monospace">↑ ↓</text>
+  <text x="870" y="334" text-anchor="middle" font-size="12" fill="#333">音調の上昇・下降</text>
+  <text x="1070" y="337" text-anchor="middle" font-size="12" fill="#555" font-family="'Courier New',monospace">↑そうなの↓</text>
+
+  <!-- Row 6 -->
+  <rect x="600" y="350" width="540" height="36" fill="#ffffff"/>
+  <text x="660" y="373" text-anchor="middle" font-size="16" fill="#2a3a9c" font-family="'Courier New',monospace">° °</text>
+  <text x="870" y="370" text-anchor="middle" font-size="12" fill="#333">小声・弱い音量</text>
+  <text x="1070" y="373" text-anchor="middle" font-size="12" fill="#555" font-family="'Courier New',monospace">°ありがとう°</text>
+
+  <!-- Row 7 -->
+  <rect x="600" y="386" width="540" height="36" fill="#f0f4ff"/>
+  <text x="660" y="409" text-anchor="middle" font-size="16" fill="#2a3a9c" font-family="'Courier New',monospace">WORD</text>
+  <text x="870" y="406" text-anchor="middle" font-size="12" fill="#333">強調（大文字表記）</text>
+  <text x="1070" y="409" text-anchor="middle" font-size="12" fill="#555" font-family="'Courier New',monospace">ぜったい NO</text>
+
+  <!-- Row 8 -->
+  <rect x="600" y="422" width="540" height="36" fill="#ffffff"/>
+  <text x="660" y="445" text-anchor="middle" font-size="16" fill="#2a3a9c" font-family="'Courier New',monospace">=</text>
+  <text x="870" y="442" text-anchor="middle" font-size="12" fill="#333">ラッチング（直前と途切れなし）</text>
+  <text x="1070" y="445" text-anchor="middle" font-size="12" fill="#555" font-family="'Courier New',monospace">うん= =そう</text>
+
+  <!-- Row 9 -->
+  <rect x="600" y="458" width="540" height="36" fill="#f0f4ff"/>
+  <text x="660" y="481" text-anchor="middle" font-size="16" fill="#2a3a9c" font-family="'Courier New',monospace">( xxx )</text>
+  <text x="870" y="478" text-anchor="middle" font-size="12" fill="#333">聞き取り不能</text>
+  <text x="1070" y="481" text-anchor="middle" font-size="12" fill="#555" font-family="'Courier New',monospace">（ xxx ）</text>
+
+  <!-- Row 10 -->
+  <rect x="600" y="494" width="540" height="36" fill="#ffffff"/>
+  <text x="660" y="517" text-anchor="middle" font-size="16" fill="#2a3a9c" font-family="'Courier New',monospace">（（ ））</text>
+  <text x="870" y="514" text-anchor="middle" font-size="12" fill="#333">転記者のコメント・非言語情報</text>
+  <text x="1070" y="517" text-anchor="middle" font-size="12" fill="#555" font-family="'Courier New',monospace">（（笑いながら））</text>
+
+  <!-- Row 11 -->
+  <rect x="600" y="530" width="540" height="36" fill="#f0f4ff"/>
+  <text x="660" y="553" text-anchor="middle" font-size="16" fill="#2a3a9c" font-family="'Courier New',monospace">&gt;</text>
+  <text x="870" y="550" text-anchor="middle" font-size="12" fill="#333">話速が速い（&gt; &lt; で囲む）</text>
+  <text x="1070" y="553" text-anchor="middle" font-size="12" fill="#555" font-family="'Courier New',monospace">&gt;はやく&lt;</text>
+
+  <!-- Row 12 -->
+  <rect x="600" y="566" width="540" height="36" fill="#ffffff"/>
+  <text x="660" y="589" text-anchor="middle" font-size="16" fill="#2a3a9c" font-family="'Courier New',monospace">word-</text>
+  <text x="870" y="586" text-anchor="middle" font-size="12" fill="#333">途中で切れた（中断）</text>
+  <text x="1070" y="589" text-anchor="middle" font-size="12" fill="#555" font-family="'Courier New',monospace">そ- そうじゃ</text>
+
+  <!-- Row 13: tip -->
+  <rect x="600" y="602" width="540" height="66" rx="6" fill="#f0f7f0" stroke="#90c4a8"/>
+  <text x="870" y="624" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a5a38">初心者向け：まず使う記号5つ</text>
+  <text x="870" y="644" text-anchor="middle" font-size="13" fill="#2a5a38">[ ] / (秒) / : / ↑↓ / °°</text>
+  <text x="870" y="662" text-anchor="middle" font-size="11" fill="#888">この5つだけで基本的な分析は始められる</text>
+
+  <!-- Bottom footer -->
+  <rect x="0" y="680" width="1200" height="40" fill="#1a3f33"/>
+  <text x="600" y="705" text-anchor="middle" font-size="14" fill="#90c4a8">ジェファーソン記法（Gail Jefferson, 1984）── CAデータの国際標準表記法</text>
 </svg>
-

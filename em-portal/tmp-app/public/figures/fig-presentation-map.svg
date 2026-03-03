@@ -1,43 +1,117 @@
-﻿<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='720' viewBox='0 0 1200 720' role='img' aria-labelledby='t d'>
-  <title id='t'>発表構成マップ</title>
-  <desc id='d'>エスノメソドロジー授業用の図解。</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="t d">
+  <title id="t">発表構成マップ ── ミニ実践計画6要素</title>
+  <desc id="d">EM探究の発表計画に必要な6つの要素を番号付きで示す構成図。</desc>
   <defs>
-    <linearGradient id='g' x1='0' y1='0' x2='1' y2='1'>
-      <stop offset='0%' stop-color='#f0f7ef'/>
-      <stop offset='100%' stop-color='#dfeee7'/>
-    </linearGradient>
-    <marker id='arrow' markerWidth='10' markerHeight='10' refX='8' refY='3' orient='auto'>
-      <path d='M0,0 L0,6 L9,3 z' fill='#1e6a53'/>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Kaku Gothic ProN',Meiryo,sans-serif; }</style>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#555"/>
     </marker>
   </defs>
-  <rect x='0' y='0' width='1200' height='720' fill='url(#g)'/>
-  <rect x='40' y='40' width='1120' height='640' rx='20' fill='#ffffff' stroke='#b9d1c2' stroke-width='2'/>
-  <text x='600' y='95' text-anchor='middle' font-family='Verdana, sans-serif' font-size='42' fill='#1a3f33'>発表構成マップ</text>
 
-  <rect x='90' y='210' width='180' height='90' rx='12' fill='#e8f4ee' stroke='#8fb8a3'/>
-  <text x='180' y='264' text-anchor='middle' font-family='Verdana, sans-serif' font-size='22' fill='#1a3f33'>問い</text>
+  <!-- Background -->
+  <rect width="1200" height="720" fill="#f4f6f3"/>
 
-  <rect x='300' y='210' width='180' height='90' rx='12' fill='#e8f4ee' stroke='#8fb8a3'/>
-  <text x='390' y='264' text-anchor='middle' font-family='Verdana, sans-serif' font-size='22' fill='#1a3f33'>方法</text>
+  <!-- Header -->
+  <rect x="0" y="0" width="1200" height="68" fill="#1a3f33"/>
+  <text x="600" y="28" text-anchor="middle" font-size="24" font-weight="bold" fill="#ffffff">発表構成マップ ── ミニ実践計画の6要素</text>
+  <text x="600" y="54" text-anchor="middle" font-size="15" fill="#90c4a8">結論よりも「6要素が全部埋まっているか」が評価のポイント</text>
 
-  <rect x='510' y='210' width='180' height='90' rx='12' fill='#e8f4ee' stroke='#8fb8a3'/>
-  <text x='600' y='264' text-anchor='middle' font-family='Verdana, sans-serif' font-size='22' fill='#1a3f33'>データ</text>
+  <!-- Central spine -->
+  <line x1="600" y1="90" x2="600" y2="660" stroke="#c0d8c0" stroke-width="2" stroke-dasharray="6,4"/>
 
-  <rect x='720' y='210' width='180' height='90' rx='12' fill='#e8f4ee' stroke='#8fb8a3'/>
-  <text x='810' y='264' text-anchor='middle' font-family='Verdana, sans-serif' font-size='22' fill='#1a3f33'>倫理</text>
+  <!-- Element 1: 問い -->
+  <rect x="40" y="88" width="520" height="96" rx="10" fill="#ffffff" stroke="#3d9970" stroke-width="3"/>
+  <circle cx="78" cy="136" r="24" fill="#3d9970"/>
+  <text x="78" y="144" text-anchor="middle" font-size="22" font-weight="bold" fill="#ffffff">1</text>
+  <text x="120" y="120" font-size="17" font-weight="bold" fill="#1a5a38">問い</text>
+  <text x="120" y="142" font-size="13" fill="#333">観察可能な形で表現する</text>
+  <text x="120" y="160" font-size="12" fill="#888">例:「昼休みの3人グループで、誰がターンを取るかはどう決まるか」</text>
 
-  <rect x='930' y='210' width='180' height='90' rx='12' fill='#e8f4ee' stroke='#8fb8a3'/>
-  <text x='1020' y='264' text-anchor='middle' font-family='Verdana, sans-serif' font-size='22' fill='#1a3f33'>限界</text>
+  <!-- Arrow 1→2 -->
+  <line x1="300" y1="184" x2="300" y2="204" stroke="#3d9970" stroke-width="2" marker-end="url(#arr)"/>
 
-  <line x1='270' y1='255' x2='300' y2='255' stroke='#1e6a53' stroke-width='4' marker-end='url(#arrow)'/>
-  <line x1='480' y1='255' x2='510' y2='255' stroke='#1e6a53' stroke-width='4' marker-end='url(#arrow)'/>
-  <line x1='690' y1='255' x2='720' y2='255' stroke='#1e6a53' stroke-width='4' marker-end='url(#arrow)'/>
-  <line x1='900' y1='255' x2='930' y2='255' stroke='#1e6a53' stroke-width='4' marker-end='url(#arrow)'/>
+  <!-- Element 2: 方法 -->
+  <rect x="40" y="204" width="520" height="96" rx="10" fill="#ffffff" stroke="#4a9970" stroke-width="2"/>
+  <circle cx="78" cy="252" r="24" fill="#4a9970"/>
+  <text x="78" y="260" text-anchor="middle" font-size="22" font-weight="bold" fill="#ffffff">2</text>
+  <text x="120" y="236" font-size="17" font-weight="bold" fill="#1a5a38">方法</text>
+  <text x="120" y="258" font-size="13" fill="#333">使う分析手法を明記する</text>
+  <text x="120" y="276" font-size="12" fill="#888">選択肢: 会話分析（CA）/ MCA / 観察記述 / ブリーチング分析</text>
 
-  <rect x='120' y='390' width='960' height='200' rx='14' fill='#f8fcf9' stroke='#c9ddd1'/>
-  <text x='150' y='445' font-family='Verdana, sans-serif' font-size='24' fill='#264b3f'>授業での使い方</text>
-  <text x='150' y='485' font-family='Verdana, sans-serif' font-size='20' fill='#335f50'>1) 左から順に読みます。</text>
-  <text x='150' y='520' font-family='Verdana, sans-serif' font-size='20' fill='#335f50'>2) 授業の事例と対応づけます。</text>
-  <text x='150' y='555' font-family='Verdana, sans-serif' font-size='20' fill='#335f50'>3) 自分の言葉で流れを説明します。</text>
+  <!-- Arrow 2→3 -->
+  <line x1="300" y1="300" x2="300" y2="320" stroke="#3d9970" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- Element 3: データ範囲 -->
+  <rect x="40" y="320" width="520" height="96" rx="10" fill="#ffffff" stroke="#5aa888" stroke-width="2"/>
+  <circle cx="78" cy="368" r="24" fill="#5aa888"/>
+  <text x="78" y="376" text-anchor="middle" font-size="22" font-weight="bold" fill="#ffffff">3</text>
+  <text x="120" y="352" font-size="17" font-weight="bold" fill="#1a5a38">データ範囲</text>
+  <text x="120" y="374" font-size="13" fill="#333">「いつ・誰の・何分・何回分」を具体的に</text>
+  <text x="120" y="392" font-size="12" fill="#888">例:「○月○日 昼休み 約3分 × 1セッション」</text>
+
+  <!-- Arrow 3→5 (left side continues down) -->
+  <line x1="300" y1="416" x2="300" y2="436" stroke="#999" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- Element 5: 倫理 (bottom-left) -->
+  <rect x="40" y="436" width="520" height="96" rx="10" fill="#ffffff" stroke="#4a7bc4" stroke-width="2"/>
+  <circle cx="78" cy="484" r="24" fill="#4a7bc4"/>
+  <text x="78" y="492" text-anchor="middle" font-size="22" font-weight="bold" fill="#ffffff">5</text>
+  <text x="120" y="468" font-size="17" font-weight="bold" fill="#1a3a8a">倫理</text>
+  <text x="120" y="490" font-size="13" fill="#333">匿名化の方法・同意の有無・公開範囲を明示</text>
+  <text x="120" y="508" font-size="12" fill="#888">例:「Aさんに口頭同意。氏名はA/Bに変換。クラス内発表のみ」</text>
+
+  <!-- Arrow 5→6 -->
+  <line x1="300" y1="532" x2="300" y2="552" stroke="#999" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- Element 6: 限界 (bottom-left) -->
+  <rect x="40" y="552" width="520" height="96" rx="10" fill="#ffffff" stroke="#8e5cb8" stroke-width="2"/>
+  <circle cx="78" cy="600" r="24" fill="#8e5cb8"/>
+  <text x="78" y="608" text-anchor="middle" font-size="22" font-weight="bold" fill="#ffffff">6</text>
+  <text x="120" y="584" font-size="17" font-weight="bold" fill="#4a1a7a">限界</text>
+  <text x="120" y="606" font-size="13" fill="#333">「このデータだけでは分からないこと」を1点以上</text>
+  <text x="120" y="624" font-size="12" fill="#888">例:「1セッションのみなのでパターンの一般化はできない」</text>
+
+  <!-- Right side: Elements 4 + summary -->
+
+  <!-- Element 4: 根拠 (right-top) -->
+  <rect x="640" y="88" width="520" height="240" rx="10" fill="#ffffff" stroke="#e08030" stroke-width="3"/>
+  <circle cx="678" cy="136" r="24" fill="#e08030"/>
+  <text x="678" y="144" text-anchor="middle" font-size="22" font-weight="bold" fill="#ffffff">4</text>
+  <text x="720" y="120" font-size="17" font-weight="bold" fill="#8a4a0a">根拠</text>
+  <text x="720" y="142" font-size="13" fill="#333">「どのデータ行から何を読んだか」行番号で示す</text>
+  <text x="720" y="164" font-size="12" fill="#888">※ 最も見落とされやすい要素！</text>
+
+  <rect x="660" y="175" width="480" height="136" rx="6" fill="#fff8f0" stroke="#e8c090"/>
+  <text x="680" y="198" font-size="13" font-weight="bold" fill="#8a4a0a">OK な書き方：</text>
+  <text x="680" y="218" font-size="13" fill="#333">「03行のAの（0.8）秒の間のあと、Bが修復を</text>
+  <text x="680" y="236" font-size="13" fill="#333">開始している（04行 ↑あ）。これはターン移行</text>
+  <text x="680" y="254" font-size="13" fill="#333">失敗への他者修復開始と解釈できる。」</text>
+  <text x="680" y="280" font-size="12" fill="#c0392b">NG：「なんとなく気まずい感じがした」</text>
+  <text x="680" y="298" font-size="12" fill="#c0392b">NG：「BはAに答えたくなかったと思う」</text>
+
+  <!-- Arrow between 4 and checklist -->
+  <line x1="900" y1="328" x2="900" y2="348" stroke="#555" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Checklist / Summary box -->
+  <rect x="640" y="348" width="520" height="116" rx="10" fill="#1a3f33"/>
+  <text x="900" y="374" text-anchor="middle" font-size="16" font-weight="bold" fill="#90c4a8">提出前チェック</text>
+  <text x="660" y="400" font-size="14" fill="#d4ecd8">□ 1. 問いは「観察可能」か？</text>
+  <text x="660" y="422" font-size="14" fill="#d4ecd8">□ 2–3. 方法・データ範囲は具体的か？</text>
+  <text x="660" y="444" font-size="14" fill="#d4ecd8">□ 4. 行番号つきの根拠があるか？</text>
+
+  <!-- Another checklist row -->
+  <rect x="640" y="476" width="520" height="72" rx="10" fill="#1a3f33" opacity="0.8"/>
+  <text x="660" y="502" font-size="14" fill="#d4ecd8">□ 5. 倫理（匿名・同意・範囲）は明示か？</text>
+  <text x="660" y="524" font-size="14" fill="#d4ecd8">□ 6. 限界を1点以上書いたか？</text>
+
+  <!-- Final call to action -->
+  <rect x="640" y="560" width="520" height="88" rx="10" fill="#e8f8f0" stroke="#3d9970" stroke-width="2"/>
+  <text x="900" y="588" text-anchor="middle" font-size="15" font-weight="bold" fill="#1a5a38">6要素が揃えば発表準備完了</text>
+  <text x="900" y="610" text-anchor="middle" font-size="13" fill="#333">結論の良し悪しより、</text>
+  <text x="900" y="630" text-anchor="middle" font-size="13" fill="#333">「根拠を持って考えた跡」が評価される</text>
+
+  <!-- Bottom footer -->
+  <rect x="0" y="660" width="1200" height="60" fill="#1a3f33"/>
+  <text x="600" y="684" text-anchor="middle" font-size="14" fill="#90c4a8">6要素は「問い → 方法 → データ → 根拠 → 倫理 → 限界」の順で確認する</text>
+  <text x="600" y="706" text-anchor="middle" font-size="12" fill="#668870">サッチマン「計画はリソース」── 完璧な計画より、修正可能な計画を繰り返し使うことが実践</text>
 </svg>
-

@@ -1,43 +1,122 @@
-﻿<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='720' viewBox='0 0 1200 720' role='img' aria-labelledby='t d'>
-  <title id='t'>倫理チェックリスト</title>
-  <desc id='d'>エスノメソドロジー授業用の図解。</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="t d">
+  <title id="t">倫理チェックリスト</title>
+  <desc id="d">EM探究を始める前に確認すべき倫理事項。すること（緑）・してはいけないこと（赤）の2段構成。</desc>
   <defs>
-    <linearGradient id='g' x1='0' y1='0' x2='1' y2='1'>
-      <stop offset='0%' stop-color='#f0f7ef'/>
-      <stop offset='100%' stop-color='#dfeee7'/>
-    </linearGradient>
-    <marker id='arrow' markerWidth='10' markerHeight='10' refX='8' refY='3' orient='auto'>
-      <path d='M0,0 L0,6 L9,3 z' fill='#1e6a53'/>
-    </marker>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Kaku Gothic ProN',Meiryo,sans-serif; }</style>
   </defs>
-  <rect x='0' y='0' width='1200' height='720' fill='url(#g)'/>
-  <rect x='40' y='40' width='1120' height='640' rx='20' fill='#ffffff' stroke='#b9d1c2' stroke-width='2'/>
-  <text x='600' y='95' text-anchor='middle' font-family='Verdana, sans-serif' font-size='42' fill='#1a3f33'>倫理チェックリスト</text>
 
-  <rect x='90' y='210' width='180' height='90' rx='12' fill='#e8f4ee' stroke='#8fb8a3'/>
-  <text x='180' y='264' text-anchor='middle' font-family='Verdana, sans-serif' font-size='22' fill='#1a3f33'>匿名化</text>
+  <!-- Background -->
+  <rect width="1200" height="720" fill="#f4f6f3"/>
 
-  <rect x='300' y='210' width='180' height='90' rx='12' fill='#e8f4ee' stroke='#8fb8a3'/>
-  <text x='390' y='264' text-anchor='middle' font-family='Verdana, sans-serif' font-size='22' fill='#1a3f33'>同意</text>
+  <!-- Header -->
+  <rect x="0" y="0" width="1200" height="68" fill="#1a3f33"/>
+  <text x="600" y="28" text-anchor="middle" font-size="24" font-weight="bold" fill="#ffffff">倫理チェックリスト ── 観察を始める前に</text>
+  <text x="600" y="54" text-anchor="middle" font-size="15" fill="#90c4a8">全項目を確認してから調査を開始すること。1つでも✗があれば計画を見直す。</text>
 
-  <rect x='510' y='210' width='180' height='90' rx='12' fill='#e8f4ee' stroke='#8fb8a3'/>
-  <text x='600' y='264' text-anchor='middle' font-family='Verdana, sans-serif' font-size='22' fill='#1a3f33'>安全</text>
+  <!-- Left column: すること (green) -->
+  <rect x="40" y="84" width="540" height="564" rx="10" fill="#ffffff" stroke="#3d9970" stroke-width="3"/>
+  <rect x="40" y="84" width="540" height="52" rx="10" fill="#3d9970"/>
+  <rect x="40" y="115" width="540" height="21" fill="#3d9970"/>
+  <text x="310" y="118" text-anchor="middle" font-size="22" font-weight="bold" fill="#ffffff">✓ すること（必須）</text>
 
-  <rect x='720' y='210' width='180' height='90' rx='12' fill='#e8f4ee' stroke='#8fb8a3'/>
-  <text x='810' y='264' text-anchor='middle' font-family='Verdana, sans-serif' font-size='22' fill='#1a3f33'>保管</text>
+  <!-- Check items -->
+  <!-- Item 1 -->
+  <rect x="60" y="152" width="500" height="72" rx="8" fill="#f0faf4" stroke="#a8dab8" stroke-width="1.5"/>
+  <circle cx="94" cy="188" r="18" fill="#3d9970"/>
+  <text x="94" y="195" text-anchor="middle" font-size="18" fill="#ffffff" font-weight="bold">✓</text>
+  <text x="124" y="182" font-size="14" font-weight="bold" fill="#1a5a38">観察対象に同意を得る</text>
+  <text x="124" y="200" font-size="12" fill="#555">録音・録画・メモを取る前に、口頭または文書で了解を得る</text>
+  <text x="124" y="216" font-size="11" fill="#888">★ 録音できない場合は観察メモのみで実施</text>
 
-  <rect x='930' y='210' width='180' height='90' rx='12' fill='#e8f4ee' stroke='#8fb8a3'/>
-  <text x='1020' y='264' text-anchor='middle' font-family='Verdana, sans-serif' font-size='22' fill='#1a3f33'>共有ルール</text>
+  <!-- Item 2 -->
+  <rect x="60" y="234" width="500" height="72" rx="8" fill="#f0faf4" stroke="#a8dab8" stroke-width="1.5"/>
+  <circle cx="94" cy="270" r="18" fill="#3d9970"/>
+  <text x="94" y="277" text-anchor="middle" font-size="18" fill="#ffffff" font-weight="bold">✓</text>
+  <text x="124" y="264" font-size="14" font-weight="bold" fill="#1a5a38">氏名・顔・場所を匿名化する</text>
+  <text x="124" y="282" font-size="12" fill="#555">データ中の固有名詞はA/B/Cまたは記号に置換する</text>
+  <text x="124" y="298" font-size="11" fill="#888">★ 発表資料・レポートでも実名・写真を使わない</text>
 
-  <line x1='270' y1='255' x2='300' y2='255' stroke='#1e6a53' stroke-width='4' marker-end='url(#arrow)'/>
-  <line x1='480' y1='255' x2='510' y2='255' stroke='#1e6a53' stroke-width='4' marker-end='url(#arrow)'/>
-  <line x1='690' y1='255' x2='720' y2='255' stroke='#1e6a53' stroke-width='4' marker-end='url(#arrow)'/>
-  <line x1='900' y1='255' x2='930' y2='255' stroke='#1e6a53' stroke-width='4' marker-end='url(#arrow)'/>
+  <!-- Item 3 -->
+  <rect x="60" y="316" width="500" height="72" rx="8" fill="#f0faf4" stroke="#a8dab8" stroke-width="1.5"/>
+  <circle cx="94" cy="352" r="18" fill="#3d9970"/>
+  <text x="94" y="359" text-anchor="middle" font-size="18" fill="#ffffff" font-weight="bold">✓</text>
+  <text x="124" y="346" font-size="14" font-weight="bold" fill="#1a5a38">データは施錠できる場所・端末に保管</text>
+  <text x="124" y="364" font-size="12" fill="#555">音声ファイル・メモは暗号化フォルダまたはパス付きに</text>
+  <text x="124" y="380" font-size="11" fill="#888">★ 授業終了後は速やかに削除または提出</text>
 
-  <rect x='120' y='390' width='960' height='200' rx='14' fill='#f8fcf9' stroke='#c9ddd1'/>
-  <text x='150' y='445' font-family='Verdana, sans-serif' font-size='24' fill='#264b3f'>授業での使い方</text>
-  <text x='150' y='485' font-family='Verdana, sans-serif' font-size='20' fill='#335f50'>1) 左から順に読みます。</text>
-  <text x='150' y='520' font-family='Verdana, sans-serif' font-size='20' fill='#335f50'>2) 授業の事例と対応づけます。</text>
-  <text x='150' y='555' font-family='Verdana, sans-serif' font-size='20' fill='#335f50'>3) 自分の言葉で流れを説明します。</text>
+  <!-- Item 4 -->
+  <rect x="60" y="398" width="500" height="72" rx="8" fill="#f0faf4" stroke="#a8dab8" stroke-width="1.5"/>
+  <circle cx="94" cy="434" r="18" fill="#3d9970"/>
+  <text x="94" y="441" text-anchor="middle" font-size="18" fill="#ffffff" font-weight="bold">✓</text>
+  <text x="124" y="428" font-size="14" font-weight="bold" fill="#1a5a38">共有範囲を事前に明示する</text>
+  <text x="124" y="446" font-size="12" fill="#555">「クラス発表のみ」「先生に提出のみ」など範囲を限定</text>
+  <text x="124" y="462" font-size="11" fill="#888">★ SNS投稿・外部公開は原則禁止</text>
+
+  <!-- Item 5 -->
+  <rect x="60" y="480" width="500" height="72" rx="8" fill="#f0faf4" stroke="#a8dab8" stroke-width="1.5"/>
+  <circle cx="94" cy="516" r="18" fill="#3d9970"/>
+  <text x="94" y="523" text-anchor="middle" font-size="18" fill="#ffffff" font-weight="bold">✓</text>
+  <text x="124" y="510" font-size="14" font-weight="bold" fill="#1a5a38">分析の限界を1点以上書く</text>
+  <text x="124" y="528" font-size="12" fill="#555">「このデータだけでは分からないこと」を明示する</text>
+  <text x="124" y="544" font-size="11" fill="#888">★ 過剰な一般化・断定を避ける</text>
+
+  <rect x="60" y="562" width="500" height="58" rx="8" fill="#e0f4e8"/>
+  <text x="310" y="590" text-anchor="middle" font-size="13" fill="#1a5a38" font-weight="bold">5項目すべて ✓ → 調査開始 OK</text>
+  <text x="310" y="612" text-anchor="middle" font-size="12" fill="#3d9970">不明な点は担当教員に確認してから進める</text>
+
+  <!-- Right column: してはいけないこと (red) -->
+  <rect x="620" y="84" width="540" height="564" rx="10" fill="#ffffff" stroke="#c0392b" stroke-width="3"/>
+  <rect x="620" y="84" width="540" height="52" rx="10" fill="#c0392b"/>
+  <rect x="620" y="115" width="540" height="21" fill="#c0392b"/>
+  <text x="890" y="118" text-anchor="middle" font-size="22" font-weight="bold" fill="#ffffff">✗ してはいけないこと</text>
+
+  <!-- NG items -->
+  <!-- NG 1 -->
+  <rect x="640" y="152" width="500" height="72" rx="8" fill="#fdf0f0" stroke="#e8a0a0" stroke-width="1.5"/>
+  <circle cx="674" cy="188" r="18" fill="#c0392b"/>
+  <text x="674" y="195" text-anchor="middle" font-size="18" fill="#ffffff" font-weight="bold">✗</text>
+  <text x="704" y="182" font-size="14" font-weight="bold" fill="#8a1a1a">同意なしに録音・撮影する</text>
+  <text x="704" y="200" font-size="12" fill="#555">「バレなければいい」は通じない。法的問題になり得る。</text>
+  <text x="704" y="216" font-size="11" fill="#888">→ 代替：観察メモのみで実施する</text>
+
+  <!-- NG 2 -->
+  <rect x="640" y="234" width="500" height="72" rx="8" fill="#fdf0f0" stroke="#e8a0a0" stroke-width="1.5"/>
+  <circle cx="674" cy="270" r="18" fill="#c0392b"/>
+  <text x="674" y="277" text-anchor="middle" font-size="18" fill="#ffffff" font-weight="bold">✗</text>
+  <text x="704" y="264" font-size="14" font-weight="bold" fill="#8a1a1a">実名・顔写真をレポートに載せる</text>
+  <text x="704" y="282" font-size="12" fill="#555">当事者が特定できる情報はすべて削除・置換が必要</text>
+  <text x="704" y="298" font-size="11" fill="#888">→ 代替：A・B・Cなどの記号を使う</text>
+
+  <!-- NG 3 -->
+  <rect x="640" y="316" width="500" height="72" rx="8" fill="#fdf0f0" stroke="#e8a0a0" stroke-width="1.5"/>
+  <circle cx="674" cy="352" r="18" fill="#c0392b"/>
+  <text x="674" y="359" text-anchor="middle" font-size="18" fill="#ffffff" font-weight="bold">✗</text>
+  <text x="704" y="346" font-size="14" font-weight="bold" fill="#8a1a1a">データを無断で第三者に見せる</text>
+  <text x="704" y="364" font-size="12" fill="#555">クラスメートにも、事前に決めた範囲外では共有しない</text>
+  <text x="704" y="380" font-size="11" fill="#888">→ 代替：共有範囲を最初に文書化する</text>
+
+  <!-- NG 4 -->
+  <rect x="640" y="398" width="500" height="72" rx="8" fill="#fdf0f0" stroke="#e8a0a0" stroke-width="1.5"/>
+  <circle cx="674" cy="434" r="18" fill="#c0392b"/>
+  <text x="674" y="441" text-anchor="middle" font-size="18" fill="#ffffff" font-weight="bold">✗</text>
+  <text x="704" y="428" font-size="14" font-weight="bold" fill="#8a1a1a">実際にブリーチング実験を行う</text>
+  <text x="704" y="446" font-size="12" fill="#555">本物の他者を困らせる行為は授業では禁止</text>
+  <text x="704" y="462" font-size="11" fill="#888">→ 代替：模擬データを使って分析のみ行う</text>
+
+  <!-- NG 5 -->
+  <rect x="640" y="480" width="500" height="72" rx="8" fill="#fdf0f0" stroke="#e8a0a0" stroke-width="1.5"/>
+  <circle cx="674" cy="516" r="18" fill="#c0392b"/>
+  <text x="674" y="523" text-anchor="middle" font-size="18" fill="#ffffff" font-weight="bold">✗</text>
+  <text x="704" y="510" font-size="14" font-weight="bold" fill="#8a1a1a">データから過剰な一般化をする</text>
+  <text x="704" y="528" font-size="12" fill="#555">「○○人はいつもこうだ」という断定は根拠不足</text>
+  <text x="704" y="544" font-size="11" fill="#888">→ 代替：「このデータでは〜が見られた」と限定して言う</text>
+
+  <rect x="640" y="562" width="500" height="58" rx="8" fill="#fae0e0"/>
+  <text x="890" y="590" text-anchor="middle" font-size="13" fill="#8a1a1a" font-weight="bold">1つでも該当 → 計画を中止して見直す</text>
+  <text x="890" y="612" text-anchor="middle" font-size="12" fill="#c0392b">不明な場合は「やらない」が正解</text>
+
+  <!-- Bottom footer -->
+  <rect x="0" y="660" width="1200" height="60" fill="#1a3f33"/>
+  <text x="600" y="685" text-anchor="middle" font-size="14" fill="#90c4a8">EM探究の倫理原則：当事者の尊厳を守ること ＞ 研究の面白さ</text>
+  <text x="600" y="706" text-anchor="middle" font-size="12" fill="#668870">疑問点はいつでも担当教員へ。「これは大丈夫？」と聞くことも研究実践の一部です。</text>
 </svg>
-

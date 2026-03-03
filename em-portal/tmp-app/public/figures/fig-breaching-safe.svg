@@ -1,43 +1,117 @@
-﻿<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='720' viewBox='0 0 1200 720' role='img' aria-labelledby='t d'>
-  <title id='t'>安全なブリーチング学習</title>
-  <desc id='d'>エスノメソドロジー授業用の図解。</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="t d">
+  <title id="t">安全なブリーチング学習 ── 判断フローチャート</title>
+  <desc id="d">ブリーチング実験を授業で安全に学ぶための判断フロー。実際に他者を困らせる行為は禁止し、模擬データ分析のみを行う。</desc>
   <defs>
-    <linearGradient id='g' x1='0' y1='0' x2='1' y2='1'>
-      <stop offset='0%' stop-color='#f0f7ef'/>
-      <stop offset='100%' stop-color='#dfeee7'/>
-    </linearGradient>
-    <marker id='arrow' markerWidth='10' markerHeight='10' refX='8' refY='3' orient='auto'>
-      <path d='M0,0 L0,6 L9,3 z' fill='#1e6a53'/>
+    <style>text { font-family: 'Noto Sans JP','Hiragino Kaku Gothic ProN',Meiryo,sans-serif; }</style>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L0,8 L10,4 z" fill="#333"/>
+    </marker>
+    <marker id="arr-g" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L0,8 L10,4 z" fill="#3d9970"/>
+    </marker>
+    <marker id="arr-r" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L0,8 L10,4 z" fill="#c0392b"/>
     </marker>
   </defs>
-  <rect x='0' y='0' width='1200' height='720' fill='url(#g)'/>
-  <rect x='40' y='40' width='1120' height='640' rx='20' fill='#ffffff' stroke='#b9d1c2' stroke-width='2'/>
-  <text x='600' y='95' text-anchor='middle' font-family='Verdana, sans-serif' font-size='42' fill='#1a3f33'>安全なブリーチング学習</text>
 
-  <rect x='90' y='210' width='180' height='90' rx='12' fill='#e8f4ee' stroke='#8fb8a3'/>
-  <text x='180' y='264' text-anchor='middle' font-family='Verdana, sans-serif' font-size='22' fill='#1a3f33'>台本を使う</text>
+  <!-- Background -->
+  <rect width="1200" height="720" fill="#f4f6f3"/>
 
-  <rect x='300' y='210' width='180' height='90' rx='12' fill='#e8f4ee' stroke='#8fb8a3'/>
-  <text x='390' y='264' text-anchor='middle' font-family='Verdana, sans-serif' font-size='22' fill='#1a3f33'>実害を避ける</text>
+  <!-- Header -->
+  <rect x="0" y="0" width="1200" height="68" fill="#1a3f33"/>
+  <text x="600" y="28" text-anchor="middle" font-size="24" font-weight="bold" fill="#ffffff">安全なブリーチング学習 ── 判断フローチャート</text>
+  <text x="600" y="54" text-anchor="middle" font-size="15" fill="#90c4a8">「やってみたい」と思ったらこのフローで確認する。答えは常に「模擬データで分析」。</text>
 
-  <rect x='510' y='210' width='180' height='90' rx='12' fill='#e8f4ee' stroke='#8fb8a3'/>
-  <text x='600' y='264' text-anchor='middle' font-family='Verdana, sans-serif' font-size='22' fill='#1a3f33'>分析する</text>
+  <!-- START: ブリーチングを学ぶ -->
+  <rect x="440" y="84" width="320" height="58" rx="28" fill="#1a3f33" stroke="#3d9970" stroke-width="3"/>
+  <text x="600" y="119" text-anchor="middle" font-size="18" font-weight="bold" fill="#90c4a8">ブリーチングを学ぶ</text>
 
-  <rect x='720' y='210' width='180' height='90' rx='12' fill='#e8f4ee' stroke='#8fb8a3'/>
-  <text x='810' y='264' text-anchor='middle' font-family='Verdana, sans-serif' font-size='22' fill='#1a3f33'>話し合う</text>
+  <!-- Arrow down -->
+  <line x1="600" y1="142" x2="600" y2="172" stroke="#333" stroke-width="2.5" marker-end="url(#arr)"/>
 
-  <rect x='930' y='210' width='180' height='90' rx='12' fill='#e8f4ee' stroke='#8fb8a3'/>
-  <text x='1020' y='264' text-anchor='middle' font-family='Verdana, sans-serif' font-size='22' fill='#1a3f33'>倫理を優先</text>
+  <!-- Decision 1: 実際に他者を困らせる行為？ -->
+  <!-- Diamond shape -->
+  <polygon points="600,172 800,270 600,368 400,270" fill="#fdf4e0" stroke="#e08030" stroke-width="3"/>
+  <text x="600" y="256" text-anchor="middle" font-size="15" font-weight="bold" fill="#8a4a0a">実際に他者を</text>
+  <text x="600" y="278" text-anchor="middle" font-size="15" font-weight="bold" fill="#8a4a0a">困らせる行為か？</text>
+  <text x="600" y="300" text-anchor="middle" font-size="13" fill="#888">（本物の人を巻き込む）</text>
 
-  <line x1='270' y1='255' x2='300' y2='255' stroke='#1e6a53' stroke-width='4' marker-end='url(#arrow)'/>
-  <line x1='480' y1='255' x2='510' y2='255' stroke='#1e6a53' stroke-width='4' marker-end='url(#arrow)'/>
-  <line x1='690' y1='255' x2='720' y2='255' stroke='#1e6a53' stroke-width='4' marker-end='url(#arrow)'/>
-  <line x1='900' y1='255' x2='930' y2='255' stroke='#1e6a53' stroke-width='4' marker-end='url(#arrow)'/>
+  <!-- YES branch (right → STOP) -->
+  <line x1="800" y1="270" x2="930" y2="270" stroke="#c0392b" stroke-width="3" marker-end="url(#arr-r)"/>
+  <text x="865" y="260" text-anchor="middle" font-size="14" font-weight="bold" fill="#c0392b">YES</text>
 
-  <rect x='120' y='390' width='960' height='200' rx='14' fill='#f8fcf9' stroke='#c9ddd1'/>
-  <text x='150' y='445' font-family='Verdana, sans-serif' font-size='24' fill='#264b3f'>授業での使い方</text>
-  <text x='150' y='485' font-family='Verdana, sans-serif' font-size='20' fill='#335f50'>1) 左から順に読みます。</text>
-  <text x='150' y='520' font-family='Verdana, sans-serif' font-size='20' fill='#335f50'>2) 授業の事例と対応づけます。</text>
-  <text x='150' y='555' font-family='Verdana, sans-serif' font-size='20' fill='#335f50'>3) 自分の言葉で流れを説明します。</text>
+  <!-- STOP box -->
+  <rect x="930" y="210" width="220" height="120" rx="12" fill="#c0392b" stroke="#8a1a1a" stroke-width="3"/>
+  <text x="1040" y="248" text-anchor="middle" font-size="36" fill="#ffffff">🚫</text>
+  <text x="1040" y="280" text-anchor="middle" font-size="18" font-weight="bold" fill="#ffffff">禁止</text>
+  <text x="1040" y="302" text-anchor="middle" font-size="13" fill="#ffcccc">計画を中止する</text>
+
+  <!-- Explanation for NO entry -->
+  <rect x="930" y="348" width="220" height="96" rx="8" fill="#fff0f0" stroke="#e8a0a0" stroke-width="1.5"/>
+  <text x="1040" y="374" text-anchor="middle" font-size="13" font-weight="bold" fill="#8a1a1a">なぜ禁止か？</text>
+  <text x="1040" y="396" text-anchor="middle" font-size="12" fill="#555">・当事者に精神的苦痛</text>
+  <text x="1040" y="414" text2="1040" font-size="12" fill="#555">   を与える可能性</text>
+  <text x="950" y="432" font-size="12" fill="#555">・同意なき実験は倫理違反</text>
+
+  <!-- Arrow from STOP: redirect -->
+  <path d="M930,330 Q860,360 800,360" fill="none" stroke="#c0392b" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="860" y="350" text-anchor="middle" font-size="11" fill="#c0392b">→ 代替案へ</text>
+
+  <!-- NO branch (down) -->
+  <line x1="600" y1="368" x2="600" y2="408" stroke="#333" stroke-width="2.5" marker-end="url(#arr)"/>
+  <text x="568" y="394" font-size="14" font-weight="bold" fill="#3d9970">NO</text>
+
+  <!-- Decision 2: 模擬データが用意できるか -->
+  <polygon points="600,408 780,476 600,544 420,476" fill="#e8f8f0" stroke="#3d9970" stroke-width="3"/>
+  <text x="600" y="462" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a5a38">模擬データ・架空場面</text>
+  <text x="600" y="484" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a5a38">が使えるか？</text>
+  <text x="600" y="506" text-anchor="middle" font-size="12" fill="#888">（授業作成 or 文献例）</text>
+
+  <!-- YES branch down → analyze -->
+  <line x1="600" y1="544" x2="600" y2="584" stroke="#3d9970" stroke-width="3" marker-end="url(#arr-g)"/>
+  <text x="568" y="570" font-size="14" font-weight="bold" fill="#3d9970">YES</text>
+
+  <!-- Analysis steps (3 boxes) -->
+  <rect x="100" y="584" width="260" height="84" rx="10" fill="#f0faf4" stroke="#3d9970" stroke-width="2"/>
+  <circle cx="135" cy="610" r="16" fill="#3d9970"/>
+  <text x="135" y="616" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffffff">1</text>
+  <text x="162" y="606" font-size="14" font-weight="bold" fill="#1a5a38">期待を特定</text>
+  <text x="162" y="626" font-size="12" fill="#555">その場の「当然」は何か</text>
+  <text x="162" y="644" font-size="12" fill="#888">を言語化する</text>
+
+  <line x1="360" y1="626" x2="380" y2="626" stroke="#3d9970" stroke-width="2" marker-end="url(#arr-g)"/>
+
+  <rect x="380" y="584" width="260" height="84" rx="10" fill="#f0faf4" stroke="#3d9970" stroke-width="2"/>
+  <circle cx="415" cy="610" r="16" fill="#3d9970"/>
+  <text x="415" y="616" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffffff">2</text>
+  <text x="442" y="606" font-size="14" font-weight="bold" fill="#1a5a38">逸脱を記録</text>
+  <text x="442" y="626" font-size="12" fill="#555">どの行で期待が崩れたか</text>
+  <text x="442" y="644" font-size="12" fill="#888">行番号で指定する</text>
+
+  <line x1="640" y1="626" x2="660" y2="626" stroke="#3d9970" stroke-width="2" marker-end="url(#arr-g)"/>
+
+  <rect x="660" y="584" width="260" height="84" rx="10" fill="#f0faf4" stroke="#3d9970" stroke-width="2"/>
+  <circle cx="695" cy="610" r="16" fill="#3d9970"/>
+  <text x="695" y="616" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffffff">3</text>
+  <text x="722" y="606" font-size="14" font-weight="bold" fill="#1a5a38">反応・回復を読む</text>
+  <text x="722" y="626" font-size="12" fill="#555">困惑・修復要求・</text>
+  <text x="722" y="644" font-size="12" fill="#888">秩序回復の連鎖を追う</text>
+
+  <!-- NO branch from decision 2 (left) -->
+  <line x1="420" y1="476" x2="320" y2="476" stroke="#e08030" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="365" y="466" text-anchor="middle" font-size="14" font-weight="bold" fill="#e08030">NO</text>
+  <rect x="100" y="430" width="220" height="80" rx="8" fill="#fff8f0" stroke="#e8c090" stroke-width="1.5"/>
+  <text x="210" y="458" text-anchor="middle" font-size="13" font-weight="bold" fill="#8a4a0a">教員に相談</text>
+  <text x="210" y="478" text-anchor="middle" font-size="12" fill="#555">模擬シナリオを</text>
+  <text x="210" y="496" text-anchor="middle" font-size="12" fill="#555">一緒に作成する</text>
+
+  <!-- GOAL: OK box -->
+  <rect x="940" y="584" width="220" height="84" rx="12" fill="#3d9970" stroke="#2a7050" stroke-width="3"/>
+  <text x="1050" y="614" text-anchor="middle" font-size="30" fill="#ffffff">✓</text>
+  <text x="1050" y="644" text-anchor="middle" font-size="18" font-weight="bold" fill="#ffffff">分析 OK</text>
+  <line x1="920" y1="626" x2="940" y2="626" stroke="#3d9970" stroke-width="2.5" marker-end="url(#arr-g)"/>
+
+  <!-- Bottom footer -->
+  <rect x="0" y="682" width="1200" height="38" fill="#1a3f33"/>
+  <text x="600" y="707" text-anchor="middle" font-size="14" fill="#90c4a8">ガーフィンケルの研究目的：「当然のこと」を可視化すること ── 実際に困らせることではない</text>
 </svg>
-
