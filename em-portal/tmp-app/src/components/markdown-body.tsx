@@ -95,6 +95,25 @@ function parseCustomBlocks(lines: string[]): ParsedSection[] {
   return result;
 }
 
+function renderInline(text: string): ReactNode {
+  const regex = /(\*\*(.+?)\*\*|\*(.+?)\*|`(.+?)`)/g;
+  const parts: ReactNode[] = [];
+  let last = 0;
+  let key = 0;
+  let match: RegExpExecArray | null;
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > last) parts.push(text.slice(last, match.index));
+    if (match[2] !== undefined) parts.push(<strong key={key++}>{match[2]}</strong>);
+    else if (match[3] !== undefined) parts.push(<em key={key++}>{match[3]}</em>);
+    else if (match[4] !== undefined) parts.push(<code key={key++}>{match[4]}</code>);
+    last = match.index + match[0].length;
+  }
+  if (last < text.length) parts.push(text.slice(last));
+  if (parts.length === 0) return text;
+  if (parts.length === 1 && typeof parts[0] === "string") return parts[0];
+  return <>{parts}</>;
+}
+
 function renderBasicLines(content: string, keyPrefix: string): ReactNode[] {
   const lines = content.split("\n");
   const nodes: ReactNode[] = [];
@@ -135,20 +154,20 @@ function renderBasicLines(content: string, keyPrefix: string): ReactNode[] {
 
     if (trimmed.startsWith("- ")) {
       flushOrdered();
-      listBuffer.push(<li key={`${keyPrefix}-li-${index}`}>{trimmed.slice(2)}</li>);
+      listBuffer.push(<li key={`${keyPrefix}-li-${index}`}>{renderInline(trimmed.slice(2))}</li>);
       return;
     }
 
     const orderedMatch = trimmed.match(/^\d+\.\s+(.+)$/);
     if (orderedMatch) {
       flushUnordered();
-      orderedListBuffer.push(<li key={`${keyPrefix}-oli-${index}`}>{orderedMatch[1]}</li>);
+      orderedListBuffer.push(<li key={`${keyPrefix}-oli-${index}`}>{renderInline(orderedMatch[1])}</li>);
       return;
     }
 
     flushUnordered();
     flushOrdered();
-    nodes.push(<p key={`${keyPrefix}-p-${index}`}>{trimmed}</p>);
+    nodes.push(<p key={`${keyPrefix}-p-${index}`}>{renderInline(trimmed)}</p>);
   });
 
   flushUnordered();
@@ -211,12 +230,12 @@ function renderLine(line: string, index: number): ReactNode {
   const trimmed = line.trim();
   if (!trimmed) return <br key={`br-${index}`} />;
 
-  if (trimmed.startsWith("### ")) return <h3 key={index}>{trimmed.slice(4)}</h3>;
+  if (trimmed.startsWith("### ")) return <h3 key={index}>{renderInline(trimmed.slice(4))}</h3>;
   if (trimmed.startsWith("## ")) {
     const text = trimmed.slice(3).trim();
-    return <h2 key={index} id={slugifyHeading(text)}>{text}</h2>;
+    return <h2 key={index} id={slugifyHeading(text)}>{renderInline(text)}</h2>;
   }
-  if (trimmed.startsWith("# ")) return <h1 key={index}>{trimmed.slice(2)}</h1>;
+  if (trimmed.startsWith("# ")) return <h1 key={index}>{renderInline(trimmed.slice(2))}</h1>;
 
   const ytId = getYoutubeId(trimmed);
   if (ytId) {
@@ -255,7 +274,7 @@ function renderLine(line: string, index: number): ReactNode {
   }
 
   if (/^\d+\)\s+/.test(trimmed)) {
-    return <p key={index} className="step-line">{trimmed}</p>;
+    return <p key={index} className="step-line">{renderInline(trimmed)}</p>;
   }
 
   if (trimmed.includes(":") && trimmed.length < 56) {
@@ -264,13 +283,13 @@ function renderLine(line: string, index: number): ReactNode {
       return (
         <p key={index}>
           <strong>{head}:</strong>
-          {rest.join(":")}
+          {renderInline(rest.join(":"))}
         </p>
       );
     }
   }
 
-  return <p key={index}>{trimmed}</p>;
+  return <p key={index}>{renderInline(trimmed)}</p>;
 }
 
 export function MarkdownBody({ body }: { body: string }) {
@@ -301,7 +320,7 @@ export function MarkdownBody({ body }: { body: string }) {
 
     const trimmed = section.text.trim();
     if (trimmed.startsWith("- ")) {
-      listBuffer.push(<li key={`li-${index}`}>{trimmed.slice(2)}</li>);
+      listBuffer.push(<li key={`li-${index}`}>{renderInline(trimmed.slice(2))}</li>);
       return;
     }
 
