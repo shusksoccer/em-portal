@@ -230,6 +230,18 @@ function renderLine(line: string, index: number): ReactNode {
   const trimmed = line.trim();
   if (!trimmed) return <br key={`br-${index}`} />;
 
+  if (trimmed === "---" || trimmed === "***" || trimmed === "___") {
+    return <hr key={`hr-${index}`} />;
+  }
+
+  if (trimmed.startsWith("> ")) {
+    return (
+      <blockquote key={`bq-${index}`} className="prose-blockquote">
+        {renderInline(trimmed.slice(2))}
+      </blockquote>
+    );
+  }
+
   if (trimmed.startsWith("### ")) return <h3 key={index}>{renderInline(trimmed.slice(4))}</h3>;
   if (trimmed.startsWith("## ")) {
     const text = trimmed.slice(3).trim();
@@ -273,22 +285,6 @@ function renderLine(line: string, index: number): ReactNode {
     );
   }
 
-  if (/^\d+\)\s+/.test(trimmed)) {
-    return <p key={index} className="step-line">{renderInline(trimmed)}</p>;
-  }
-
-  if (trimmed.includes(":") && trimmed.length < 56) {
-    const [head, ...rest] = trimmed.split(":");
-    if (rest.length > 0) {
-      return (
-        <p key={index}>
-          <strong>{head}:</strong>
-          {renderInline(rest.join(":"))}
-        </p>
-      );
-    }
-  }
-
   return <p key={index}>{renderInline(trimmed)}</p>;
 }
 
@@ -299,6 +295,10 @@ export function MarkdownBody({ body }: { body: string }) {
   const nodes: ReactNode[] = [];
   let listBuffer: ReactNode[] = [];
   let listKey = 0;
+  let nodeKey = 0;
+  let inCodeBlock = false;
+  let codeLines: string[] = [];
+  let tableRows: string[][] = [];
 
   const flushList = () => {
     if (listBuffer.length) {
@@ -311,23 +311,104 @@ export function MarkdownBody({ body }: { body: string }) {
     }
   };
 
+  const flushTable = () => {
+    if (!tableRows.length) return;
+    const dataRows = tableRows.filter(
+      (row) => !row.every((cell) => /^[-: ]+$/.test(cell)),
+    );
+    if (dataRows.length) {
+      const [header, ...body] = dataRows;
+      nodes.push(
+        <div key={`tbl-${nodeKey++}`} style={{ overflowX: "auto", margin: "0.8rem 0" }}>
+          <table className="prose-table">
+            <thead>
+              <tr>{header.map((cell, i) => <th key={i}>{renderInline(cell.trim())}</th>)}</tr>
+            </thead>
+            <tbody>
+              {body.map((row, ri) => (
+                <tr key={ri}>{row.map((cell, ci) => <td key={ci}>{renderInline(cell.trim())}</td>)}</tr>
+              ))}
+            </tbody>
+          </table>
+        </div>,
+      );
+    }
+    tableRows = [];
+  };
+
   sections.forEach((section, index) => {
     if (section.type === "custom-block") {
       flushList();
+      flushTable();
       nodes.push(renderCustomBlock(section, index));
       return;
     }
 
-    const trimmed = section.text.trim();
+    const raw = section.text;
+    const trimmed = raw.trim();
+
+    // Fenced code block
+    if (trimmed.startsWith("```")) {
+      if (!inCodeBlock) {
+        flushList();
+        flushTable();
+        inCodeBlock = true;
+        codeLines = [];
+      } else {
+        inCodeBlock = false;
+        nodes.push(
+          <pre key={`pre-${nodeKey++}`} className="code-block">
+            <code>{codeLines.join("\n")}</code>
+          </pre>,
+        );
+        codeLines = [];
+      }
+      return;
+    }
+    if (inCodeBlock) {
+      codeLines.push(raw);
+      return;
+    }
+
+    // Table
+    if (trimmed.startsWith("|") && trimmed.endsWith("|")) {
+      flushList();
+      tableRows.push(trimmed.slice(1, -1).split("|"));
+      return;
+    }
+    flushTable();
+
+    // Checkbox list
+    if (/^- \[[ xX]\] /.test(trimmed)) {
+      const checked = trimmed[3] !== " ";
+      listBuffer.push(
+        <li key={`li-${index}`} style={{ listStyle: "none", display: "flex", gap: "0.4rem", alignItems: "flex-start" }}>
+          <input type="checkbox" disabled checked={checked} style={{ marginTop: "0.25rem", flexShrink: 0 }} />
+          <span>{renderInline(trimmed.slice(6))}</span>
+        </li>,
+      );
+      return;
+    }
+
+    // Regular list
     if (trimmed.startsWith("- ")) {
       listBuffer.push(<li key={`li-${index}`}>{renderInline(trimmed.slice(2))}</li>);
       return;
     }
 
     flushList();
-    nodes.push(renderLine(section.text, index));
+    nodes.push(renderLine(raw, index));
   });
+
   flushList();
+  flushTable();
+  if (inCodeBlock && codeLines.length) {
+    nodes.push(
+      <pre key="pre-end" className="code-block">
+        <code>{codeLines.join("\n")}</code>
+      </pre>,
+    );
+  }
 
   return (
     <div className="prose">
