@@ -69,7 +69,14 @@ tags: ["ai-collect","inbox"]
 sources: []
 status: "inbox"
 source_url: ""
-updated_at: "2026-02-22"
+source_type: "secondary"
+primary_source_url: ""
+published_at: ""
+checked_at: "YYYY-MM-DD"
+verification_status: "needs_review"
+refresh_after_days: 30
+refresh_due: "YYYY-MM-DD"
+updated_at: "YYYY-MM-DD"
 ai_summary: ""
 ai_confidence: "medium"
 ---
@@ -86,13 +93,19 @@ ai_confidence: "medium"
 ## 2. Fact notes (traceable to source)
 - 
 
-## 3. Terms to extract (glossary candidates)
+## 3. Accuracy check
+- Primary source URL:
+- Published/updated date:
+- Last checked date:
+- Number/name/date consistency check:
+
+## 4. Terms to extract (glossary candidates)
 - 
 
-## 4. Reuse ideas (lesson / worksheet / figure)
+## 5. Reuse ideas (lesson / worksheet / figure)
 - 
 
-## 5. Human review
+## 6. Human review
 - Misreadings:
 - Tone / wording:
 - Publish decision:
@@ -141,8 +154,10 @@ Turn the input material into an Obsidian Markdown note.
 Requirements:
 - Preserve or complete frontmatter
 - Do not break slug/title/tags/sources fields
+- Prefer primary or official sources when available
 - Separate facts from inferences
 - Mark uncertain parts as 要確認
+- Add/maintain: source_type, primary_source_url, published_at, checked_at, verification_status
 - Fill sections for summary, fact notes, glossary candidates, and reuse ideas
 
 Output:
@@ -159,7 +174,28 @@ Edit the Markdown note and improve readability.
 Constraints:
 - Keep frontmatter keys unchanged
 - Keep tags and sources as arrays
+- Prefer primary or official sources if source links are revised
+- Do not fabricate URLs, dates, names, or quotes
 - Mark unsupported claims as 要確認
+- Return Markdown only
+'@
+  },
+  @{
+    Path = Join-Path $projectRoot "_ai\prompts\in\knowledge-enrichment.md"
+    Body = @'
+# Prompt: Knowledge Enrichment
+
+Enrich the note for ethnomethodology understanding and teaching use.
+
+Requirements:
+- Preserve frontmatter keys and existing slug/title/tags/sources arrays
+- Do not fabricate URLs, dates, names, figures, or quotes
+- Improve conceptual coverage (definitions, contrasts, misconceptions)
+- Add classroom-ready examples where helpful
+- Keep uncertain points marked as 要確認
+- Keep Japanese wording clear for high-school level explanations
+
+Output:
 - Return Markdown only
 '@
   },
@@ -198,5 +234,5 @@ Write-Host "AI workspace setup complete."
 Write-Host "Next:"
 Write-Host "  1) Run ops\\New-ObsidianResearchNote.ps1 to create a collection note"
 Write-Host "  2) Run ops\\Build-AIEditPrompt.ps1 to generate an edit prompt"
-Write-Host "  3) Edit in Obsidian, then publish with the existing bat file"
-
+Write-Host "  3) Run ops\\Build-AIKnowledgePrompt.ps1 to enrich EM learning content"
+Write-Host "  4) Edit in Obsidian, then publish with the existing bat file"

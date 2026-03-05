@@ -84,6 +84,7 @@ export function getCollection(kind: ContentKind): ContentDoc[] {
   const entries = fs.readdirSync(dir, { withFileTypes: true });
   const docs = entries
     .filter((entry) => entry.isFile() && entry.name.endsWith(".md"))
+    .filter((entry) => !(kind === "lessons" && entry.name.toLowerCase() === "template.md"))
     .map((entry) => {
       const fullPath = path.join(dir, entry.name);
       const raw = fs.readFileSync(fullPath, "utf-8");
@@ -104,6 +105,12 @@ export function getCollection(kind: ContentKind): ContentDoc[] {
     });
   if (kind === "lessons") {
     docs.sort((a, b) => Number(a.lesson_no ?? 0) - Number(b.lesson_no ?? 0));
+  } else if (kind === "library") {
+    docs.sort((a, b) => {
+      const orderDiff = Number(a.recommended_order ?? 9999) - Number(b.recommended_order ?? 9999);
+      if (orderDiff !== 0) return orderDiff;
+      return a.title.localeCompare(b.title, "ja");
+    });
   } else {
     docs.sort((a, b) => a.title.localeCompare(b.title, "ja"));
   }

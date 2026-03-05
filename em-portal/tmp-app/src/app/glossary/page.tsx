@@ -5,6 +5,7 @@ const glossaryCycleGroups = [
   {
     label: "観察するときの用語",
     sub: "L1–L2: フィールドに出る前に押さえる基本概念",
+    phase: "understand" as const,
     slugs: [
       "accountability",
       "indexicality",
@@ -24,6 +25,7 @@ const glossaryCycleGroups = [
   {
     label: "記述・分析するときの用語",
     sub: "L3–L5: 転記・会話分析・ブリーチング実験で使う概念",
+    phase: "practice" as const,
     slugs: [
       "transcript",
       "sequence",
@@ -43,9 +45,16 @@ const glossaryCycleGroups = [
   {
     label: "まとめる・発表するときの用語",
     sub: "L6: 分析結果を整理し、他者に伝えるための概念",
+    phase: "apply" as const,
     slugs: ["presentation", "validity", "inference", "topic-management"],
   },
 ] as const;
+
+const phaseLabel = {
+  understand: "観察する",
+  practice:   "記述・分析する",
+  apply:      "まとめる",
+} as const;
 
 export default function GlossaryPage() {
   const glossary = getCollection("glossary");
@@ -60,13 +69,16 @@ export default function GlossaryPage() {
       </div>
 
       <div style={{ display: "grid", gap: "1.5rem", marginTop: "1.2rem" }}>
-        {glossaryCycleGroups.map(({ label, sub, slugs }) => {
+        {glossaryCycleGroups.map(({ label, sub, phase, slugs }) => {
           const groupTerms = glossary.filter((g) => slugs.includes(g.slug as never));
           if (groupTerms.length === 0) return null;
 
           return (
             <section key={label} className="reveal">
-              <h2 style={{ fontSize: "1rem", fontWeight: 700, marginBottom: "0.2rem" }}>{label}</h2>
+              <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.2rem" }}>
+                <h2 style={{ fontSize: "1rem", fontWeight: 700, margin: 0 }}>{label}</h2>
+                <span className={`phase-badge phase-${phase}`} style={{ fontSize: "0.72rem" }}>{phaseLabel[phase]}</span>
+              </div>
               <p className="meta" style={{ margin: "0 0 0.6rem" }}>{sub}</p>
               <div className="grid">
                 {groupTerms.map((term) => (

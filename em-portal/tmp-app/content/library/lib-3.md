@@ -1,4 +1,4 @@
-﻿---
+---
 slug: "lib-3"
 title: "Schegloff (2000) Overlapping Talk"
 tags: ["会話分析","重なり","文献"]
@@ -8,6 +8,11 @@ author: "Emanuel A. Schegloff"
 year: 2000
 difficulty: "高"
 use_case: "重なり発話の見方を深める"
+learning_stage: "練習"
+learning_role: "発展読解"
+audience: "teacher"
+recommended_order: 50
+content_track: "supplement"
 url: "https://www.conversationanalysis.org/schegloff-media-archive/overlapping-talk-and-the-organization-of-turntaking-for-conversation-2000/"
 ---
 

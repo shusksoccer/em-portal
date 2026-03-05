@@ -8,6 +8,11 @@ author: "Harold Garfinkel"
 year: 1967
 difficulty: "中"
 use_case: "EMの導入と基礎概念の確認"
+learning_stage: "理解"
+learning_role: "基礎概念"
+audience: "teacher"
+recommended_order: 10
+content_track: "core"
 url: "https://www.wiley-vch.de/en/areas-interest/humanities-social-sciences/studies-in-ethnomethodology-978-0-7456-0005-5"
 ---
 

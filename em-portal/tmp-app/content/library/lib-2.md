@@ -1,4 +1,4 @@
-﻿---
+---
 slug: "lib-2"
 title: "Sacks, Schegloff, Jefferson (1974) Turn-taking"
 tags: ["会話分析","順番取り","文献"]
@@ -8,6 +8,11 @@ author: "Harvey Sacks, Emanuel Schegloff, Gail Jefferson"
 year: 1974
 difficulty: "中"
 use_case: "会話分析の核概念を学ぶ"
+learning_stage: "練習"
+learning_role: "会話分析基礎"
+audience: "teacher"
+recommended_order: 30
+content_track: "core"
 url: "https://www.conversationanalysis.org/schegloff-media-archive/simplest-systematics-for-turn-taking-language-1974/"
 ---
 

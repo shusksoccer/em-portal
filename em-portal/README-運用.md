@@ -94,6 +94,21 @@ powershell -ExecutionPolicy Bypass -File .\ops\Build-AIEditPrompt.ps1 `
 
 このファイルをAIへ渡し、返ってきたMarkdownをObsidianノートに反映します。
 
+## AIで知識を充実させる（EM理解重視）
+既存ノートの内容を、授業で使える形に深めたい場合:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\ops\Build-AIKnowledgePrompt.ps1 `
+  -Kind library `
+  -Slug lib-1
+```
+
+ポイント:
+- 既存frontmatterは保持
+- EM概念の整理（定義・違い・誤解しやすい点）を強化
+- 授業で使える具体例に落とし込む
+- 不明点は断定せず `要確認` を残す
+
 ## 普段の流れ
 1. Obsidian で内容を編集
 2. `em-portal/更新して公開する.bat` をダブルクリック
@@ -107,15 +122,30 @@ powershell -ExecutionPolicy Bypass -File .\ops\Build-AIEditPrompt.ps1 `
 - サイト作成テスト
 - GitHubへ送信
 - Vercel 自動更新（連携済みの場合）
+- 完了通知（音 + 音声） ※ `ops/Notify-TaskDone.ps1`
+
+## 完了通知だけ鳴らしたいとき
+手動でも実行できます。
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\ops\Notify-TaskDone.ps1 -Message "作業完了です"
+```
+
+音だけ不要なら:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\ops\Notify-TaskDone.ps1 -Silent
+```
 
 ## AI運用のおすすめ流れ（最小）
 1. `New-ObsidianResearchNote.ps1` で `library` ノートを作る
 2. 情報源URL・メモを貼る
-3. `Build-AIEditPrompt.ps1` でプロンプト生成
-4. AIで整理（frontmatter維持）
-5. Obsidianで人間レビュー（要確認の潰し込み）
-6. 必要に応じて `glossary` / `figures` / `lessons` に転記
-7. `更新して公開する.bat` で公開更新
+3. 追記や整理は `Build-AIEditPrompt.ps1` でプロンプト生成
+4. 知識を深めるときは `Build-AIKnowledgePrompt.ps1` を使う
+5. AIで整理（frontmatter維持）
+6. Obsidianで人間レビュー（要確認の潰し込み）
+7. 必要に応じて `glossary` / `figures` / `lessons` に転記
+8. `更新して公開する.bat` で公開更新
 
 ## 作業が落ちても再開しやすくする記録場所
 - `WORKLOG/CURRENT_TASK.md`: 今回の目的・現在地・次回再開ポイント

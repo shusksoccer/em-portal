@@ -24,8 +24,8 @@
 - [x] REDESIGN Phase 1（見た目の土台）実装
 - [x] REDESIGN Phase 3（Markdown `:::block` + TEMPLATE）実装
 - [x] REDESIGN 追加改善 A-D 実装（カード識別 / 用語バックリンク / ToC / library主フィルタ）
-- [ ] REDESIGN Phase 2（授業・用語の本文拡充）をコンテンツへ反映
-- [ ] 追加改善E（グローバルナビのステージ優先化）実施可否を決定
+- [x] REDESIGN Phase 2（授業・用語の本文拡充）をコンテンツへ反映
+- [x] 追加改善E（グローバルナビのステージ優先化）実施可否を決定・実装
 
 ## Scope Guard（今回触る範囲）
 - `tmp-app/content/*`

@@ -6,6 +6,7 @@
 - 作業開始時: `CURRENT_TASK.md` の内容を更新
 - 節目ごと: `SESSION_LOG.md` に 1〜3 行追記
 - 作業終了時: `CURRENT_TASK.md` の `Next Resume Point` を更新
+- 大きな再構成作業時: `RESTRUCTURE_PLAN.md` のフェーズと完了条件に従う
 
 ## ルール
 - ここは「復旧しやすさ」優先で、短く具体的に書く

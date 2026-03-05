@@ -2,8 +2,8 @@
 title: "研究テーマが広すぎるときは?"
 slug: "faq-6"
 tags: ["FAQ","基礎"]
-sources: ["src-em-intro","src-class-ethics"]
-status: "reviewed"
+sources: ["britannica-em","wiley-sem"]
+status: "published"
 ---
 ## 回答（短く）
 - 場面・時間・参加者を絞ってください。広い問いは検証不能になりやすいです。

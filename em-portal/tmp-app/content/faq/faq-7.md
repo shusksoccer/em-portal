@@ -2,7 +2,7 @@
 title: "結論が出ない場合は失敗ですか?"
 slug: "faq-7"
 tags: ["FAQ","基礎"]
-sources: ["src-em-intro","src-class-ethics"]
+sources: ["britannica-em","wiley-sem"]
 status: "published"
 ---
 ## 回答（短く）

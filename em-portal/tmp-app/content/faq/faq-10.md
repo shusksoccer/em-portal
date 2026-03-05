@@ -2,8 +2,8 @@
 title: "発表で重視される点は何ですか?"
 slug: "faq-10"
 tags: ["FAQ","基礎"]
-sources: ["src-em-intro","src-class-ethics"]
-status: "reviewed"
+sources: ["britannica-em","wiley-sem"]
+status: "published"
 ---
 ## 回答（短く）
 - 問いの明確さ、方法の妥当性、根拠、倫理、限界説明の5点を重視します。

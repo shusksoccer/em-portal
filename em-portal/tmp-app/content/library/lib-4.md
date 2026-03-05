@@ -1,4 +1,4 @@
-﻿---
+---
 slug: "lib-4"
 title: "Britannica: Ethnomethodology (overview)"
 tags: ["基礎","文献","概要"]
@@ -8,6 +8,11 @@ author: "Encyclopaedia Britannica"
 year: 2026
 difficulty: "易"
 use_case: "導入説明の確認"
+learning_stage: "理解"
+learning_role: "導入概要"
+audience: "teacher"
+recommended_order: 20
+content_track: "core"
 url: "https://www.britannica.com/topic/ethnomethodology"
 ---
 

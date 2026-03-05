@@ -39,7 +39,7 @@ if ([string]::IsNullOrWhiteSpace($OutputPath)) {
     New-Item -ItemType Directory -Path $outDir -Force | Out-Null
   }
   $timestamp = Get-Date -Format "yyyyMMdd-HHmmss"
-  $OutputPath = Join-Path $outDir "$timestamp-$noteName-edit-prompt.md"
+  $OutputPath = Join-Path $outDir "$timestamp-$noteName-knowledge-prompt.md"
 } else {
   $OutputPath = Resolve-PathSafe -BaseDir $portalRoot -PathValue $OutputPath
   $parent = Split-Path -Parent $OutputPath
@@ -50,25 +50,28 @@ if ([string]::IsNullOrWhiteSpace($OutputPath)) {
 
 $codeFence = '```'
 $parts = @(
-  "# AI Edit Prompt for $noteName",
+  "# AI Knowledge Enrichment Prompt for $noteName",
   "",
-  "Edit the following Markdown note for clarity, structure, and factual reliability.",
+  "Enrich this note for ethnomethodology learning depth.",
   "",
   "Goals:",
-  "- Improve readability and organization",
-  "- Keep claims traceable to sources (prefer primary/official sources when available)",
-  "- Separate facts, inferences, and TODO checks",
-  "- Keep it reusable for future portal content",
+  "- Strengthen EM concepts and distinctions in plain Japanese",
+  "- Add concrete classroom-friendly examples",
+  "- Clarify what students often misunderstand",
+  "- Keep direct reuse paths to lesson/worksheet/glossary/faq",
   "",
   "Constraints:",
-  "- Do not rename frontmatter keys",
-  "- Do not remove slug, title, tags, or sources",
-  "- Keep tags and sources as arrays",
-  "- Do not invent citations, dates, or URLs",
-  "- Mark unsupported or outdated claims as TODO-CHECK",
-  "- If factual freshness is unclear, add 要確認 with suggested check target",
-  "- Preserve existing language style unless clarity requires minor rewrite",
-  "- Return Markdown only (no extra explanation)",
+  "- Preserve frontmatter keys and existing slug/title/tags/sources arrays",
+  "- Do not invent citations, URLs, dates, names, or quotations",
+  "- Separate facts and interpretations; mark uncertain parts as 要確認",
+  "- Keep tone suitable for high-school learning support",
+  "- Return Markdown only",
+  "",
+  "Suggested output additions:",
+  "- 1) 核となる概念（3-5点）",
+  "- 2) まちがえやすい点",
+  "- 3) 授業で使える具体例",
+  "- 4) どのlesson/worksheetに繋げるか",
   "",
   "Input note:",
   "",
@@ -80,4 +83,5 @@ $parts = @(
 
 $prompt = $parts -join [Environment]::NewLine
 Set-Content -LiteralPath $OutputPath -Value $prompt -Encoding UTF8
-Write-Host "Prompt generated: $OutputPath"
+Write-Host "Knowledge prompt generated: $OutputPath"
+

@@ -1,4 +1,4 @@
-﻿---
+---
 slug: "lib-5"
 title: "TalkResearch transcription resources"
 tags: ["転写","方法","会話分析"]
@@ -8,6 +8,11 @@ author: "TalkResearch / TalkBank"
 year: 2026
 difficulty: "易"
 use_case: "転写記号と記録方法の導入"
+learning_stage: "練習"
+learning_role: "転写実践"
+audience: "teacher"
+recommended_order: 40
+content_track: "core"
 url: "https://www.talkresearch.org/transcription-resources"
 ---
 

@@ -3,7 +3,7 @@ slug: "faq-3"
 title: "会話分析では何を数えればよいですか？"
 tags: ["FAQ","会話分析","記述"]
 sources: ["isca-turntaking-1974","isca-overlap-2000"]
-status: "reviewed"
+status: "published"
 ---
 
 ## 回答（短く）

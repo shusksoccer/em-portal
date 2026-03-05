@@ -78,6 +78,14 @@ function Run-Step {
   & $Script
 }
 
+function Notify-Complete {
+  param([string]$Message)
+  $notifyScript = Join-Path $opsDir "Notify-TaskDone.ps1"
+  if (Test-Path -LiteralPath $notifyScript) {
+    & powershell -ExecutionPolicy Bypass -File $notifyScript -Message $Message
+  }
+}
+
 $opsDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $portalRoot = Split-Path -Parent $opsDir
 $config = Load-Config -OpsDir $opsDir -PortalRoot $portalRoot
@@ -146,6 +154,7 @@ Run-Step "Prepare git changes" {
 if (-not $HasChanges) {
   Write-Host ""
   Write-Host "Done (no changes)."
+  Notify-Complete -Message "更新対象はありませんでした。"
   exit 0
 }
 
@@ -163,6 +172,7 @@ Run-Step "Commit" {
 if ($SkipPush) {
   Write-Host ""
   Write-Host "Done (push skipped)."
+  Notify-Complete -Message "更新は完了しました。Pushはスキップしました。"
   exit 0
 }
 
@@ -173,3 +183,4 @@ Run-Step "Push" {
 
 Write-Host ""
 Write-Host "Done. GitHub push completed. Vercel will auto-deploy if linked."
+Notify-Complete -Message "公開フローが完了しました。"

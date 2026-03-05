@@ -2,7 +2,7 @@
 title: "データはどれくらい必要ですか?"
 slug: "faq-9"
 tags: ["FAQ","基礎"]
-sources: ["src-em-intro","src-class-ethics"]
+sources: ["britannica-em","wiley-sem"]
 status: "published"
 ---
 ## 回答（短く）

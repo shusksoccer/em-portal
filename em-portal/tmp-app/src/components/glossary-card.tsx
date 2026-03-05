@@ -8,7 +8,15 @@ type Props = {
 
 export function GlossaryCard({ doc, href }: Props) {
   const excerpt = doc.body
-    ? doc.body.replace(/^#+.*$/gm, "").trim().slice(0, 120)
+    ? doc.body
+        .replace(/^#+.*$/gm, "")
+        .replace(/\|.*\|/gm, "")
+        .replace(/\*\*(.+?)\*\*/g, "$1")
+        .replace(/\*(.+?)\*/g, "$1")
+        .replace(/^\s*[-*+]\s+/gm, "")
+        .replace(/\s+/g, " ")
+        .trim()
+        .slice(0, 120)
     : "";
 
   return (

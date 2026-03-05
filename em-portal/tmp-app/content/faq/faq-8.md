@@ -2,7 +2,7 @@
 title: "引用と盗用の違いは何ですか?"
 slug: "faq-8"
 tags: ["FAQ","基礎"]
-sources: ["src-em-intro","src-class-ethics"]
+sources: ["britannica-em","wiley-sem"]
 status: "published"
 ---
 ## 回答（短く）
