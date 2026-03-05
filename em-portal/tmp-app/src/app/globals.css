@@ -1359,6 +1359,63 @@ input:focus-visible {
   margin-top: 0.1rem;
 }
 
+/* ── レッスン下部ナビ ────────────────────────── */
+.lesson-footer-nav {
+  padding: 1.2rem 1.4rem;
+}
+
+.lesson-footer-nav-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin: 0 0 0.45rem;
+}
+
+.lesson-footer-nav-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.btn-worksheet {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1.1rem;
+  background: #e8f5f0;
+  border: 2px solid #2f7b6d;
+  border-radius: 10px;
+  color: #1a5c52;
+  font-weight: 600;
+  font-size: 0.92rem;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+.btn-worksheet:hover {
+  background: #d0ede5;
+}
+
+.btn-next-lesson {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.4rem;
+  background: linear-gradient(135deg, #0f6a67, #1a8a7a);
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+.btn-next-lesson:hover {
+  background: linear-gradient(135deg, #0c5855, #157a6c);
+}
+
 .lesson-nav-bar {
   display: flex;
   flex-wrap: wrap;

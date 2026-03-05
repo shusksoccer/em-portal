@@ -31,14 +31,13 @@ const phaseLabel = {
 // ── ツールキット：フロントマターから構築 ──────────
 type QuickLink = { href: string; label: string; kind: string };
 
-function buildQuickLinks(lesson: ContentDoc): QuickLink[] {
+function buildToolkitLinks(lesson: ContentDoc): QuickLink[] {
   const toSlugs = (field: unknown): string[] =>
     Array.isArray(field) ? (field as string[]) : [];
 
-  const glossaryDocs  = getCollection("glossary");
-  const figuresDocs   = getCollection("figures");
-  const worksheetDocs = getCollection("worksheets");
-  const peopleDocs    = getCollection("people");
+  const glossaryDocs = getCollection("glossary");
+  const figuresDocs  = getCollection("figures");
+  const peopleDocs   = getCollection("people");
 
   const resolve = (
     slugs: string[],
@@ -53,12 +52,22 @@ function buildQuickLinks(lesson: ContentDoc): QuickLink[] {
     }));
 
   return [
-    ...resolve(toSlugs(lesson.toolkit_figures),    "図解",  "/figures",    figuresDocs),
-    ...resolve(toSlugs(lesson.toolkit_glossary),   "用語",  "/glossary",   glossaryDocs),
-    ...resolve(toSlugs(lesson.toolkit_worksheets), "ワーク", "/worksheets", worksheetDocs),
-    ...resolve(toSlugs(lesson.toolkit_people),     "人物",  "/people",     peopleDocs),
+    ...resolve(toSlugs(lesson.toolkit_figures),  "図解", "/figures",  figuresDocs),
+    ...resolve(toSlugs(lesson.toolkit_glossary), "用語", "/glossary", glossaryDocs),
+    ...resolve(toSlugs(lesson.toolkit_people),   "人物", "/people",   peopleDocs),
     { href: "/faq", label: "FAQ", kind: "FAQ" },
   ];
+}
+
+function buildWorksheetLinks(lesson: ContentDoc): QuickLink[] {
+  const toSlugs = (field: unknown): string[] =>
+    Array.isArray(field) ? (field as string[]) : [];
+  const worksheetDocs = getCollection("worksheets");
+  return toSlugs(lesson.toolkit_worksheets).map((slug) => ({
+    href:  `/worksheets/${slug}`,
+    label: worksheetDocs.find((d) => d.slug === slug)?.title ?? slug,
+    kind:  "ワーク",
+  }));
 }
 
 export function generateStaticParams() {
@@ -74,10 +83,12 @@ export default async function LessonDetailPage({
   const lesson = getDocBySlug("lessons", slug);
   if (!lesson) notFound();
 
-  const objectives  = Array.isArray(lesson.objectives) ? lesson.objectives : [];
-  const lessonPhase = getLessonPhase(lesson.slug);
-  const cycleStep   = getLessonCycleStep(lesson.slug);
-  const quickLinks  = buildQuickLinks(lesson);
+  const objectives     = Array.isArray(lesson.objectives) ? lesson.objectives : [];
+  const lessonPhase    = getLessonPhase(lesson.slug);
+  const cycleStep      = getLessonCycleStep(lesson.slug);
+  const toolkitLinks   = buildToolkitLinks(lesson);
+  const worksheetLinks = buildWorksheetLinks(lesson);
+  const nextLesson     = lesson.next ? getDocBySlug("lessons", String(lesson.next)) : null;
 
   return (
     <article className="lesson-article">
@@ -101,27 +112,14 @@ export default async function LessonDetailPage({
         </div>
       </header>
 
-      {quickLinks.length > 0 && (
+      {toolkitLinks.length > 0 && (
         <div className="lesson-nav-bar reveal">
           <span className="lesson-nav-bar-label">この授業のリンク集</span>
-          {quickLinks.map((item) => (
+          {toolkitLinks.map((item) => (
             <Link key={`${item.kind}-${item.href}`} href={item.href} className="chip-link">
               <small>{item.kind}</small> {item.label}
             </Link>
           ))}
-          {lesson.next
-            ? (() => {
-                const nextLesson = getDocBySlug("lessons", String(lesson.next));
-                return (
-                  <Link
-                    href={`/curriculum/${encodeURIComponent(String(lesson.next))}`}
-                    className="chip-link"
-                  >
-                    <small>次へ</small> {nextLesson?.title ?? String(lesson.next)}
-                  </Link>
-                );
-              })()
-            : null}
         </div>
       )}
 
@@ -133,6 +131,42 @@ export default async function LessonDetailPage({
       </section>
 
       <SourceLinks sourceIds={lesson.sources} />
+
+      <section className="card lesson-footer-nav reveal" aria-label="次のステップ">
+        <p className="meta" style={{ marginBottom: "0.7rem" }}>次のステップ</p>
+
+        {worksheetLinks.length > 0 && (
+          <div style={{ marginBottom: "0.8rem" }}>
+            <p className="lesson-footer-nav-label">この授業のワークシート</p>
+            <div className="lesson-footer-nav-row">
+              {worksheetLinks.map((ws) => (
+                <Link key={ws.href} href={ws.href} className="btn-worksheet">
+                  📝 {ws.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {nextLesson ? (
+          <div>
+            <p className="lesson-footer-nav-label">次のレッスン</p>
+            <Link
+              href={`/curriculum/${encodeURIComponent(String(lesson.next))}`}
+              className="btn-next-lesson"
+            >
+              {nextLesson.title} →
+            </Link>
+          </div>
+        ) : (
+          <div>
+            <p className="lesson-footer-nav-label">カリキュラム完了</p>
+            <Link href="/curriculum" className="btn-next-lesson">
+              カリキュラム一覧へ →
+            </Link>
+          </div>
+        )}
+      </section>
     </article>
   );
 }
