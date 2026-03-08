@@ -1,6 +1,6 @@
 ---
 slug: "turn-taking"
-title: "順番取り（Turn-taking）"
+title: "順番交替（Turn-taking）"
 tags: ["会話分析","用語","観察"]
 sources: ["isca-turntaking-1974","isca-overlap-2000"]
 status: "published"

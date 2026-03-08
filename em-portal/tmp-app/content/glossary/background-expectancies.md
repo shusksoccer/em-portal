@@ -1,6 +1,6 @@
 ---
 slug: "background-expectancies"
-title: "背景的期待（Background expectancies）"
+title: "背景期待（Background Expectancies）"
 tags: ["基礎","用語","分析"]
 sources: ["wiley-sem","wikipedia-garfinkel"]
 status: "published"
